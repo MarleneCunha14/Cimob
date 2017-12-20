@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cimob.Models.ManageViewModels
 {
-    public class IndexViewModel
+    public class AlterarDadosModel
     {
         public string Username { get; set; }
 

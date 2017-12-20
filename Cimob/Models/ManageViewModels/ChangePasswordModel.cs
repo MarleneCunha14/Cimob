@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cimob.Models.ManageViewModels
 {
-    public class ChangePasswordViewModel
+    public class ChangePasswordModel
     {
         [Required]
         [DataType(DataType.Password)]

@@ -11,7 +11,7 @@ namespace Cimob.Views.Manage
     {
         public static string ActivePageKey => "ActivePage";
 
-        public static string Index => "Index";
+        public static string AlterarDados => "AlterarDados";
 
         public static string ChangePassword => "ChangePassword";
 
@@ -19,7 +19,7 @@ namespace Cimob.Views.Manage
 
         public static string TwoFactorAuthentication => "TwoFactorAuthentication";
 
-        public static string IndexNavClass(ViewContext viewContext) => PageNavClass(viewContext, Index);
+        public static string AlterarDadosNavClass(ViewContext viewContext) => PageNavClass(viewContext, AlterarDados);
 
         public static string ChangePasswordNavClass(ViewContext viewContext) => PageNavClass(viewContext, ChangePassword);
 

@@ -1,0 +1,32 @@
+﻿body {
+
+    font-family:Arial;
+}
+
+h2 {
+    font-family: Arial;
+    font-size: 18pt;
+    margin-left: 380px;
+}
+
+img {
+    margin-left: 200px;
+}
+
+.btn {
+    font-weight: 700;
+    height: 36px;
+    width: 200px;
+    margin-left: 380px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+    margin-left: 460px;
+    background-color: green;
+    color: white;
+}
+
+input {
+    margin-left: 380px;
+}

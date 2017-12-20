@@ -6,8 +6,22 @@ using System.Threading.Tasks;
 
 namespace Cimob.Models.AccountViewModels
 {
-    public class RegisterViewModel
+    //classe registo
+    public class RegisterModel
     {
+
+        [Required]
+        [Display(Name = "Name")]
+        public string Name { get; set; }
+
+        [Required]
+        [Display(Name = "Pais")]
+        public String Pais { get; set; }
+
+        [Required]
+        [Display(Name = "Tipo")]
+        public String Tipo { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

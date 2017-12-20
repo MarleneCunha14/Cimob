@@ -46,7 +46,7 @@ namespace Cimob.Controllers
         public string StatusMessage { get; set; }
 
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> AlterarDados()
         {
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
@@ -54,7 +54,7 @@ namespace Cimob.Controllers
                 throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
             }
 
-            var model = new IndexViewModel
+            var model = new AlterarDadosModel
             {
                 Username = user.UserName,
                 Email = user.Email,
@@ -68,7 +68,7 @@ namespace Cimob.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Index(IndexViewModel model)
+        public async Task<IActionResult> AlterarDados(AlterarDadosModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -102,12 +102,12 @@ namespace Cimob.Controllers
             }
 
             StatusMessage = "Your profile has been updated";
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(AlterarDados));
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> SendVerificationEmail(IndexViewModel model)
+        public async Task<IActionResult> SendVerificationEmail(AlterarDadosModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -126,7 +126,7 @@ namespace Cimob.Controllers
             await _emailSender.SendEmailConfirmationAsync(email, callbackUrl);
 
             StatusMessage = "Verification email sent. Please check your email.";
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(AlterarDados));
         }
 
         [HttpGet]
@@ -144,13 +144,13 @@ namespace Cimob.Controllers
                 return RedirectToAction(nameof(SetPassword));
             }
 
-            var model = new ChangePasswordViewModel { StatusMessage = StatusMessage };
+            var model = new ChangePasswordModel { StatusMessage = StatusMessage };
             return View(model);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
+        public async Task<IActionResult> ChangePassword(ChangePasswordModel model)
         {
             if (!ModelState.IsValid)
             {
