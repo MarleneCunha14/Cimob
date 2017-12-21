@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cimob.Models.AccountViewModels
 {
+    //Classe Forgot
     public class ForgotPasswordModel
     {
         [Required]
