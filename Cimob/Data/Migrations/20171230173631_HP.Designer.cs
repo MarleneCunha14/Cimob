@@ -11,9 +11,10 @@ using System;
 namespace Cimob.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171230173631_HP")]
+    partial class HP
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,18 +30,6 @@ namespace Cimob.Migrations
 
                     b.ToTable("AjudaAutenticacao");
                 });
-
-            modelBuilder.Entity("Cimob.Models.Conta.TipoDeUser", b =>
-            {
-                b.Property<int>("TipoDeUserId")
-                    .ValueGeneratedOnAdd();
-
-                b.HasKey("TipoDeUserId");
-
-                b.Property<string>("nomeTipo");
-
-                b.ToTable("TipoDeUser");
-            });
 
             modelBuilder.Entity("Cimob.Models.ApplicationUser", b =>
                 {

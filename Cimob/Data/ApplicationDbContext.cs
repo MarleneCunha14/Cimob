@@ -24,11 +24,11 @@ namespace Cimob.Data
         }
 
         public DbSet<Cimob.Models.AjudaAutenticacao> AjudaAutenticacao { get; set; }
+        public DbSet<Cimob.Models.> TipoDeUser { get; set; }
 
 
-  
-        
 
-         
+
+
     }
 }

@@ -13,6 +13,7 @@ using Microsoft.Extensions.Options;
 using Cimob.Models;
 using Cimob.Models.AccountViewModels;
 using Cimob.Services;
+using Cimob.Data;
 
 namespace Cimob.Controllers
 {
@@ -24,17 +25,19 @@ namespace Cimob.Controllers
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IEmailSender _emailSender;
         private readonly ILogger _logger;
-
+        private readonly ApplicationDbContext _context;
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender,
-            ILogger<AccountController> logger)
+            ILogger<AccountController> logger,
+            ApplicationDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
             _logger = logger;
+            _context = context;
         }
 
         [TempData]
@@ -209,6 +212,9 @@ namespace Cimob.Controllers
         public IActionResult Register(string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
+            List<TipoDeUser> tipoDeUser = new List<TipoDeUser>();
+            tipoDeUser = (from nomeTipo in _context.TipoDeUser
+                          select nomeTipo).ToList();
             return View();
         }
 
@@ -222,7 +228,7 @@ namespace Cimob.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email};
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -242,6 +248,14 @@ namespace Cimob.Controllers
             // If we got this far, something failed, redisplay form
             return View(model);
         }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult RegisterConfirmation()
+        {
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
@@ -381,12 +395,15 @@ namespace Cimob.Controllers
             return View(model);
         }
 
+        
+
         [HttpGet]
         [AllowAnonymous]
         public IActionResult ForgotPasswordConfirmation()
         {
             return View();
         }
+
 
         [HttpGet]
         [AllowAnonymous]

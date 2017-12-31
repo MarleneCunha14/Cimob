@@ -45,7 +45,11 @@
                     <span asp-validation-for="Pais" class="text-danger"></span>
                 </div>
                 <div class="form-group">
+                    @using (Html.BeginForm(actionName = "AddToInvoice", controllerName = "Invoice", method = FormMethod.Post))
+    {
 
+                @Html.DropDownListFor(m => m.Tipo, new SelectList(model.Products, "ProductId", "Name"))
+}
                     <input asp-for="Tipo" class="form-control" placeholder="Tipo" />
                     <span asp-validation-for="Tipo" class="text-danger"></span>
                 </div>

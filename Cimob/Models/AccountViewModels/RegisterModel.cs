@@ -20,7 +20,7 @@ namespace Cimob.Models.AccountViewModels
 
         [Required]
         [Display(Name = "Tipo")]
-        public String Tipo { get; set; }
+        public IEnumerable<TipoDeUser> Tipo { get; set; }
 
         [Required]
         [EmailAddress]
