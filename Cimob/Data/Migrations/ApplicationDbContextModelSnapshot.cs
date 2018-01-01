@@ -30,7 +30,7 @@ namespace Cimob.Migrations
                     b.ToTable("AjudaAutenticacao");
                 });
 
-            modelBuilder.Entity("Cimob.Models.Conta.TipoDeUser", b =>
+            modelBuilder.Entity("Cimob.Models..TipoDeUser", b =>
             {
                 b.Property<int>("TipoDeUserId")
                     .ValueGeneratedOnAdd();

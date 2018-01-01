@@ -215,6 +215,7 @@ namespace Cimob.Controllers
             List<TipoDeUser> tipoDeUser = new List<TipoDeUser>();
             tipoDeUser = (from nomeTipo in _context.TipoDeUser
                           select nomeTipo).ToList();
+            ViewBag.ListaDeTipos = tipoDeUser;
             return View();
         }
 
