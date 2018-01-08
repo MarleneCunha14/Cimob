@@ -5,18 +5,28 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Cimob.Models;
-using Cimob.Models.AccountViewModels;
+using Cimob.Models.Candidatura;
 
 namespace Cimob.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
-        {
-            this.InsertInitialData();
-        }
+        { 
 
+
+        }
+        public DbSet<ApplicationUser> ApplicationUser { get; set; }
+        public DbSet<AjudaAutenticacao> AjudaAutenticacao { get; set; }
+        public DbSet<TipoDeUser> TipoDeUser { get; set; }
+        public DbSet<Candidatura> Candidatura { get; set; }
+        public DbSet<Concurso> Concurso { get; set; }
+        public DbSet<Regulamento> Regulamento { get; set; }
+        public DbSet<EstadoCandidatura> EstadoCandidatura { get; set; }
+        public DbSet<Escola> Escola { get; set; }
+        public DbSet<Pais> Pais { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -24,23 +34,6 @@ namespace Cimob.Data
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
         }
-
-        public DbSet<Cimob.Models.AjudaAutenticacao> AjudaAutenticacao { get; set; }
-        public DbSet<Cimob.Models.TipoDeUser> TipoDeUser { get; set; }
-
-        private void InsertInitialData()
-        {
-            var tipoDeUser = new TipoDeUser[]
-               {
-                   new TipoDeUser {TipoDeUserId=1, nomeTipo="Estudante"},
-                   new TipoDeUser {TipoDeUserId=2, nomeTipo="Docente"}
-               };
-            foreach (TipoDeUser t in tipoDeUser)
-            {
-
-                this.TipoDeUser.Add(t);
-            }
-            this.SaveChanges();
-        }
+      
     }
 }

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Cimob.Models.Candidatura.Candidatura>
+
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataCandidatura)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Comentarios)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Concurso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoCandidatura)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataCandidatura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comentarios)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Concurso.ConcursoId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoCandidatura.EstadoCandidaturaId)
+            </td>
+            <td>             
+                <a asp-action="Delete" asp-route-id="@item.CandidaturaId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

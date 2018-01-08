@@ -1,0 +1,51 @@
+﻿@model Cimob.Models.Candidatura.Concurso
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Concurso</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PaisId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PaisId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoDeUtilizadorId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TipoDeUtilizadorId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Escola)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Escola.EscolaId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Regulamento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Regulamento.RegulamentoId)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ConcursoId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

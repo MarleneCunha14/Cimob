@@ -4,12 +4,12 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Cimob.Models.Genericos
+namespace Cimob.Models.Candidatura
 {
     public class EstadoCandidatura
     {
         [Key]
-        public int CandidaturaId { get; set; }
+        public int EstadoCandidaturaId { get; set; }
         public String NomeEstado { get; set; }
     }
 }

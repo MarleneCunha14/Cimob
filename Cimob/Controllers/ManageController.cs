@@ -13,6 +13,8 @@ using Microsoft.Extensions.Options;
 using Cimob.Models;
 using Cimob.Models.ManageViewModels;
 using Cimob.Services;
+using Cimob.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Cimob.Controllers
 {
@@ -25,7 +27,7 @@ namespace Cimob.Controllers
         private readonly IEmailSender _emailSender;
         private readonly ILogger _logger;
         private readonly UrlEncoder _urlEncoder;
-
+        private readonly ApplicationDbContext _context;
         private const string AuthenicatorUriFormat = "otpauth://totp/{0}:{1}?secret={2}&issuer={0}&digits=6";
 
         public ManageController(
@@ -33,13 +35,15 @@ namespace Cimob.Controllers
           SignInManager<ApplicationUser> signInManager,
           IEmailSender emailSender,
           ILogger<ManageController> logger,
-          UrlEncoder urlEncoder)
+          UrlEncoder urlEncoder,
+          ApplicationDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
             _logger = logger;
             _urlEncoder = urlEncoder;
+            _context = context;
         }
 
         [TempData]
@@ -148,7 +152,9 @@ namespace Cimob.Controllers
             return View(model);
         }
 
-        [HttpPost]
+       
+
+    [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ChangePassword(ChangePasswordModel model)
         {
@@ -499,7 +505,50 @@ namespace Cimob.Controllers
                 _urlEncoder.Encode(email),
                 unformattedKey);
         }
+        // GET: Candidaturas
+        public async Task<IActionResult> VerCandidaturasPendentes()
+        {
+            string id = User.Identity.Name;
+            if (string.Equals(id, "", StringComparison.OrdinalIgnoreCase))
+            {
+                return NotFound();
+            }
 
+            var user = await _context.ApplicationUser
+                .SingleOrDefaultAsync(m => m.UserName.Equals(id));
+            if (user == null)
+            {
+                return NotFound();
+            }
+            var applicationDbContext = _context.Candidatura.Where(c => c.ApplicationUserId.Equals(user.Id));
+                  
+
+
+            return View(await applicationDbContext.ToListAsync());
+        }
+        // GET: Utilizadores/Delete/5
+        public async Task<IActionResult> Delete(int id)
+        {
+            var candidatura = await _context.Candidatura
+                .SingleOrDefaultAsync(m => m.CandidaturaId == id);
+            _context.Candidatura.Remove(candidatura);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(VerCandidaturasPendentes));
+        }
+
+        // POST: Utilizadores/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var candidatura = await _context.Candidatura
+                .SingleOrDefaultAsync(m => m.CandidaturaId == id);
+            _context.Candidatura.Remove(candidatura);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(VerCandidaturasPendentes));
+        }
         #endregion
     }
+
+
 }

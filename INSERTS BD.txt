@@ -1,0 +1,41 @@
+SET IDENTITY_INSERT [dbo].[Escola] ON
+INSERT INTO [dbo].[Escola] ([EscolaId], [NomeEscola]) VALUES (1, 'EST')
+SET IDENTITY_INSERT [dbo].[Escola] OFF
+
+SET IDENTITY_INSERT [dbo].[Pais] ON
+INSERT INTO [dbo].[Pais] ([PaisId], [NomePais]) VALUES (1, 'Portugal')
+SET IDENTITY_INSERT [dbo].[Pais] OFF
+
+SET IDENTITY_INSERT [dbo].[TipoDeUser] ON
+INSERT INTO [dbo].[TipoDeUser] ([TipoDeUserId], [nomeTipo]) VALUES (1, 'Estudante')
+SET IDENTITY_INSERT [dbo].[TipoDeUser] OFF
+
+
+SET IDENTITY_INSERT [dbo].[TipoDeUser] ON
+INSERT INTO [dbo].[TipoDeUser] ([TipoDeUserId], [nomeTipo]) VALUES (2, 'Docente')
+SET IDENTITY_INSERT [dbo].[TipoDeUser] OFF
+
+SET IDENTITY_INSERT [dbo].[Regulamento] ON
+INSERT INTO [dbo].[Regulamento] ([RegulamentoId], [Descricao]) VALUES (1, 'Regulamento')
+SET IDENTITY_INSERT [dbo].[Regulamento] OFF
+
+SET IDENTITY_INSERT [dbo].[EstadoCandidatura] ON
+INSERT INTO [dbo].[EstadoCandidatura] ([EstadoCandidaturaId], [NomeEstado]) VALUES (1, 'Pendente')
+SET IDENTITY_INSERT [dbo].[EstadoCandidatura] OFF
+
+SET IDENTITY_INSERT [dbo].[Concurso] ON
+INSERT INTO [dbo].[Concurso] ([ConcursoId], [Descricao], [EscolaID], [PaisId], [RegulamentoId], [TipoDeUserId], [TipoDeUtilizadorId])
+VALUES (1, 'coiso', 1, 1, 1, 1, 1)
+SET IDENTITY_INSERT [dbo].[Concurso] OFF
+
+SET IDENTITY_INSERT [dbo].[Candidatura] ON
+INSERT INTO [dbo].[Candidatura] ([CandidaturaId], [ApplicationUserId], [Comentarios], [ConcursoId], [DataCandidatura], [DataNascimento], [EstadoCandidaturaId], [UserId])
+VALUES (1, '73f570b8-f72c-4bd4-aaf2-00eb4247c4a4', 'Coiso', 1, getdate(), getdate(), 1,0 )
+
+
+
+
+
+SET IDENTITY_INSERT [dbo].[Candidatura] ON
+INSERT INTO [dbo].[Candidatura] ([CandidaturaId], [ApplicationUserId], [Comentarios], [ConcursoId], [DataCandidatura], [EstadoCandidaturaId], [UserId])
+VALUES (2, '73f570b8-f72c-4bd4-aaf2-00eb4247c4a4', 'Coiso', 1, getdate(), 1,0 )

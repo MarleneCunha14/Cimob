@@ -1,4 +1,4 @@
-﻿using Cimob.Models.Genericos;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -11,10 +11,15 @@ namespace Cimob.Models.Candidatura
     {
         [Key]
         public int CandidaturaId { get; set; }
-        public ApplicationUser User { get; set; }
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        public int UserId { get; set; }
         public DateTime DataCandidatura { get; set; }
-        public EstadoCandidatura EstadoCandidatura { get; set; }
+        public int EstadoCandidaturaId { get; set; }
+        public String Comentarios { get; set; }
+        public int ConcursoId { get; set; }
+        public string ApplicationUserId { get; set; }
+
+        public virtual Concurso Concurso { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
+        public virtual EstadoCandidatura EstadoCandidatura { get; set; }
     }
 }

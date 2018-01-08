@@ -14,6 +14,7 @@ using Cimob.Models;
 using Cimob.Models.AccountViewModels;
 using Cimob.Services;
 using Cimob.Data;
+using Cimob.Models.Candidatura;
 
 namespace Cimob.Controllers
 {
@@ -212,11 +213,25 @@ namespace Cimob.Controllers
         public IActionResult Register(string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
-            List<TipoDeUser> tipoDeUser = new List<TipoDeUser>();
-            tipoDeUser = (from nomeTipo in _context.TipoDeUser
-                          select nomeTipo).ToList();
-            ViewBag.ListaDeTipos = tipoDeUser;
+            ViewData["EscolaId"] = new SelectList(_context.Escola, "EscolaId", "NomeEscola");
+            ViewData["TipoId"] = new SelectList(_context.TipoDeUser, "TipoDeUserId", "nomeTipo");
+            ViewData["PaisId"] = new SelectList(_context.Pais, "PaisId", "NomePais" );
             return View();
+        }
+        [HttpPost]
+        public ActionResult ValidateDateEqualOrGreater(DateTime Date)
+        {        
+            DateTime dtMin = DateTime.UtcNow;
+            dtMin = dtMin.AddYears(-17);
+            if (Date >= dtMin)
+            {
+                return Json(true);
+            }
+
+            return Json(false);
+
+            
+           
         }
 
         //
@@ -229,7 +244,9 @@ namespace Cimob.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email};
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, PaisId = model.PaisId,
+                    Nome = model.Name, TipoDeUserId = model.TipoId, EscolaId = model.EscolaId,
+                    DataNascimento = model.DataNascimento };
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -245,7 +262,10 @@ namespace Cimob.Controllers
                 }
                 AddErrors(result);
             }
-
+            ViewData["ReturnUrl"] = returnUrl;
+            ViewData["EscolaId"] = new SelectList(_context.Escola, "EscolaId", "NomeEscola");
+            ViewData["TipoId"] = new SelectList(_context.TipoDeUser, "TipoDeUserId", "nomeTipo");
+            ViewData["PaisId"] = new SelectList(_context.Pais, "PaisId", "NomePais");
             // If we got this far, something failed, redisplay form
             return View(model);
         }

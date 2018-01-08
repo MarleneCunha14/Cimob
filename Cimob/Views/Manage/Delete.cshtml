@@ -1,0 +1,51 @@
+﻿@model Cimob.Models.Candidatura.Candidatura
+
+<h3>Deseja mesmo desistir da candidatura?</h3>
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CandidaturaId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CandidaturaId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataCandidatura)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataCandidatura)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comentarios)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comentarios)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationUser)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationUser.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Concurso)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Concurso.ConcursoId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EstadoCandidatura)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EstadoCandidatura.EstadoCandidaturaId)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="CandidaturaId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

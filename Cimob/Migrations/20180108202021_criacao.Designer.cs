@@ -11,8 +11,8 @@ using System;
 namespace Cimob.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20171230173631_HP")]
-    partial class HP
+    [Migration("20180108202021_criacao")]
+    partial class criacao
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,41 @@ namespace Cimob.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "2.0.1-rtm-125")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("Cimob.Models.AccountViewModels.RegisterModel", b =>
+                {
+                    b.Property<string>("Email")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ConfirmPassword");
+
+                    b.Property<DateTime>("DataNascimento");
+
+                    b.Property<int>("EscolaId");
+
+                    b.Property<string>("Name")
+                        .IsRequired();
+
+                    b.Property<int>("PaisId");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(100);
+
+                    b.Property<int?>("TipoDeUserId");
+
+                    b.Property<int>("TipoId");
+
+                    b.HasKey("Email");
+
+                    b.HasIndex("EscolaId");
+
+                    b.HasIndex("PaisId");
+
+                    b.HasIndex("TipoDeUserId");
+
+                    b.ToTable("RegisterModel");
+                });
 
             modelBuilder.Entity("Cimob.Models.AjudaAutenticacao", b =>
                 {
@@ -41,20 +76,28 @@ namespace Cimob.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
+                    b.Property<DateTime>("DataNascimento");
+
                     b.Property<string>("Email")
                         .HasMaxLength(256);
 
                     b.Property<bool>("EmailConfirmed");
 
+                    b.Property<int>("EscolaId");
+
                     b.Property<bool>("LockoutEnabled");
 
                     b.Property<DateTimeOffset?>("LockoutEnd");
+
+                    b.Property<string>("Nome");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256);
 
                     b.Property<string>("NormalizedUserName")
                         .HasMaxLength(256);
+
+                    b.Property<int>("PaisId");
 
                     b.Property<string>("PasswordHash");
 
@@ -64,12 +107,16 @@ namespace Cimob.Migrations
 
                     b.Property<string>("SecurityStamp");
 
+                    b.Property<int>("TipoDeUserId");
+
                     b.Property<bool>("TwoFactorEnabled");
 
                     b.Property<string>("UserName")
                         .HasMaxLength(256);
 
                     b.HasKey("Id");
+
+                    b.HasIndex("EscolaId");
 
                     b.HasIndex("NormalizedEmail")
                         .HasName("EmailIndex");
@@ -79,7 +126,127 @@ namespace Cimob.Migrations
                         .HasName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
+                    b.HasIndex("PaisId");
+
+                    b.HasIndex("TipoDeUserId");
+
                     b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("Cimob.Models.Candidatura.Candidatura", b =>
+                {
+                    b.Property<int>("CandidaturaId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("ApplicationUserId");
+
+                    b.Property<string>("Comentarios");
+
+                    b.Property<int>("ConcursoId");
+
+                    b.Property<DateTime>("DataCandidatura");
+
+                    b.Property<int>("EstadoCandidaturaId");
+
+                    b.Property<int>("UserId");
+
+                    b.HasKey("CandidaturaId");
+
+                    b.HasIndex("ApplicationUserId");
+
+                    b.HasIndex("ConcursoId");
+
+                    b.HasIndex("EstadoCandidaturaId");
+
+                    b.ToTable("Candidatura");
+                });
+
+            modelBuilder.Entity("Cimob.Models.Candidatura.Concurso", b =>
+                {
+                    b.Property<int>("ConcursoId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Descricao");
+
+                    b.Property<int>("EscolaID");
+
+                    b.Property<int>("PaisId");
+
+                    b.Property<int>("RegulamentoId");
+
+                    b.Property<int?>("TipoDeUserId");
+
+                    b.Property<int>("TipoDeUtilizadorId");
+
+                    b.HasKey("ConcursoId");
+
+                    b.HasIndex("EscolaID");
+
+                    b.HasIndex("RegulamentoId");
+
+                    b.HasIndex("TipoDeUserId");
+
+                    b.ToTable("Concurso");
+                });
+
+            modelBuilder.Entity("Cimob.Models.Candidatura.Escola", b =>
+                {
+                    b.Property<int>("EscolaId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("NomeEscola");
+
+                    b.HasKey("EscolaId");
+
+                    b.ToTable("Escola");
+                });
+
+            modelBuilder.Entity("Cimob.Models.Candidatura.EstadoCandidatura", b =>
+                {
+                    b.Property<int>("EstadoCandidaturaId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("NomeEstado");
+
+                    b.HasKey("EstadoCandidaturaId");
+
+                    b.ToTable("EstadoCandidatura");
+                });
+
+            modelBuilder.Entity("Cimob.Models.Candidatura.Pais", b =>
+                {
+                    b.Property<int>("PaisId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("NomePais");
+
+                    b.HasKey("PaisId");
+
+                    b.ToTable("Pais");
+                });
+
+            modelBuilder.Entity("Cimob.Models.Candidatura.Regulamento", b =>
+                {
+                    b.Property<int>("RegulamentoId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Descricao");
+
+                    b.HasKey("RegulamentoId");
+
+                    b.ToTable("Regulamento");
+                });
+
+            modelBuilder.Entity("Cimob.Models.TipoDeUser", b =>
+                {
+                    b.Property<int>("TipoDeUserId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("nomeTipo");
+
+                    b.HasKey("TipoDeUserId");
+
+                    b.ToTable("TipoDeUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -188,6 +355,75 @@ namespace Cimob.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("Cimob.Models.AccountViewModels.RegisterModel", b =>
+                {
+                    b.HasOne("Cimob.Models.Candidatura.Escola", "Escola")
+                        .WithMany()
+                        .HasForeignKey("EscolaId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Cimob.Models.Candidatura.Pais", "Pais")
+                        .WithMany()
+                        .HasForeignKey("PaisId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Cimob.Models.TipoDeUser", "TipoDeUser")
+                        .WithMany("RegisterModel")
+                        .HasForeignKey("TipoDeUserId");
+                });
+
+            modelBuilder.Entity("Cimob.Models.ApplicationUser", b =>
+                {
+                    b.HasOne("Cimob.Models.Candidatura.Escola", "Escola")
+                        .WithMany()
+                        .HasForeignKey("EscolaId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Cimob.Models.Candidatura.Pais", "Pais")
+                        .WithMany()
+                        .HasForeignKey("PaisId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Cimob.Models.TipoDeUser", "TipoDeUser")
+                        .WithMany("ApplicationUser")
+                        .HasForeignKey("TipoDeUserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Cimob.Models.Candidatura.Candidatura", b =>
+                {
+                    b.HasOne("Cimob.Models.ApplicationUser", "ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("ApplicationUserId");
+
+                    b.HasOne("Cimob.Models.Candidatura.Concurso", "Concurso")
+                        .WithMany()
+                        .HasForeignKey("ConcursoId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Cimob.Models.Candidatura.EstadoCandidatura", "EstadoCandidatura")
+                        .WithMany()
+                        .HasForeignKey("EstadoCandidaturaId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Cimob.Models.Candidatura.Concurso", b =>
+                {
+                    b.HasOne("Cimob.Models.Candidatura.Escola", "Escola")
+                        .WithMany()
+                        .HasForeignKey("EscolaID")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Cimob.Models.Candidatura.Regulamento", "Regulamento")
+                        .WithMany()
+                        .HasForeignKey("RegulamentoId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Cimob.Models.TipoDeUser", "TipoDeUser")
+                        .WithMany()
+                        .HasForeignKey("TipoDeUserId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

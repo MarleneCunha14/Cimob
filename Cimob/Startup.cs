@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Cimob.Data;
 using Cimob.Models;
 using Cimob.Services;
+using TopCar.Data;
 
 namespace Cimob
 {
@@ -44,7 +45,7 @@ namespace Cimob
             services.Configure<AuthMessageSenderOptions>(Configuration);
         }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ApplicationDbContext context)
         {
             if (env.IsDevelopment())
             {
@@ -67,6 +68,7 @@ namespace Cimob
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            //DbInitializer.Initialize(context);
         }
     }
 }

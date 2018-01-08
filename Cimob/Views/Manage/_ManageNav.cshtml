@@ -28,10 +28,11 @@
 
         <li class="@ManageNavPages.AlterarDadosNavClass(ViewContext)"><a asp-action="AlterarDados">Consultar dados do perfil</a></li>
         <li class="@ManageNavPages.ChangePasswordNavClass(ViewContext)"><a asp-action="ChangePassword">Alterar Palavra-passe</a></li>
+        <li class="@ManageNavPages.CandidaturasPendentesNavClass(ViewContext)"><a asp-action="VerCandidaturasPendentes">Ver Candidaturas Pendentes</a></li>
         @if (hasExternalLogins)
-        {
-            <li class="@ManageNavPages.ExternalLoginsNavClass(ViewContext)"><a asp-action="ExternalLogins">External logins</a></li>
-        }
+    {
+        <li class="@ManageNavPages.ExternalLoginsNavClass(ViewContext)"><a asp-action="ExternalLogins">External logins</a></li>
+}
 
     </ul>
     </body>

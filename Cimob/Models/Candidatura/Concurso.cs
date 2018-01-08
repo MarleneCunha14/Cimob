@@ -10,13 +10,16 @@ namespace Cimob.Models.Candidatura
     {
         [Key]
         public int ConcursoId { get; set; }
-        public Escola Escola { get; set; }
-        public Pais Pais { get; set; }
-        public String TipoCandidatura { get; set; }
-        public Regulamento Regulamento { get; set; }
+        public int EscolaID { get; set; }
+        public int PaisId { get; set; }
+        public int RegulamentoId { get; set; }
         public String Descricao { get; set; }
         //Caso no futuro queiramos fazer pesquisa por tipo de utilizador
         
-        public String TipoDeUtilizador { get; set; }
+        public int TipoDeUtilizadorId { get; set; }
+
+        public virtual TipoDeUser TipoDeUser { get; set; }
+        public virtual Regulamento Regulamento { get; set; }
+        public virtual Escola Escola { get; set; }
     }
 }
