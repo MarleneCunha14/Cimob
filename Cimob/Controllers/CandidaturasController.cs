@@ -48,12 +48,16 @@ namespace Cimob.Controllers
         }
 
         // GET: Candidaturas/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create(int id)
         {
-            ViewData["ApplicationUserId"] = new SelectList(_context.ApplicationUser, "Id", "Id");
-            ViewData["ConcursoId"] = new SelectList(_context.Concurso, "ConcursoId", "ConcursoId");
-            ViewData["EstadoCandidaturaId"] = new SelectList(_context.EstadoCandidatura, "EstadoCandidaturaId", "EstadoCandidaturaId");
-            return View();
+            Candidatura candidatura = new Candidatura();
+            candidatura.ConcursoId=id;
+
+            var concurso = await _context.Concurso
+              .SingleOrDefaultAsync(m => m.ConcursoId == id);
+
+            ViewBag.Descricao = concurso.Descricao;
+            return View(candidatura);
         }
 
         // POST: Candidaturas/Create
@@ -61,17 +65,28 @@ namespace Cimob.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CandidaturaId,UserId,DataCandidatura,EstadoCandidaturaId,Comentarios,ConcursoId,ApplicationUserId")] Candidatura candidatura)
+        public async Task<IActionResult> Create([Bind("Comentarios, ConcursoId")] Candidatura candidatura)
         {
+            candidatura.DataCandidatura = new DateTime();
+            candidatura.EstadoCandidaturaId= 1;
+            string id = User.Identity.Name;
+            if (string.Equals(id, "", StringComparison.OrdinalIgnoreCase))
+            {
+                return NotFound();
+            }
+
+            var user = await _context.ApplicationUser
+                .SingleOrDefaultAsync(m => m.UserName.Equals(id));
+            candidatura.UserId = 1;
+            candidatura.ApplicationUserId = user.Id;
             if (ModelState.IsValid)
             {
                 _context.Add(candidatura);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("VerCandidaturasPendentes", "Manage", new { area = "" }); ;
             }
-            ViewData["ApplicationUserId"] = new SelectList(_context.ApplicationUser, "Id", "Id", candidatura.ApplicationUserId);
-            ViewData["ConcursoId"] = new SelectList(_context.Concurso, "ConcursoId", "ConcursoId", candidatura.ConcursoId);
-            ViewData["EstadoCandidaturaId"] = new SelectList(_context.EstadoCandidatura, "EstadoCandidaturaId", "EstadoCandidaturaId", candidatura.EstadoCandidaturaId);
+
+
             return View(candidatura);
         }
 

@@ -1,5 +1,4 @@
 ﻿@model IEnumerable<Cimob.Models.Candidatura.Candidatura>
-
 @{
     ViewData["Title"] = "Index";
 }
@@ -12,15 +11,15 @@
 <table class="table">
     <thead>
         <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.UserId)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.DataCandidatura)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Comentarios)
-                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataCandidatura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comentarios)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.ApplicationUser)
             </th>
@@ -34,31 +33,31 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataCandidatura)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Comentarios)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApplicationUser.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Concurso.ConcursoId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EstadoCandidatura.EstadoCandidaturaId)
-            </td>
-            <td>
-                <a asp-area=""  asp-controller="Candidaturas" asp-action="Create">Candidatar</a>
-                
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataCandidatura)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comentarios)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ApplicationUser.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Concurso.ConcursoId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EstadoCandidatura.EstadoCandidaturaId)
+                </td>
+                <td>
+                   <a asp-area="" asp-controller="Candidaturas" asp-action="Create">Candidatar</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

@@ -49,7 +49,7 @@
                 @Html.DisplayFor(modelItem => item.Regulamento.RegulamentoId)
             </td>
             <td>
-                <a asp-area="" asp-controller="Candidaturas" asp-action="Create">Candidatar</a>
+                <a asp-area="" asp-route-id="@item.ConcursoId" asp-controller="Candidaturas" asp-action="Create">Candidatar</a>
             </td>
         </tr>
 }

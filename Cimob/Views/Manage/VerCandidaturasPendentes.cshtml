@@ -1,44 +1,70 @@
-﻿@model IEnumerable<Cimob.Models.Candidatura.Candidatura>
+﻿@model IEnumerable<Cimob.Models.Candidatura.ProcessoCandidatura>
 
-<table class="table">
-    <thead>
-        <tr>
-              
-                <th>
-                    @Html.DisplayNameFor(model => model.DataCandidatura)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Comentarios)
-                </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Concurso)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EstadoCandidatura)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-           
-            <td>
-                @Html.DisplayFor(modelItem => item.DataCandidatura)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Comentarios)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Concurso.ConcursoId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EstadoCandidatura.EstadoCandidaturaId)
-            </td>
-            <td>             
-                <a asp-action="Delete" asp-route-id="@item.CandidaturaId">Desistir Candidatura</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+
+
+<div style="margin: auto; width: auto;">
+    
+    <div class="container" style="width: 800px; min-height: 400px; float: left;">
+        <div id="areaDeCaixaReserva">
+            <div id="caixaLarga" style="width: 800px">
+                @{ if (Model.Any())
+                    {
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Escola
+                                    </th>
+                                    <th>
+                                        Estado Candidatura
+                                    </th>
+                                    <th>
+                                        Comentário
+                                    </th>
+                                    <th>
+                                        Data Candidatura
+                                    </th>
+                                    <th>
+                                       Acções
+                                    </th>
+                                   
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.escola.NomeEscola)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.estadoCandidatura.NomeEstado)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.candidatura.Comentarios)
+                                        </td>
+
+                                        <td> 
+                                           @Html.DisplayFor(modelItem => item.candidatura.DataCandidatura)
+                                        </td>
+                                        <td>
+                                            <a asp-action="Delete" asp-route-id="@item.candidatura.CandidaturaId" >Desistir Candidatura</a>
+                                        </td>
+                                        
+                                    </tr>
+
+                                }
+
+
+                            </tbody>
+                        </table>
+                    }
+                  
+                }
+             
+            </div>
+        </div>
+    </div>
+</div>

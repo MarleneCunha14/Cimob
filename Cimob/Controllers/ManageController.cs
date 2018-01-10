@@ -15,6 +15,7 @@ using Cimob.Models.ManageViewModels;
 using Cimob.Services;
 using Cimob.Data;
 using Microsoft.EntityFrameworkCore;
+using Cimob.Models.Candidatura;
 
 namespace Cimob.Controllers
 {
@@ -521,24 +522,37 @@ namespace Cimob.Controllers
                 return NotFound();
             }
             var applicationDbContext = _context.Candidatura.Where(c => c.ApplicationUserId.Equals(user.Id));
-                  
+
+            var candidatura = await applicationDbContext.ToListAsync();
 
 
-            return View(await applicationDbContext.ToListAsync());
+            var candidaturasPendentes = (from res in _context.Escola
+                                  join c in _context.Concurso
+                                  on res.EscolaId equals c.EscolaID
+                                  join v in _context.Candidatura
+                                  on c.ConcursoId equals v.ConcursoId
+                                  join e in _context.EstadoCandidatura
+                                  on v.EstadoCandidaturaId equals e.EstadoCandidaturaId
+                                  select new ProcessoCandidatura { escola = res, candidatura = v, concurso = c, estadoCandidatura = e});
+
+
+
+
+            return View(candidaturasPendentes);
         }
         // GET: Utilizadores/Delete/5
         public async Task<IActionResult> Delete(int id)
         {
             var candidatura = await _context.Candidatura
                 .SingleOrDefaultAsync(m => m.CandidaturaId == id);
-            _context.Candidatura.Remove(candidatura);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(VerCandidaturasPendentes));
+            var concurso = await _context.Concurso
+                .SingleOrDefaultAsync(m => m.ConcursoId == candidatura.ConcursoId);
+            ViewBag.Descricao = concurso.Descricao;
+            
+            return View(candidatura);
         }
 
         // POST: Utilizadores/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var candidatura = await _context.Candidatura
