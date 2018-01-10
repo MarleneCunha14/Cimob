@@ -1,0 +1,65 @@
+﻿
+
+body {
+
+    max-width: 350px;
+    padding: 40px 40px;
+    
+}
+
+h2 {
+
+    margin-top:70px;
+    font-family:Arial;
+    font-size:18pt;
+    text-align:center;
+    
+}
+
+h3 {
+    color:dodgerblue;
+    font-family:Arial;
+    font-size:16pt;
+    text-align:center;
+}
+
+.btn{
+    font-weight: 700;
+    height: 36px;
+    width:200px;
+    margin-left:380px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+    margin-left: 460px;
+    background-color: green;
+    color:white;
+        
+}
+
+img {
+   
+    margin-left:200px;
+}
+
+input{
+
+      margin-left:380px;
+      
+}
+
+label {
+    margin-left: 380px;
+    margin-top:10px;
+}
+
+ p{
+    margin-top:230px;
+    margin-left:400px;
+
+}
+
+
+
+

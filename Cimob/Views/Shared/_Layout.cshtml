@@ -31,9 +31,14 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="About">Candidaturas</a></li>
+                    <li><a asp-area="" asp-controller="PesquisarCandidaturas" asp-action="Index">Pesquisar Candidatura</a></li>
+                    <li><a asp-area="" asp-controller="Pais" asp-action="Index">País</a></li>
+                    <li><a asp-area="" asp-controller="Regulamentoes" asp-action="Index">Regulamento</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contacto</a></li>
+
                 </ul>
+                @await Html.PartialAsync("_LoginPartial")
             </div>
         </div>
     </nav>
@@ -41,7 +46,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2018 - Cimob</p>
+            <p>&copy; 2017 - Projeto</p>
         </footer>
     </div>
 
@@ -69,3 +74,4 @@
     @RenderSection("Scripts", required: false)
 </body>
 </html>
+

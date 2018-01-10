@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Cimob.Models.AjudaAutenticacao>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Ajuda</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/Ajuda.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/Ajuda.css" asp-append-version="true" />
+    </environment>
+</head>
+<body>
+    <h2>Centro de ajuda</h2>
+    <p>Para fazer Login:</p>
+    <ul>
+        <li>É necessario ter uma conta no site;</li>
+        <li>Ao clicar no login, preenche os campos com o email e a palavra-passe usadas na criação da conta;</li>
+        <li>Clique em <a asp-area="" asp-controller="Account" asp-action="Login">Iniciar Sessão.</a></li>
+    </ul>
+    <p>Para criar a conta no Cimob:</p>
+    <ul>
+        <li>Aceda ao site da aplicação;</li>
+        <li>No menu principal no canto superior direito, clique no Login;</li>
+        <li>Ao entrar no login, clique na opção <a asp-area="" asp-controller="Account" asp-action="Register">Criar conta;</a></li>
+        <li>Após preencher os campos com os seus dados, clica botão no criar conta.</li>
+    </ul>
+    <p>Para fazer Logout:</p>
+    <ul>
+        <li>Após estar logado, no canto superior direito clique em Logout.</li>
+    </ul>
+
+    <p>Para Alterar a palavra-passe:</p>
+    <ul>
+        <li>É necessário estar logado;</li>
+        <li>No canto superior direito, clique no nome do utilizador;</li>
+        <li>E aparece a opção alterar palavra-passe, preenche os campos com a palavra-passe antiga e a nova;</li>
+        <li>Confirma a palavra-passe nova;</li>
+        <li>Clique no botão alterar.</li>
+    </ul>
+    <p>Para recuperar a palavra-passe:</p>
+    <ul>
+        <li>No canto superior direito, clique no login;</li>
+        <li>Após isso clique no link <a asp-area="" asp-controller="Account" asp-action="ForgotPassword">Esqueceu a palavra-passe;</a></li>
+        <li>Preenche o campo com o email; </li>
+        <li>Clique em submeter.</li>
+    </ul>
+    <p>Para consultar e alterar dados do perfil:</p>
+    <ul>
+        <li>É necessário estar logado;</li>
+        <li>Após isso no canto superior direito,clique no nome do utilizador;</li>
+        <li>Aparecerá a páginca gerenciar conta; </li>
+        <li>No menu vertical, clique em consultar dados do perfil.</li>
+    </ul>
+</body>
+</html>

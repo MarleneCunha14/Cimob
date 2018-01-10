@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Cimob.Models.Candidatura.PesquisarCandidatura>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Pesquisar</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CandidaturaId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @{if (Model.Any())
+        {
+            @foreach (var item in Model)
+         {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CandidaturaId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+            </tr>
+          }
+    }
+    else
+    {
+        <text>"Resultado não encontrado"</text>
+
+   }  
+        }
+
+    </tbody>
+</table>
+

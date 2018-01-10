@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Cimob
 {
+    //novo branch
     public class Program
     {
         public static void Main(string[] args)
@@ -22,6 +23,4 @@ namespace Cimob
                 .UseStartup<Startup>()
                 .Build();
     }
-    //novo branch
-    //teste
 }

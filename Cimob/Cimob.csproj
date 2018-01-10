@@ -2,14 +2,38 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <UserSecretsId>aspnet-Cimob-4EF90CC8-68C5-40DF-90AE-E1A6E9412CA5</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
+    <Compile Remove="Views\AjudaAutenticacaos1\**" />
+    <Content Remove="Views\AjudaAutenticacaos1\**" />
+    <EmbeddedResource Remove="Views\AjudaAutenticacaos1\**" />
+    <None Remove="Views\AjudaAutenticacaos1\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\AjudaAutenticacaoController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\css\login.css" />
+    <Content Remove="wwwroot\images\erasmus.jpg" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.1" PrivateAssets="All" />
+    <PackageReference Include="SendGrid" Version="9.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.1" />
+    <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
+    <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />
   </ItemGroup>
 
 </Project>
