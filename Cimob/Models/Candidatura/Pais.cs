@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cimob.Models.Candidatura
 {
+    //País
     public class Pais
     {
         [Key]

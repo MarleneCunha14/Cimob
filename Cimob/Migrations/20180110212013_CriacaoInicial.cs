@@ -101,6 +101,21 @@ namespace Cimob.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Parcerias",
+                columns: table => new
+                {
+                    ParceriasId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Nome = table.Column<string>(nullable: true),
+                    PaisId = table.Column<int>(nullable: false),
+                    url = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Parcerias", x => x.ParceriasId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "PesquisarCandidatura",
                 columns: table => new
                 {
@@ -387,6 +402,9 @@ namespace Cimob.Migrations
 
             migrationBuilder.DropTable(
                 name: "Concurso");
+
+            //migrationBuilder.DropTable(
+              //  name: "Parcerias");
 
             migrationBuilder.DropTable(
                 name: "PesquisarCandidatura");

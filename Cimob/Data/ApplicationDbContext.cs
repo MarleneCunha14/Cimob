@@ -29,6 +29,7 @@ namespace Cimob.Data
         public DbSet<EstadoCandidatura> EstadoCandidatura { get; set; }
         public DbSet<Escola> Escola { get; set; }
         public DbSet<Pais> Pais { get; set; }
+        public DbSet<Parcerias> Parcerias { get; set; }
         public DbSet<PesquisarCandidatura> PesquisarCandidatura { get; set; }
 
 
@@ -124,5 +125,8 @@ namespace Cimob.Data
 
 
         }
+
+
+      //  public DbSet<Cimob.Models.Parcerias> Parcerias { get; set; }
     }
 }

@@ -11,7 +11,7 @@ using System;
 namespace Cimob.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180110125653_CriacaoInicial")]
+    [Migration("20180110212013_CriacaoInicial")]
     partial class CriacaoInicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -192,6 +192,22 @@ namespace Cimob.Migrations
                     b.HasKey("RegulamentoId");
 
                     b.ToTable("Regulamento");
+                });
+
+            modelBuilder.Entity("Cimob.Models.Parcerias", b =>
+                {
+                    b.Property<int>("ParceriasId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Nome");
+
+                    b.Property<int>("PaisId");
+
+                    b.Property<string>("url");
+
+                    b.HasKey("ParceriasId");
+
+                    b.ToTable("Parcerias");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

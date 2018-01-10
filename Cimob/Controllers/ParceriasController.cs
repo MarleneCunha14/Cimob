@@ -6,29 +6,28 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Cimob.Data;
-using Cimob.Models.Candidatura;
+using Cimob.Models;
 
 namespace Cimob.Controllers
 {
-    public class PaisController : Controller
+    public class ParceriasController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public PaisController(ApplicationDbContext context)
+        public ParceriasController(ApplicationDbContext context)
         {
             _context = context;
         }
-
-        public async Task<IActionResult> SearchPais(string id)
+        
+        public async Task<IActionResult> SearchParcerias(string id)
         {
-            var pais = from m in _context.Pais
-                            select m;
+            var parcerias = from m in _context.Parcerias
+                             select m;
             if (!String.IsNullOrEmpty(id))
             {
-                pais = pais.Where(s => s.NomePais.Contains(id));
+                parcerias = parcerias.Where(s => s.Nome.Contains(id));
             }
-            return View(await pais.ToListAsync());
+            return View(await parcerias.ToListAsync());
         }
-
     }
 }

@@ -193,6 +193,22 @@ namespace Cimob.Migrations
                     b.ToTable("Regulamento");
                 });
 
+            modelBuilder.Entity("Cimob.Models.Parcerias", b =>
+                {
+                    b.Property<int>("ParceriasId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Nome");
+
+                    b.Property<int>("PaisId");
+
+                    b.Property<string>("url");
+
+                    b.HasKey("ParceriasId");
+
+                    b.ToTable("Parcerias");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
