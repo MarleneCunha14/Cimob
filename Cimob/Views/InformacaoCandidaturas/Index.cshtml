@@ -1,20 +1,21 @@
-﻿@model IEnumerable<Cimob.Models.Candidatura.Regulamento>
+﻿@model IEnumerable<Cimob.Models.InformacaoCandidatura>
 
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <br />
 <br />
-<h1>Cimob Regulamento</h1>
+<h2>Informações sobre candidaturas abertas</h2>
 <br />
 <br />
 <br />
-
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Descricao)
             </th>
@@ -25,6 +26,9 @@
         @foreach (var item in Model)
         {
             <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Descricao)
                 </td>

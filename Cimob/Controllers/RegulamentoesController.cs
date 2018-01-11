@@ -21,45 +21,12 @@ namespace Cimob.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index(string filename)
+        public async Task<IActionResult> Index()
         {
-            if (filename == null)
-                return Content("Não encontrou ficheiro");
-
-            var path = Path.Combine(Directory.GetCurrentDirectory(), "https://localhost:44382/Regulamentoes", filename);
-
-            var memory = new MemoryStream();
-            using (var stream = new FileStream(path, FileMode.Open))
-            {
-                await stream.CopyToAsync(memory);
-            }
-            memory.Position = 0;
-            return File(memory, GetContentType(path), Path.GetFileName(path));
+            return View(await _context.Regulamento.ToListAsync());
         }
 
-        private string GetContentType(string path)
-        {
-            var types = GetMimeTypes();
-            var ext = Path.GetExtension(path).ToLowerInvariant();
-            return types[ext];
-        }
-
-        private Dictionary<string, string> GetMimeTypes()
-        {
-            return new Dictionary<string, string>
-            {
-                {".txt", "text/plain"},
-                {".pdf", "application/pdf"},
-                {".doc", "application/vnd.ms-word"},
-                {".docx", "application/vnd.ms-word"},
-                {".xls", "application/vnd.ms-excel"},
-                {".png", "image/png"},
-                {".jpg", "image/jpeg"},
-                {".jpeg", "image/jpeg"},
-                {".gif", "image/gif"},
-                {".csv", "text/csv"}
-            };
-        }
+  
 
     }
 }

@@ -10,24 +10,24 @@ using Cimob.Models;
 
 namespace Cimob.Controllers
 {
-    public class ParceriasController : Controller
+    public class EscolasController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public ParceriasController(ApplicationDbContext context)
+        public EscolasController(ApplicationDbContext context)
         {
             _context = context;
         }
         
-        public async Task<IActionResult> SearchParcerias(string id)
+        public async Task<IActionResult> SearchEscolas(string id)
         {
-            var parcerias = from m in _context.Parcerias
+            var escola = from m in _context.Escola
                              select m;
             if (!String.IsNullOrEmpty(id))
             {
-                parcerias = parcerias.Where(s => s.Nome.Contains(id));
+                escola = escola.Where(s => s.Nome.Contains(id));
             }
-            return View(await parcerias.ToListAsync());
+            return View(await escola.ToListAsync());
         }
     }
 }

@@ -67,7 +67,9 @@ namespace Cimob.Migrations
                 {
                     EscolaId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    NomeEscola = table.Column<string>(nullable: true)
+                    Nome = table.Column<string>(nullable: true),
+                    PaisId = table.Column<int>(nullable: false),
+                    url = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -88,6 +90,21 @@ namespace Cimob.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "InformacaoCandidatura",
+                columns: table => new
+                {
+                    InformacaoCandidaturaId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    CandidaturaId = table.Column<int>(nullable: false),
+                    Descricao = table.Column<string>(nullable: true),
+                    Nome = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_InformacaoCandidatura", x => x.InformacaoCandidaturaId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Pais",
                 columns: table => new
                 {
@@ -98,35 +115,6 @@ namespace Cimob.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Pais", x => x.PaisId);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Parcerias",
-                columns: table => new
-                {
-                    ParceriasId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(nullable: true),
-                    PaisId = table.Column<int>(nullable: false),
-                    url = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Parcerias", x => x.ParceriasId);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "PesquisarCandidatura",
-                columns: table => new
-                {
-                    PesquisarCandidaturaId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    CandidaturaId = table.Column<int>(nullable: false),
-                    Nome = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_PesquisarCandidatura", x => x.PesquisarCandidaturaId);
                 });
 
             migrationBuilder.CreateTable(
@@ -403,11 +391,8 @@ namespace Cimob.Migrations
             migrationBuilder.DropTable(
                 name: "Concurso");
 
-            //migrationBuilder.DropTable(
-              //  name: "Parcerias");
-
             migrationBuilder.DropTable(
-                name: "PesquisarCandidatura");
+                name: "InformacaoCandidatura");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

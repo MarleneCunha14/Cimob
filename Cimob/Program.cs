@@ -12,7 +12,7 @@ namespace Cimob
 {
     //novo branch
     public class Program
-    {
+    {   //regulamento, parcerias
         public static void Main(string[] args)
         {
             BuildWebHost(args).Run();

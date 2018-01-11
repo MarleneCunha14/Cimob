@@ -5,14 +5,13 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace Cimob.Models
-{   
-    //Parcerias
-    public class Parcerias
-    {
+{
+    public class InformacaoCandidatura
+    {   
         [Key]
-        public int ParceriasId { get; set; }
-        public int PaisId { get; set; }
+        public int InformacaoCandidaturaId { get; set; }
+        public int CandidaturaId { get; set; }
         public string Nome { get; set; }
-        public string url { get; set; }
+        public string Descricao { get; set; }
     }
 }

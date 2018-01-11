@@ -11,7 +11,7 @@ using System;
 namespace Cimob.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180110212013_CriacaoInicial")]
+    [Migration("20180110230142_CriacaoInicial")]
     partial class CriacaoInicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -132,18 +132,6 @@ namespace Cimob.Migrations
                     b.ToTable("Concurso");
                 });
 
-            modelBuilder.Entity("Cimob.Models.Candidatura.Escola", b =>
-                {
-                    b.Property<int>("EscolaId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("NomeEscola");
-
-                    b.HasKey("EscolaId");
-
-                    b.ToTable("Escola");
-                });
-
             modelBuilder.Entity("Cimob.Models.Candidatura.EstadoCandidatura", b =>
                 {
                     b.Property<int>("CandidaturaId")
@@ -168,20 +156,6 @@ namespace Cimob.Migrations
                     b.ToTable("Pais");
                 });
 
-            modelBuilder.Entity("Cimob.Models.Candidatura.PesquisarCandidatura", b =>
-                {
-                    b.Property<int>("PesquisarCandidaturaId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("CandidaturaId");
-
-                    b.Property<string>("Nome");
-
-                    b.HasKey("PesquisarCandidaturaId");
-
-                    b.ToTable("PesquisarCandidatura");
-                });
-
             modelBuilder.Entity("Cimob.Models.Candidatura.Regulamento", b =>
                 {
                     b.Property<int>("RegulamentoId")
@@ -194,9 +168,9 @@ namespace Cimob.Migrations
                     b.ToTable("Regulamento");
                 });
 
-            modelBuilder.Entity("Cimob.Models.Parcerias", b =>
+            modelBuilder.Entity("Cimob.Models.Escola", b =>
                 {
-                    b.Property<int>("ParceriasId")
+                    b.Property<int>("EscolaId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Nome");
@@ -205,9 +179,25 @@ namespace Cimob.Migrations
 
                     b.Property<string>("url");
 
-                    b.HasKey("ParceriasId");
+                    b.HasKey("EscolaId");
 
-                    b.ToTable("Parcerias");
+                    b.ToTable("Escola");
+                });
+
+            modelBuilder.Entity("Cimob.Models.InformacaoCandidatura", b =>
+                {
+                    b.Property<int>("InformacaoCandidaturaId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("CandidaturaId");
+
+                    b.Property<string>("Descricao");
+
+                    b.Property<string>("Nome");
+
+                    b.HasKey("InformacaoCandidaturaId");
+
+                    b.ToTable("InformacaoCandidatura");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -333,7 +323,7 @@ namespace Cimob.Migrations
 
             modelBuilder.Entity("Cimob.Models.Candidatura.Concurso", b =>
                 {
-                    b.HasOne("Cimob.Models.Candidatura.Escola", "Escola")
+                    b.HasOne("Cimob.Models.Escola", "Escola")
                         .WithMany()
                         .HasForeignKey("EscolaId")
                         .OnDelete(DeleteBehavior.Restrict);

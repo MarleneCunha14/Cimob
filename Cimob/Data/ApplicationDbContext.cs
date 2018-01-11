@@ -22,15 +22,15 @@ namespace Cimob.Data
 
         public DbSet<ApplicationUser> ApplicationUser { get; set; }
         public DbSet<AjudaAutenticacao> AjudaAutenticacao { get; set; }
-       // public DbSet<TipoDeUser> TipoDeUser { get; set; }
+        public DbSet<InformacaoCandidatura> InformacaoCandidatura { get; set; }
         public DbSet<Candidatura> Candidatura { get; set; }
         public DbSet<Concurso> Concurso { get; set; }
         public DbSet<Regulamento> Regulamento { get; set; }
         public DbSet<EstadoCandidatura> EstadoCandidatura { get; set; }
         public DbSet<Escola> Escola { get; set; }
         public DbSet<Pais> Pais { get; set; }
-        public DbSet<Parcerias> Parcerias { get; set; }
-        public DbSet<PesquisarCandidatura> PesquisarCandidatura { get; set; }
+        
+       
 
 
 
@@ -56,7 +56,8 @@ namespace Cimob.Data
             builder.Entity<EstadoCandidatura>().ToTable("EstadoCandidatura");
             builder.Entity<Escola>().ToTable("Escola");
             builder.Entity<Pais>().ToTable("Pais");
-            builder.Entity<PesquisarCandidatura>().ToTable("PesquisarCandidatura");
+            builder.Entity<InformacaoCandidatura>().ToTable("InformacaoCandidatura");
+
 
 
         }
@@ -111,22 +112,10 @@ namespace Cimob.Data
                 this.SaveChanges();
             }
 
-            if (!this.PesquisarCandidatura.Any())
-            {
-
-                var pesquisa = new PesquisarCandidatura[]
-                {
-                new PesquisarCandidatura { Nome= " Adilson", CandidaturaId=1,}
-                };
-
-                this.SaveChanges();
-            }
-
+          
 
 
         }
-
-
-      //  public DbSet<Cimob.Models.Parcerias> Parcerias { get; set; }
+       
     }
 }

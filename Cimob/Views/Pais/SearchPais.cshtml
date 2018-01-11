@@ -41,22 +41,23 @@
         </thead>
         <tbody>
             @{if (Model.Any())
-                {
-                    foreach (var item in Model)
-                    {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.NomePais)
-                            </td>                           
-                        </tr>
-                    }
-                }
-                else
-                {
-                    <text>"Resultado não encontrado"</text>
-                }
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NomePais)
+                    </td>
 
+                </tr>
             }
+      }
+      else
+           {
+        <text>"Resultado não encontrado"</text>
+           }
+
+          }
         </tbody>
     </table>
 
