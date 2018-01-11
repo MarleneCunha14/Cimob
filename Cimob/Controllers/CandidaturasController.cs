@@ -26,6 +26,12 @@ namespace Cimob.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
+        public IActionResult MaximumExceeded()
+        {
+            return View();
+        }
+
+
         // GET: Candidaturas/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -53,11 +59,25 @@ namespace Cimob.Controllers
             Candidatura candidatura = new Candidatura();
             candidatura.ConcursoId=id;
 
-            var concurso = await _context.Concurso
+            string nome = User.Identity.Name;           
+
+            var user = await _context.ApplicationUser
+                .SingleOrDefaultAsync(m => m.UserName.Equals(nome));
+
+            var candidaturas =  _context.Candidatura.Where(c => c.ApplicationUserId.Equals(user.Id));
+
+            if (candidaturas.Count() > 3)
+            {
+                return RedirectToAction(nameof(MaximumExceeded));
+            }
+            else
+            {
+                var concurso = await _context.Concurso
               .SingleOrDefaultAsync(m => m.ConcursoId == id);
 
-            ViewBag.Descricao = concurso.Descricao;
-            return View(candidatura);
+                ViewBag.Descricao = concurso.Descricao;
+                return View(candidatura);
+            }
         }
 
         // POST: Candidaturas/Create
