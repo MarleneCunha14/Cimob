@@ -45,11 +45,11 @@ namespace Cimob.Models.AccountViewModels
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
-        [Required]
+  /*      [Required]
         [ValidaDataNascimento(ErrorMessage =
             "Deve ter no minimo 17 anos para se poder registar")]
         public DateTime DataNascimento { get; set; }
-
+*/
         public virtual TipoDeUser TipoDeUser { get; set; }
         public virtual Pais Pais { get; set; }
         public virtual Escola Escola { get; set; }

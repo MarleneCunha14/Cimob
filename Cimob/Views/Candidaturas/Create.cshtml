@@ -25,10 +25,7 @@
                 <input asp-for="ConcursoId" value="@Model.ConcursoId" class="form-control" />
             </div>
             <div class="form-group">
-                @if (SignInManager.IsSignedIn(User))
-                {
-                    <input type="submit" value="Candidatar" class="btn btn-default" />
-                }
+                    <input type="submit" value="Candidatar" class="btn btn-default" />               
                 </div>
             </form>
         </div>

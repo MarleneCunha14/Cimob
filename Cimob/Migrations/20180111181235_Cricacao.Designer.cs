@@ -11,8 +11,8 @@ using System;
 namespace Cimob.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180108202021_criacao")]
-    partial class criacao
+    [Migration("20180111181235_Cricacao")]
+    partial class Cricacao
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,8 +27,6 @@ namespace Cimob.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("ConfirmPassword");
-
-                    b.Property<DateTime>("DataNascimento");
 
                     b.Property<int>("EscolaId");
 
@@ -75,8 +73,6 @@ namespace Cimob.Migrations
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
-
-                    b.Property<DateTime>("DataNascimento");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256);
@@ -170,6 +166,8 @@ namespace Cimob.Migrations
 
                     b.Property<int>("EscolaID");
 
+                    b.Property<string>("Nome");
+
                     b.Property<int>("PaisId");
 
                     b.Property<int>("RegulamentoId");
@@ -194,7 +192,9 @@ namespace Cimob.Migrations
                     b.Property<int>("EscolaId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("NomeEscola");
+                    b.Property<string>("Nome");
+
+                    b.Property<string>("url");
 
                     b.HasKey("EscolaId");
 
@@ -235,6 +235,22 @@ namespace Cimob.Migrations
                     b.HasKey("RegulamentoId");
 
                     b.ToTable("Regulamento");
+                });
+
+            modelBuilder.Entity("Cimob.Models.InformacaoCandidatura", b =>
+                {
+                    b.Property<int>("InformacaoCandidaturaId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("CandidaturaId");
+
+                    b.Property<string>("Descricao");
+
+                    b.Property<string>("Nome");
+
+                    b.HasKey("InformacaoCandidaturaId");
+
+                    b.ToTable("InformacaoCandidatura");
                 });
 
             modelBuilder.Entity("Cimob.Models.TipoDeUser", b =>

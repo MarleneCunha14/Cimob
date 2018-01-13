@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Cimob.Models.Candidatura.Regulamento>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<br />
+<h1>Cimob Regulamento</h1>
+<br />
+<br />
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricao)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

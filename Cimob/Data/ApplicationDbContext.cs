@@ -18,6 +18,8 @@ namespace Cimob.Data
 
 
         }
+        
+        public DbSet<InformacaoCandidatura> InformacaoCandidatura { get; set; }
         public DbSet<ApplicationUser> ApplicationUser { get; set; }
         public DbSet<AjudaAutenticacao> AjudaAutenticacao { get; set; }
         public DbSet<TipoDeUser> TipoDeUser { get; set; }

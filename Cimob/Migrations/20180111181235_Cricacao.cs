@@ -5,11 +5,11 @@ using System.Collections.Generic;
 
 namespace Cimob.Migrations
 {
-    public partial class criacao : Migration
+    public partial class Cricacao : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            Down(migrationBuilder);
+            //Down(migrationBuilder);
             migrationBuilder.CreateTable(
                 name: "AjudaAutenticacao",
                 columns: table => new
@@ -42,7 +42,8 @@ namespace Cimob.Migrations
                 {
                     EscolaId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    NomeEscola = table.Column<string>(nullable: true)
+                    Nome = table.Column<string>(nullable: true),
+                    url = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -60,6 +61,21 @@ namespace Cimob.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_EstadoCandidatura", x => x.EstadoCandidaturaId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "InformacaoCandidatura",
+                columns: table => new
+                {
+                    InformacaoCandidaturaId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    CandidaturaId = table.Column<int>(nullable: false),
+                    Descricao = table.Column<string>(nullable: true),
+                    Nome = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_InformacaoCandidatura", x => x.InformacaoCandidaturaId);
                 });
 
             migrationBuilder.CreateTable(
@@ -129,7 +145,6 @@ namespace Cimob.Migrations
                     Id = table.Column<string>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
                     ConcurrencyStamp = table.Column<string>(nullable: true),
-                    DataNascimento = table.Column<DateTime>(nullable: false),
                     Email = table.Column<string>(maxLength: 256, nullable: true),
                     EmailConfirmed = table.Column<bool>(nullable: false),
                     EscolaId = table.Column<int>(nullable: false),
@@ -178,6 +193,7 @@ namespace Cimob.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Descricao = table.Column<string>(nullable: true),
                     EscolaID = table.Column<int>(nullable: false),
+                    Nome = table.Column<string>(nullable: true),
                     PaisId = table.Column<int>(nullable: false),
                     RegulamentoId = table.Column<int>(nullable: false),
                     TipoDeUserId = table.Column<int>(nullable: true),
@@ -212,7 +228,6 @@ namespace Cimob.Migrations
                 {
                     Email = table.Column<string>(nullable: false),
                     ConfirmPassword = table.Column<string>(nullable: true),
-                    DataNascimento = table.Column<DateTime>(nullable: false),
                     EscolaId = table.Column<int>(nullable: false),
                     Name = table.Column<string>(nullable: false),
                     PaisId = table.Column<int>(nullable: false),
@@ -486,6 +501,9 @@ namespace Cimob.Migrations
 
             migrationBuilder.DropTable(
                 name: "Candidatura");
+
+            migrationBuilder.DropTable(
+                name: "InformacaoCandidatura");
 
             migrationBuilder.DropTable(
                 name: "RegisterModel");

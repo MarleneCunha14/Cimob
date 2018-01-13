@@ -1,57 +1,52 @@
-﻿@model IEnumerable<Cimob.Models.Candidatura.Concurso>
+﻿@model IEnumerable<Cimob.Models.Candidatura.Concurso_Escola_Tipo>
+@inject SignInManager<ApplicationUser> SignInManager
+<h2>Informações sobre candidaturas abertas</h2>
 
-@{
-    ViewData["Title"] = "Index";
-}
 
-<h2>Index</h2>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.PaisId)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Descricao)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.TipoDeUtilizadorId)
-                </th>
             <th>
-                @Html.DisplayNameFor(model => model.Escola)
+                Nome
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Regulamento)
+                Descrição
             </th>
-            <th></th>
+            <th>
+                Tipo de Utilizador
+            </th>
+            <th>
+                Escola
+            </th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.PaisId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descricao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TipoDeUtilizadorId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Escola.EscolaId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Regulamento.RegulamentoId)
-            </td>
-            <td>
-                <a asp-area="" asp-route-id="@item.ConcursoId" asp-controller="Candidaturas" asp-action="Create">Candidatar</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.concurso.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.concurso.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoDeUser.nomeTipo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.escola.Nome)
+                </td>
+                <td>
+                    @if (SignInManager.IsSignedIn(User))
+                       {
+                       @if (ViewBag.Tipo == item.TipoDeUser.TipoDeUserId)
+                       {             
+                        <a asp-area="" asp-route-id="@item.concurso.ConcursoId" asp-controller="Candidaturas" asp-action="Create">Candidatar</a>
+                        }
+                       }
+
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

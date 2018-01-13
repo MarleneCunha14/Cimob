@@ -14,8 +14,9 @@ namespace Cimob.Models.Candidatura
         public int PaisId { get; set; }
         public int RegulamentoId { get; set; }
         public String Descricao { get; set; }
+        public String Nome { get; set; }
         //Caso no futuro queiramos fazer pesquisa por tipo de utilizador
-        
+
         public int TipoDeUtilizadorId { get; set; }
 
         public virtual TipoDeUser TipoDeUser { get; set; }

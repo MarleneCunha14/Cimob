@@ -22,8 +22,45 @@ namespace Cimob.Controllers
         // GET: Concursoes
         public async Task<IActionResult> Index()
         {
+            string nome = User.Identity.Name;
+
+            var user = await _context.ApplicationUser
+                .SingleOrDefaultAsync(m => m.UserName.Equals(nome));
+            if (user == null)
+            {
+                ViewBag.Tipo = 1;
+            }
+            else
+            {
+                ViewBag.Tipo = user.TipoDeUserId;
+              
+            }
+                
+
+            //If null mostra tudo
+
+            
+            var candidaturas = _context.Candidatura.Where(c => c.ApplicationUserId.Equals(user.Id));
+            ViewBag.candidaturas = candidaturas;
             var applicationDbContext = _context.Concurso.Include(c => c.Escola).Include(c => c.Regulamento);
-            return View(await applicationDbContext.ToListAsync());
+
+
+
+
+            var concursosShow = (from res in _context.Escola
+                                 join c in _context.Concurso
+                                 on res.EscolaId equals c.EscolaID
+                                 join v in _context.TipoDeUser
+                                 on c.TipoDeUtilizadorId equals v.TipoDeUserId
+                                  select new Concurso_Escola_Tipo { escola = res, concurso = c, TipoDeUser=v });
+
+
+
+
+
+
+
+            return View(concursosShow);
         }
 
         // GET: Concursoes/Details/5

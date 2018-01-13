@@ -10,6 +10,7 @@ namespace Cimob.Models.Candidatura
     {
         [Key]
         public int EscolaId { get; set; }
-        public string NomeEscola { get; set; }
+        public string Nome { get; set; }
+        public string url { get; set; }
     }
 }

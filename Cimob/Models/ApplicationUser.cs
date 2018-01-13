@@ -15,7 +15,7 @@ namespace Cimob.Models
         public int PaisId { get; set; }
         public int EscolaId { get; set; }
         public string Nome { get; set; }
-        public DateTime DataNascimento { get; set; }
+    //    public DateTime DataNascimento { get; set; }
         public virtual TipoDeUser TipoDeUser { get; set; }
         public virtual Escola Escola { get; set; }
         public virtual Pais Pais { get; set; }

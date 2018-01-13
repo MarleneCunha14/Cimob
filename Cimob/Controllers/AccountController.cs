@@ -213,7 +213,7 @@ namespace Cimob.Controllers
         public IActionResult Register(string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
-            ViewData["EscolaId"] = new SelectList(_context.Escola, "EscolaId", "NomeEscola");
+            ViewData["EscolaId"] = new SelectList(_context.Escola, "EscolaId", "Nome");
             ViewData["TipoId"] = new SelectList(_context.TipoDeUser, "TipoDeUserId", "nomeTipo");
             ViewData["PaisId"] = new SelectList(_context.Pais, "PaisId", "NomePais" );
             return View();
@@ -244,9 +244,19 @@ namespace Cimob.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, PaisId = model.PaisId,
-                    Nome = model.Name, TipoDeUserId = model.TipoId, EscolaId = model.EscolaId,
-                    DataNascimento = model.DataNascimento };
+                /*   var user = new ApplicationUser { UserName = model.Email, Email = model.Email, PaisId = model.PaisId,
+                       Nome = model.Name, TipoDeUserId = model.TipoId, EscolaId = model.EscolaId,
+                       DataNascimento = model.DataNascimento };*/
+
+                var user = new ApplicationUser
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    PaisId = model.PaisId,
+                    Nome = model.Name,
+                    TipoDeUserId = model.TipoId,
+                    EscolaId = model.EscolaId
+                };
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

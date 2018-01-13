@@ -27,8 +27,6 @@ namespace Cimob.Migrations
 
                     b.Property<string>("ConfirmPassword");
 
-                    b.Property<DateTime>("DataNascimento");
-
                     b.Property<int>("EscolaId");
 
                     b.Property<string>("Name")
@@ -74,8 +72,6 @@ namespace Cimob.Migrations
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
-
-                    b.Property<DateTime>("DataNascimento");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256);
@@ -169,6 +165,8 @@ namespace Cimob.Migrations
 
                     b.Property<int>("EscolaID");
 
+                    b.Property<string>("Nome");
+
                     b.Property<int>("PaisId");
 
                     b.Property<int>("RegulamentoId");
@@ -193,7 +191,9 @@ namespace Cimob.Migrations
                     b.Property<int>("EscolaId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("NomeEscola");
+                    b.Property<string>("Nome");
+
+                    b.Property<string>("url");
 
                     b.HasKey("EscolaId");
 
@@ -234,6 +234,22 @@ namespace Cimob.Migrations
                     b.HasKey("RegulamentoId");
 
                     b.ToTable("Regulamento");
+                });
+
+            modelBuilder.Entity("Cimob.Models.InformacaoCandidatura", b =>
+                {
+                    b.Property<int>("InformacaoCandidaturaId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("CandidaturaId");
+
+                    b.Property<string>("Descricao");
+
+                    b.Property<string>("Nome");
+
+                    b.HasKey("InformacaoCandidaturaId");
+
+                    b.ToTable("InformacaoCandidatura");
                 });
 
             modelBuilder.Entity("Cimob.Models.TipoDeUser", b =>
