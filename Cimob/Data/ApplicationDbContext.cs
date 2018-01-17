@@ -29,6 +29,7 @@ namespace Cimob.Data
         public DbSet<EstadoCandidatura> EstadoCandidatura { get; set; }
         public DbSet<Escola> Escola { get; set; }
         public DbSet<Pais> Pais { get; set; }
+        public DbSet<Mapa> Mapa { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

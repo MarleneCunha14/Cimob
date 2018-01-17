@@ -252,6 +252,26 @@ namespace Cimob.Migrations
                     b.ToTable("InformacaoCandidatura");
                 });
 
+            modelBuilder.Entity("Cimob.Models.Mapa", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Adress");
+
+                    b.Property<float>("Lat");
+
+                    b.Property<float>("Long");
+
+                    b.Property<int>("Rating");
+
+                    b.Property<int>("Zoom");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Mapa");
+                });
+
             modelBuilder.Entity("Cimob.Models.TipoDeUser", b =>
                 {
                     b.Property<int>("TipoDeUserId")

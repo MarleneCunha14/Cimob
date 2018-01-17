@@ -1,0 +1,55 @@
+﻿@model Cimob.Models.Mapa
+
+@{
+    ViewData["Title"] = "Pontos de interesse";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Pontos de interesse</title>
+    <style>
+
+        #map {
+            height: 400px;
+            padding: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <br /> <br />
+    <h2>Pontos de interesses</h2>
+    <br />
+    <div class="form-group">
+        <select asp-for="Id" class="form-control" asp-items="ViewBag.Id"></select>
+        <span asp-validation-for="Id" class="text-danger"></span>
+    </div>
+    <br /> <br />
+
+    <div id="map"></div>
+    <script>
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 38.525405, lng: -8.894100 },
+                zoom: 8
+            });
+
+            var marker = new google.maps.Marker({
+                position: { lat: 38.525405, lng: -8.894100 },
+                map: map
+            });
+            var marker = new google.maps.Marker({
+                position: { lat: 38.522082, lng: -8.838784 },
+                map: map
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkk_4jiJYh_PiNInOVmrgXN5TpcCb0Ehs&callback=initMap"
+            async defer></script>
+</body>
+</html>

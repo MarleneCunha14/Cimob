@@ -5,11 +5,11 @@ using System.Collections.Generic;
 
 namespace Cimob.Migrations
 {
-    public partial class Cricacao : Migration
+    public partial class criacao : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            //Down(migrationBuilder);
+            Down(migrationBuilder);
             migrationBuilder.CreateTable(
                 name: "AjudaAutenticacao",
                 columns: table => new
@@ -76,6 +76,23 @@ namespace Cimob.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_InformacaoCandidatura", x => x.InformacaoCandidaturaId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Mapa",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Adress = table.Column<string>(nullable: true),
+                    Lat = table.Column<float>(nullable: false),
+                    Long = table.Column<float>(nullable: false),
+                    Rating = table.Column<int>(nullable: false),
+                    Zoom = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Mapa", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -481,56 +498,59 @@ namespace Cimob.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "AjudaAutenticacao");
+           // migrationBuilder.DropTable(
+               // name: "AjudaAutenticacao");
 
-            migrationBuilder.DropTable(
-                name: "AspNetRoleClaims");
+           // migrationBuilder.DropTable(
+                //name: "AspNetRoleClaims");
 
-            migrationBuilder.DropTable(
-                name: "AspNetUserClaims");
+            //migrationBuilder.DropTable(
+              //  name: "AspNetUserClaims");
 
-            migrationBuilder.DropTable(
-                name: "AspNetUserLogins");
+            //migrationBuilder.DropTable(
+              //  name: "AspNetUserLogins");
 
-            migrationBuilder.DropTable(
-                name: "AspNetUserRoles");
+            //migrationBuilder.DropTable(
+               // name: "AspNetUserRoles");
 
-            migrationBuilder.DropTable(
-                name: "AspNetUserTokens");
+            //migrationBuilder.DropTable(
+              //  name: "AspNetUserTokens");
 
-            migrationBuilder.DropTable(
-                name: "Candidatura");
+            //migrationBuilder.DropTable(
+               // name: "Candidatura");
 
-            migrationBuilder.DropTable(
-                name: "InformacaoCandidatura");
+           // migrationBuilder.DropTable(
+              //  name: "InformacaoCandidatura");
 
-            migrationBuilder.DropTable(
-                name: "RegisterModel");
+           // migrationBuilder.DropTable(
+              //  name: "Mapa");
 
-            migrationBuilder.DropTable(
-                name: "AspNetRoles");
+           // migrationBuilder.DropTable(
+             //   name: "RegisterModel");
 
-            migrationBuilder.DropTable(
-                name: "AspNetUsers");
+           // migrationBuilder.DropTable(
+             //   name: "AspNetRoles");
 
-            migrationBuilder.DropTable(
-                name: "Concurso");
+           // migrationBuilder.DropTable(
+             //   name: "AspNetUsers");
 
-            migrationBuilder.DropTable(
-                name: "EstadoCandidatura");
+            //migrationBuilder.DropTable(
+              //  name: "Concurso");
 
-            migrationBuilder.DropTable(
-                name: "Pais");
+            //migrationBuilder.DropTable(
+              //  name: "EstadoCandidatura");
 
-            migrationBuilder.DropTable(
-                name: "Escola");
+            //migrationBuilder.DropTable(
+              //  name: "Pais");
 
-            migrationBuilder.DropTable(
-                name: "Regulamento");
+           // migrationBuilder.DropTable(
+              //  name: "Escola");
 
-            migrationBuilder.DropTable(
-                name: "TipoDeUser");
+            //migrationBuilder.DropTable(
+              //  name: "Regulamento");
+
+            //migrationBuilder.DropTable(
+              //  name: "TipoDeUser");
         }
     }
 }
