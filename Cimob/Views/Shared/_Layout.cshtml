@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
+<head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Cimob</title>
@@ -15,10 +15,22 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
+
+    <meta name="google-translate-customization"
+          content="3280487709591956-dc3fc45d489f056a-g5378ebab0cbcd0a4-12" />
 </head>
 <body>
+
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
     <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+        <div  id="google_translate_element" class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -30,13 +42,13 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a runat="server" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Pais" asp-action="SearchPais">País</a></li>
                     <li><a asp-area="" asp-controller="Regulamentoes" asp-action="Index">Regulamento</a></li>
-                    <li><a asp-area="" asp-controller="Concursoes" asp-action="Index">Informações Concursos</a></li>
-                    <!-- <li><a asp-area="" asp-controller="InformacaoCandidaturas" asp-action="Index">Informação</a></li>-->
+                    <li><a asp-area="" asp-controller="InformacaoCandidaturas" asp-action="Index">Informação</a></li>
                     <li><a asp-area="" asp-controller="Escolas" asp-action="SearchEscolas">Parcerias</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contacto</a></li>
+
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")
             </div>

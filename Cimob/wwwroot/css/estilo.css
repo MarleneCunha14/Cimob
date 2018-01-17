@@ -4,3 +4,7 @@
     font-family: Arial;
 }
 
+.body-content {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+}

@@ -1,0 +1,28 @@
+using Cimob.Data;
+using Cimob.Controllers;
+using System;
+using Xunit;
+using Microsoft.AspNetCore.Mvc;
+
+namespace XUnitTestProject1
+{
+    public class UnitTest1
+    {
+        private readonly ApplicationDbContext _context;
+        
+
+        public UnitTest1(ApplicationDbContext context)
+        {
+            this._context = context;
+        }
+        [Fact]
+        public async System.Threading.Tasks.Task Test1Async()
+        {            
+
+            ConcursoesController manage = new ConcursoesController(_context);
+           
+            var result = await manage.Index();
+            Assert.IsType<ViewResult>(result);
+        }
+    }
+}

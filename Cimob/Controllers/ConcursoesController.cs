@@ -83,6 +83,11 @@ namespace Cimob.Controllers
             return View(concurso);
         }
 
+        public async Task<IActionResult> MostrarConcursos()
+        {
+            return View(await _context.Concurso.ToListAsync());
+        }
+
         // GET: Concursoes/Create
         public IActionResult Create()
         {
