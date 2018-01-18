@@ -1,7 +1,6 @@
 ﻿@model Cimob.Models.Mapa
-
 @{
-    ViewData["Title"] = "Pontos de interesse";
+    ViewData["Title"] = "Index";
 }
 
 <!DOCTYPE html>
@@ -21,32 +20,59 @@
 
 </head>
 <body>
-    <br /> <br />
+    <br /> 
     <h2>Pontos de interesses</h2>
     <br />
     <div class="form-group">
-        <select asp-for="Id" class="form-control" asp-items="ViewBag.Id"></select>
+        <select asp-for="Id" class="form-control" asp-items="ViewBag.Id" onclick="GetAllLocationById"></select>
         <span asp-validation-for="Id" class="text-danger"></span>
     </div>
-    <br /> <br />
+    <br /> 
 
     <div id="map"></div>
     <script>
         var map;
         function initMap() {
             map = new google.maps.Map(document.getElementById('map'), {
-                center: { lat: 38.525405, lng: -8.894100 },
+                center: { lat: 40.463667, lng: -3.749220 },
                 zoom: 8
             });
+            $.get("@Url.Action("GetAllLocation", "Mapa")"), function (data, status) {
+                var marker = [];
+                var contentString = [];
+                var infowindow = [];
+                var iconName = data[i].Rating == 1 ?
+                    marker[i] = new google.maps.Marker({
+                        position: { lat: data[i].Lat, lng: data[i].Long },
+                        map: map,
+                        icon: iconName
+                    });
+                contentString[i] = '<div id="content">' +
+                    '<div id="siteNotice">' +
+                    '</div>' +
+                    '<h1 id="firstHeading" class="firstHeading">' + data[i].Adress + '</h1>' +
+                    '<div id="bodyContent">' +
+                    'É uma cidade portuguesa' +
+                    'com 100.00 habitantes ' +
+                    'Situa-se na sub-regiao de Área Metropolitana de Lisboa. ' +
+                    'É sede município com 230,33 km de área e 131.000 habitantes, Subdividido em 5 freguesias. ' +
+                    '</div>' +
+                    '</div>';
 
-            var marker = new google.maps.Marker({
-                position: { lat: 38.525405, lng: -8.894100 },
-                map: map
-            });
-            var marker = new google.maps.Marker({
-                position: { lat: 38.522082, lng: -8.838784 },
-                map: map
-            });
+                infowindow[i] = new google.maps.InfoWindow({
+                    content: contentString[i]
+                });
+                var mdl = marker[i];
+                Mapa.event.addListener(marker[i], 'mouseover', (function (mdl, i) {
+                    return function () {
+                        infowindow[i].open(map, marker[i]);
+
+                    }
+                }
+                )
+                    (marker[i], i));
+
+             })
         }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkk_4jiJYh_PiNInOVmrgXN5TpcCb0Ehs&callback=initMap"
