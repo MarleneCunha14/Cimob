@@ -16,19 +16,11 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 
-    <meta name="google-translate-customization"
-          content="3280487709591956-dc3fc45d489f056a-g5378ebab0cbcd0a4-12" />
+   
 </head>
 <body>
 
-    <div id="google_translate_element"></div>
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({ pageLanguage: 'pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+    
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div  id="google_translate_element" class="container">
             <div class="navbar-header">
@@ -48,7 +40,7 @@
                     <li><a asp-area="" asp-controller="InformacaoCandidaturas" asp-action="Index">Informação</a></li>
                     <li><a asp-area="" asp-controller="Escolas" asp-action="SearchEscolas">Parcerias</a></li>
                     <li><a asp-area="" asp-controller="Mapa" asp-action="Index">Pontos de interesses</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contacto</a></li>
+                    <li><a asp-area="" asp-controller="Contactos" asp-action="Create">Contacto</a></li>
 
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")

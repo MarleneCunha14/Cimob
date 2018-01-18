@@ -21,6 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Contactos\Delete.cshtml" />
+    <Content Remove="Views\Contactos\Edit.cshtml" />
+    <Content Remove="Views\Contactos\Index.cshtml" />
     <Content Remove="wwwroot\css\login.css" />
     <Content Remove="wwwroot\images\erasmus.jpg" />
   </ItemGroup>

@@ -41,11 +41,11 @@
                 var marker = [];
                 var contentString = [];
                 var infowindow = [];
-                var iconName = data[i].Rating == 1 ?
+              
                     marker[i] = new google.maps.Marker({
                         position: { lat: data[i].Lat, lng: data[i].Long },
                         map: map,
-                        icon: iconName
+                    
                     });
                 contentString[i] = '<div id="content">' +
                     '<div id="siteNotice">' +
@@ -72,7 +72,7 @@
                 )
                     (marker[i], i));
 
-             })
+             }
         }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkk_4jiJYh_PiNInOVmrgXN5TpcCb0Ehs&callback=initMap"

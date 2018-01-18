@@ -1,0 +1,67 @@
+﻿@model Cimob.Models.Contacto
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Entra já em contacto connosco</h2>
+
+<h3>Através do skype:</h3>
+Horário de Funcionamento de atendimento por Skype:<br />
+<strong>2.ª e 4.ª</strong> | 14h00 - 16h30<br />
+<strong>3.ª e 5.ª</strong> | 09h30 - 12h30<br />
+
+<script type="text/javascript" src="https://secure.skypeassets.com/i/scom/js/skype-uri.js"></script>
+<div id="SkypeButton_Call_david_santos_12">
+    <script type="text/javascript">
+        Skype.ui({
+            "name": "dropdown",
+            "element": "SkypeButton_Call_david_santos_12",
+            "participants": ["carlusca.cunha"]
+        });
+    </script>
+</div>
+
+<h3>Enviando-nos uma mensagem:</h3>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="Email" class="form-control" placeholder="Email"/>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="Assunto" class="form-control" placeholder="Assunto"/>
+                <span asp-validation-for="Assunto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="Descriçao" class="form-control" placeholder="Descriço" style="height: 100px;" />
+                <span asp-validation-for="Descriçao" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Enviar" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<address>
+    <strong>Dúvidas Gerais:</strong> <a href="mailto:cimob@ips.pt">cimob@ips.pt</a><br />
+</address>
+<address>
+    Campus do IPS<br />
+    Edifício ESTSetúbal <br />
+    Estefanilha<br />
+    2910-761 Setúbal<br />
+    Portugal<br />
+    <abbr title="Telefone:">Tel::</abbr>
+    + 351 265 790 159
+</address>
+
+
+
