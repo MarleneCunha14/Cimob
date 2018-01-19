@@ -6,13 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\**" />
+    <Compile Remove="Data\Migrations\**" />
     <Compile Remove="Views\AjudaAutenticacaos1\**" />
-    <Content Remove="Migrations\**" />
+    <Content Remove="Data\Migrations\**" />
     <Content Remove="Views\AjudaAutenticacaos1\**" />
-    <EmbeddedResource Remove="Migrations\**" />
+    <EmbeddedResource Remove="Data\Migrations\**" />
     <EmbeddedResource Remove="Views\AjudaAutenticacaos1\**" />
-    <None Remove="Migrations\**" />
+    <None Remove="Data\Migrations\**" />
     <None Remove="Views\AjudaAutenticacaos1\**" />
   </ItemGroup>
 
@@ -23,15 +23,14 @@
   <ItemGroup>
     <Content Remove="Views\Contactos\Delete.cshtml" />
     <Content Remove="Views\Contactos\Edit.cshtml" />
-    <Content Remove="Views\Contactos\Index.cshtml" />
     <Content Remove="wwwroot\css\login.css" />
     <Content Remove="wwwroot\images\erasmus.jpg" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="Migrations\20180118010059_criacao.cs" />
-    <Compile Include="Migrations\20180118010059_criacao.Designer.cs" />
-    <Compile Include="Migrations\ApplicationDbContextModelSnapshot.cs" />
+    <Compile Include="Data\Migrations\20180118220537_criacao.cs" />
+    <Compile Include="Data\Migrations\20180118220537_criacao.Designer.cs" />
+    <Compile Include="Data\Migrations\ApplicationDbContextModelSnapshot.cs" />
   </ItemGroup>
 
 

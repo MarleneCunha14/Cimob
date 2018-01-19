@@ -30,6 +30,8 @@ namespace Cimob.Data
         public DbSet<Escola> Escola { get; set; }
         public DbSet<Pais> Pais { get; set; }
         public DbSet<Mapa> Mapa { get; set; }
+        public DbSet<Contacto> Contacto { get; set; }
+      
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -37,7 +39,7 @@ namespace Cimob.Data
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
         }
-        public DbSet<Cimob.Models.Contacto> Contacto { get; set; }
+   
       
     }
 }

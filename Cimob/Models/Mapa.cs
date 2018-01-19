@@ -10,15 +10,9 @@ namespace Cimob.Models
     {
         public int Id { get; set; }
 
-        public String Adress { get; set; }
+        public String Address { get; set; }
 
-        public float Lat { get; set; }
-
-        public float Long { get; set; }
-
-        public int Rating { get; set; }
-
-        public int Zoom { get; set; }
+        public String  Url { get; set; }
 
 
     }

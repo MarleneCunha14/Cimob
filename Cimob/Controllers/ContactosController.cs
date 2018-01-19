@@ -7,16 +7,19 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Cimob.Data;
 using Cimob.Models;
+using Cimob.Services;
 
 namespace Cimob.Controllers
 {
     public class ContactosController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly IEmailSender _emailSender;
 
-        public ContactosController(ApplicationDbContext context)
+        public ContactosController(ApplicationDbContext context, IEmailSender emailSender)
         {
             _context = context;
+            _emailSender = emailSender;
         }
 
         // GET: Contactos
@@ -59,6 +62,8 @@ namespace Cimob.Controllers
             if (ModelState.IsValid)
             {
                 _context.Add(contacto);
+                String descricao = "Um utilizador enviou mensagem com a descrição " +contacto.Descriçao+" Com o senguinte email" + contacto.Email;
+                await _emailSender.SendEmail(descricao);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
