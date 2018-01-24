@@ -28,24 +28,7 @@ namespace Cimob.Controllers
             return View(await _context.Contacto.ToListAsync());
         }
 
-        // GET: Contactos/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var contacto = await _context.Contacto
-                .SingleOrDefaultAsync(m => m.Id == id);
-            if (contacto == null)
-            {
-                return NotFound();
-            }
-
-            return View(contacto);
-        }
-
+        
         // GET: Contactos/Create
         public IActionResult Create()
         {
@@ -62,97 +45,14 @@ namespace Cimob.Controllers
             if (ModelState.IsValid)
             {
                 _context.Add(contacto);
-                String descricao = "Um utilizador enviou mensagem com a descrição " +contacto.Descriçao+" Com o senguinte email" + contacto.Email;
-                await _emailSender.SendEmail(descricao);
+                await _emailSender.SendEmailAsync("marlenecunha14@hotmail.com"," CIMOB - Erasmus", "Um utilizador enviou a senguinte mensagem: " + contacto.Descriçao + " Email:" + contacto.Email);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(contacto);
         }
 
-        // GET: Contactos/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+       
 
-            var contacto = await _context.Contacto.SingleOrDefaultAsync(m => m.Id == id);
-            if (contacto == null)
-            {
-                return NotFound();
-            }
-            return View(contacto);
-        }
-
-        // POST: Contactos/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Assunto,Descriçao,Email")] Contacto contacto)
-        {
-            if (id != contacto.Id)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(contacto);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!ContactoExists(contacto.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(contacto);
-        }
-
-        // GET: Contactos/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var contacto = await _context.Contacto
-                .SingleOrDefaultAsync(m => m.Id == id);
-            if (contacto == null)
-            {
-                return NotFound();
-            }
-
-            return View(contacto);
-        }
-
-        // POST: Contactos/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var contacto = await _context.Contacto.SingleOrDefaultAsync(m => m.Id == id);
-            _context.Contacto.Remove(contacto);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool ContactoExists(int id)
-        {
-            return _context.Contacto.Any(e => e.Id == id);
-        }
     }
 }

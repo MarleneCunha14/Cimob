@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <Content Remove="Views\Contactos\Delete.cshtml" />
+    <Content Remove="Views\Contactos\Details.cshtml" />
     <Content Remove="Views\Contactos\Edit.cshtml" />
     <Content Remove="wwwroot\css\login.css" />
     <Content Remove="wwwroot\images\erasmus.jpg" />
