@@ -12,7 +12,13 @@ namespace Cimob.Models
 
         public String Address { get; set; }
 
-        public String  Url { get; set; }
+        public double Lat { get; set; }
+
+        public double Long { get; set; }
+
+        public int Rating { get; set; }
+
+        public int Zoom { get; set; }
 
 
     }

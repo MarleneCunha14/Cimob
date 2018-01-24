@@ -100,7 +100,10 @@ namespace Cimob.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Address = table.Column<string>(nullable: true),
-                    Url = table.Column<string>(nullable: true)
+                    Lat = table.Column<double>(nullable: false),
+                    Long = table.Column<double>(nullable: false),
+                    Rating = table.Column<int>(nullable: false),
+                    Zoom = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

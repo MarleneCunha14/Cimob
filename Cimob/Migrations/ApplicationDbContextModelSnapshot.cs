@@ -11,10 +11,9 @@ using System;
 namespace Cimob.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180117210655_criacao")]
-    partial class criacao
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -237,6 +236,25 @@ namespace Cimob.Migrations
                     b.ToTable("Regulamento");
                 });
 
+            modelBuilder.Entity("Cimob.Models.Contacto", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Assunto")
+                        .IsRequired();
+
+                    b.Property<string>("Descriçao")
+                        .IsRequired();
+
+                    b.Property<string>("Email")
+                        .IsRequired();
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Contacto");
+                });
+
             modelBuilder.Entity("Cimob.Models.InformacaoCandidatura", b =>
                 {
                     b.Property<int>("InformacaoCandidaturaId")
@@ -258,11 +276,11 @@ namespace Cimob.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Adress");
+                    b.Property<string>("Address");
 
-                    b.Property<float>("Lat");
+                    b.Property<double>("Lat");
 
-                    b.Property<float>("Long");
+                    b.Property<double>("Long");
 
                     b.Property<int>("Rating");
 

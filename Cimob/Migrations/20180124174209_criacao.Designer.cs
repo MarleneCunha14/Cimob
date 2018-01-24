@@ -11,7 +11,7 @@ using System;
 namespace Cimob.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180118220537_criacao")]
+    [Migration("20180124174209_criacao")]
     partial class criacao
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -279,7 +279,13 @@ namespace Cimob.Migrations
 
                     b.Property<string>("Address");
 
-                    b.Property<string>("Url");
+                    b.Property<double>("Lat");
+
+                    b.Property<double>("Long");
+
+                    b.Property<int>("Rating");
+
+                    b.Property<int>("Zoom");
 
                     b.HasKey("Id");
 

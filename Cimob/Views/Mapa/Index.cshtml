@@ -1,4 +1,5 @@
-﻿@model Cimob.Models.Mapa
+﻿@model IEnumerable<Cimob.Models.Mapa>
+
 @{
     ViewData["Title"] = "Index";
 }
@@ -6,18 +7,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Pontos de interesse</title>
-   
-
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <br />
-    <h2>Pontos de interesses</h2>
-    <br />
-    
-    <iframe src=@ViewData["url"] width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <h3>Pontos de interesses</h3>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+          var uluru = { lat: 38.525405, lng: -8.894100};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkk_4jiJYh_PiNInOVmrgXN5TpcCb0Ehs&callback=initMap"
+    </script>
 </body>
 </html>
