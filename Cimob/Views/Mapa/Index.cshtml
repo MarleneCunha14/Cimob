@@ -18,20 +18,49 @@
     <h3>Pontos de interesses</h3>
     <div id="map"></div>
     <script>
+      var map; 
       function initMap() {
-          var uluru = { lat: 38.525405, lng: -8.894100};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
+      
+          map = new google.maps.Map(document.getElementById('map'), {
+              center: { lat: 38.525405, lng: -8.894100 },
+              zoom: 8
+         
+          });
+          $.get("@Url.Action("GetAllLocation", "Mapa")", function (data, status) {
+              var marker = [];
+              var contentString = [];
+              var infowindow = [];
+              for (var i = 0; i < data.length; i++) {
+                  marker[i] = new google.maps.Marker({
+                      position: { lat: data[i].Lat, lng: data[i].Long },
+                      map: map
+
+
+                  });
+
+                  contentString[i] = '<div id="content">' +
+                      '<div id="siteNotice">' +
+                      '</div>' +
+                      '<h1 id="firstHeading" class="firstHeading">' + data[i].Address +'</h1>' +
+                      '<div id="bodyContent">' +
+                      '<p><b>Brac University</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
+                      'sandstone rock formation in the southern part of the ' +
+                      'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) ' +
+                      'south west of the nearest large town, Alice Springs; 450&#160;km ' +
+                      '(280&#160;mi) by road.';
+
+                   infowindow[i] = new google.maps.InfoWindow({
+                      content: contentString[i]
+                  });
+                
+              }
+              
+          })
+          
+
       }
     </script>
-    <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkk_4jiJYh_PiNInOVmrgXN5TpcCb0Ehs&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkk_4jiJYh_PiNInOVmrgXN5TpcCb0Ehs&callback=initMap" async defer>
     </script>
 </body>
 </html>

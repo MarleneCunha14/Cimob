@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Cimob.Data;
 using Cimob.Models;
 
+
 namespace Cimob.Controllers
 {
     public class MapaController : Controller
@@ -148,6 +149,13 @@ namespace Cimob.Controllers
         private bool MapaExists(int id)
         {
             return _context.Mapa.Any(e => e.Id == id);
+        }
+
+        public JsonResult GetAllLocation()
+        {
+            var data = _context.Mapa.ToList();
+            return Json(data);
+                
         }
     }
 }
