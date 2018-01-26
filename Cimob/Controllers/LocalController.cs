@@ -151,15 +151,13 @@ namespace Cimob.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public JsonResult GetAllLocation()
         {
-            var data = _context.Local.ToList();
+            var data = _context.Local.ToListAsync();
             return Json(data);
-
-
         }
 
-        
 
     }
 }
