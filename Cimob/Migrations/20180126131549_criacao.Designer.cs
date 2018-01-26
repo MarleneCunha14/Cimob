@@ -11,7 +11,7 @@ using System;
 namespace Cimob.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180124174209_criacao")]
+    [Migration("20180126131549_criacao")]
     partial class criacao
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -272,16 +272,16 @@ namespace Cimob.Migrations
                     b.ToTable("InformacaoCandidatura");
                 });
 
-            modelBuilder.Entity("Cimob.Models.Mapa", b =>
+            modelBuilder.Entity("Cimob.Models.Local", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Address");
 
-                    b.Property<double>("Lat");
+                    b.Property<string>("Lat");
 
-                    b.Property<double>("Long");
+                    b.Property<string>("Long");
 
                     b.Property<int>("Rating");
 
@@ -289,7 +289,7 @@ namespace Cimob.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Mapa");
+                    b.ToTable("Local");
                 });
 
             modelBuilder.Entity("Cimob.Models.TipoDeUser", b =>

@@ -8,25 +8,24 @@ using Microsoft.EntityFrameworkCore;
 using Cimob.Data;
 using Cimob.Models;
 
-
 namespace Cimob.Controllers
 {
-    public class MapaController : Controller
+    public class LocalController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public MapaController(ApplicationDbContext context)
+        public LocalController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Mapa
+        // GET: Local
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Mapa.ToListAsync());
+            return View(await _context.Local.ToListAsync());
         }
 
-        // GET: Mapa/Details/5
+        // GET: Local/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,39 +33,39 @@ namespace Cimob.Controllers
                 return NotFound();
             }
 
-            var mapa = await _context.Mapa
+            var local = await _context.Local
                 .SingleOrDefaultAsync(m => m.Id == id);
-            if (mapa == null)
+            if (local == null)
             {
                 return NotFound();
             }
 
-            return View(mapa);
+            return View(local);
         }
 
-        // GET: Mapa/Create
+        // GET: Local/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Mapa/Create
+        // POST: Local/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Address,Lat,Long,Rating,Zoom")] Mapa mapa)
+        public async Task<IActionResult> Create([Bind("Id,Address,Lat,Long,Rating,Zoom")] Local local)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(mapa);
+                _context.Add(local);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(mapa);
+            return View(local);
         }
 
-        // GET: Mapa/Edit/5
+        // GET: Local/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -74,22 +73,22 @@ namespace Cimob.Controllers
                 return NotFound();
             }
 
-            var mapa = await _context.Mapa.SingleOrDefaultAsync(m => m.Id == id);
-            if (mapa == null)
+            var local = await _context.Local.SingleOrDefaultAsync(m => m.Id == id);
+            if (local == null)
             {
                 return NotFound();
             }
-            return View(mapa);
+            return View(local);
         }
 
-        // POST: Mapa/Edit/5
+        // POST: Local/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Address,Lat,Long,Rating,Zoom")] Mapa mapa)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Address,Lat,Long,Rating,Zoom")] Local local)
         {
-            if (id != mapa.Id)
+            if (id != local.Id)
             {
                 return NotFound();
             }
@@ -98,12 +97,12 @@ namespace Cimob.Controllers
             {
                 try
                 {
-                    _context.Update(mapa);
+                    _context.Update(local);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MapaExists(mapa.Id))
+                    if (!LocalExists(local.Id))
                     {
                         return NotFound();
                     }
@@ -114,10 +113,10 @@ namespace Cimob.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(mapa);
+            return View(local);
         }
 
-        // GET: Mapa/Delete/5
+        // GET: Local/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -125,37 +124,42 @@ namespace Cimob.Controllers
                 return NotFound();
             }
 
-            var mapa = await _context.Mapa
+            var local = await _context.Local
                 .SingleOrDefaultAsync(m => m.Id == id);
-            if (mapa == null)
+            if (local == null)
             {
                 return NotFound();
             }
 
-            return View(mapa);
+            return View(local);
         }
 
-        // POST: Mapa/Delete/5
+        // POST: Local/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var mapa = await _context.Mapa.SingleOrDefaultAsync(m => m.Id == id);
-            _context.Mapa.Remove(mapa);
+            var local = await _context.Local.SingleOrDefaultAsync(m => m.Id == id);
+            _context.Local.Remove(local);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool MapaExists(int id)
+        private bool LocalExists(int id)
         {
-            return _context.Mapa.Any(e => e.Id == id);
+            return _context.Local.Any(e => e.Id == id);
         }
 
+        [HttpPost]
         public JsonResult GetAllLocation()
         {
-            var data = _context.Mapa.ToList();
-            return Json(data,j);
-                
+            var data = _context.Local.ToList();
+            return Json(data);
+
+
         }
+
+        
+
     }
 }

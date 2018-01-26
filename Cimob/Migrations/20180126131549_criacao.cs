@@ -94,20 +94,20 @@ namespace Cimob.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Mapa",
+                name: "Local",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Address = table.Column<string>(nullable: true),
-                    Lat = table.Column<double>(nullable: false),
-                    Long = table.Column<double>(nullable: false),
+                    Lat = table.Column<string>(nullable: true),
+                    Long = table.Column<string>(nullable: true),
                     Rating = table.Column<int>(nullable: false),
                     Zoom = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Mapa", x => x.Id);
+                    table.PrimaryKey("PK_Local", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -541,7 +541,7 @@ namespace Cimob.Migrations
                 name: "InformacaoCandidatura");
 
             migrationBuilder.DropTable(
-                name: "Mapa");
+                name: "Local");
 
             migrationBuilder.DropTable(
                 name: "RegisterModel");

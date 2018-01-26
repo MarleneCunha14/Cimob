@@ -7,13 +7,23 @@
 
   <ItemGroup>
     <Compile Remove="Views\AjudaAutenticacaos1\**" />
+    <Compile Remove="Views\Local\**" />
+    <Compile Remove="Views\Mapa\**" />
     <Content Remove="Views\AjudaAutenticacaos1\**" />
+    <Content Remove="Views\Local\**" />
+    <Content Remove="Views\Mapa\**" />
     <EmbeddedResource Remove="Views\AjudaAutenticacaos1\**" />
+    <EmbeddedResource Remove="Views\Local\**" />
+    <EmbeddedResource Remove="Views\Mapa\**" />
     <None Remove="Views\AjudaAutenticacaos1\**" />
+    <None Remove="Views\Local\**" />
+    <None Remove="Views\Mapa\**" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Remove="Controllers\AjudaAutenticacaoController.cs" />
+    <Compile Remove="Controllers\MapaController.cs" />
+    <Compile Remove="Models\Mapa.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,6 +51,14 @@
     <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
     <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Local\Create.cshtml" />
+    <None Include="Views\Local\Delete.cshtml" />
+    <None Include="Views\Local\Details.cshtml" />
+    <None Include="Views\Local\Edit.cshtml" />
+    <None Include="Views\Local\Index.cshtml" />
   </ItemGroup>
 
 </Project>
