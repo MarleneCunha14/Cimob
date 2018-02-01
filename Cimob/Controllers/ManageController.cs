@@ -16,6 +16,8 @@ using Cimob.Services;
 using Cimob.Data;
 using Microsoft.EntityFrameworkCore;
 using Cimob.Models.Candidatura;
+using Cimob.Models.Utilizadores;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Cimob.Controllers
 {
@@ -61,12 +63,16 @@ namespace Cimob.Controllers
 
             var model = new AlterarDadosModel
             {
-                Username = user.UserName,
+                Nome = user.Nome,
                 Email = user.Email,
-                PhoneNumber = user.PhoneNumber,
-                IsEmailConfirmed = user.EmailConfirmed,
-                StatusMessage = StatusMessage
+                TipoDeUserId=user.TipoDeUserId,
+                EscolaId=user.EscolaId,
+                PaisId=user.PaisId
             };
+            ViewBag.EscolaId = new SelectList(_context.Escola, "EscolaId", "NomeEscola");
+            ViewData["TipoId"] = new SelectList(_context.TipoDeUser, "TipoDeUserId", "nomeTipo");
+            ViewData["PaisId"] = new SelectList(_context.Pais, "PaisId", "NomePais");
+
 
             return View(model);
         }
@@ -81,31 +87,11 @@ namespace Cimob.Controllers
             }
 
             var user = await _userManager.GetUserAsync(User);
-            if (user == null)
-            {
-                throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
-            }
 
-            var email = user.Email;
-            if (model.Email != email)
-            {
-                var setEmailResult = await _userManager.SetEmailAsync(user, model.Email);
-                if (!setEmailResult.Succeeded)
-                {
-                    throw new ApplicationException($"Unexpected error occurred setting email for user with ID '{user.Id}'.");
-                }
-            }
-
-            var phoneNumber = user.PhoneNumber;
-            if (model.PhoneNumber != phoneNumber)
-            {
-                var setPhoneResult = await _userManager.SetPhoneNumberAsync(user, model.PhoneNumber);
-                if (!setPhoneResult.Succeeded)
-                {
-                    throw new ApplicationException($"Unexpected error occurred setting phone number for user with ID '{user.Id}'.");
-                }
-            }
-
+            user.Nome = model.Nome;
+            user.EscolaId = model.EscolaId;
+            user.TipoDeUserId = model.TipoDeUserId;
+            await _userManager.UpdateAsync(user);
             StatusMessage = "Your profile has been updated";
             return RedirectToAction(nameof(AlterarDados));
         }
@@ -431,6 +417,28 @@ namespace Cimob.Controllers
         {
             return View(nameof(ResetAuthenticator));
         }
+
+        
+        public async Task<IActionResult> ConsultarDados()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+            }
+
+            var escola = await _context.Escola.SingleOrDefaultAsync(m => m.EscolaId.Equals(user.EscolaId));
+            ViewBag.NomeEscola = escola.Nome;
+
+            var pais = await _context.Pais.SingleOrDefaultAsync(m => m.PaisId.Equals(user.PaisId));
+            ViewBag.NomePais = pais.NomePais;
+
+            var tipoDeuser = await _context.TipoDeUser.SingleOrDefaultAsync(m => m.TipoDeUserId.Equals(user.TipoDeUserId));
+            ViewBag.NomeTipo = tipoDeuser.nomeTipo;
+
+            return View(user);
+        }
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]

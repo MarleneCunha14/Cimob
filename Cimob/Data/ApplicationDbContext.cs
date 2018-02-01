@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Cimob.Models;
 using Cimob.Models.Candidatura;
+using Cimob.Models.Utilizadores;
+using Cimob.Models.Contactos;
+using Cimob.Models.PontosInteresse;
 
 namespace Cimob.Data
 {
@@ -18,8 +21,7 @@ namespace Cimob.Data
 
 
         }
-        
-        public DbSet<InformacaoCandidatura> InformacaoCandidatura { get; set; }
+       
         public DbSet<ApplicationUser> ApplicationUser { get; set; }
         public DbSet<AjudaAutenticacao> AjudaAutenticacao { get; set; }
         public DbSet<TipoDeUser> TipoDeUser { get; set; }
@@ -29,6 +31,8 @@ namespace Cimob.Data
         public DbSet<EstadoCandidatura> EstadoCandidatura { get; set; }
         public DbSet<Escola> Escola { get; set; }
         public DbSet<Pais> Pais { get; set; }
+        public DbSet<Contacto> Contacto { get; set; }
+        public DbSet<Concurso_Regulamento> Concurso_Regulamento { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -37,5 +41,7 @@ namespace Cimob.Data
             // Add your customizations after calling base.OnModelCreating(builder);
         }
       
+        public DbSet<PontoInteresse> PontoInteresse { get; set; }
+        public DbSet<TipoConcurso> TipoConcurso { get;  set; }
     }
 }

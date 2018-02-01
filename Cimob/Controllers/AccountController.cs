@@ -15,6 +15,7 @@ using Cimob.Models.AccountViewModels;
 using Cimob.Services;
 using Cimob.Data;
 using Cimob.Models.Candidatura;
+using Cimob.Models.Utilizadores;
 
 namespace Cimob.Controllers
 {
@@ -268,7 +269,7 @@ namespace Cimob.Controllers
 
                     //await _signInManager.SignInAsync(user, isPersistent: false);
                     _logger.LogInformation("User created a new account with password.");
-                    return RedirectToLocal(returnUrl);
+                    return RedirectToAction(nameof(RegisterConfirmation));
                 }
                 AddErrors(result);
             }

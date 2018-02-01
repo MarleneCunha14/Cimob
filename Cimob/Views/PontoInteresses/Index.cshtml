@@ -1,21 +1,15 @@
-﻿@model Cimob.Models.PontoInteresse
-@{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+﻿@model Cimob.Models.PontosInteresse.PontoInteresse
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <select asp-for="@Model.Id" class="form-control" asp-items="ViewBag.Pontos"></select> <a asp-action="ChooseItem" asp-route-id="@Model.Id">Ver Ponto</a>
+<div class="DefaultPresentation">
+    <div class="vertical-menu">
+        <a href="#" class="active">Sobre Nós</a>
+        <a class="SubMenu" asp-area="" asp-controller="Home" asp-action="About">Apresentação</a>
+        <a class="SubMenuSelected" asp-area="" asp-controller="Home" asp-action="Team">A Equipa</a>
+    </div>
+    <div>
+        <select asp-for="@Model.Id" class="form-control" asp-items="ViewBag.Pontos"></select> <a asp-action="ChooseItem" asp-route-id="@Model.Id">Ver Ponto</a>
 
 
-    <iframe src=@ViewBag.url width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-</body>
-</html>
+        <iframe src=@ViewBag.url width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+</div>

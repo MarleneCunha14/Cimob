@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Cimob.Data;
 using Cimob.Models;
+using Cimob.Models.PontosInteresse;
 
 namespace Cimob.Controllers
 {

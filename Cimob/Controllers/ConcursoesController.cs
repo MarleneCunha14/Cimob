@@ -13,196 +13,91 @@ namespace Cimob.Controllers
     public class ConcursoesController : Controller
     {
         private readonly ApplicationDbContext _context;
-
+       
         public ConcursoesController(ApplicationDbContext context)
         {
             _context = context;
+            
         }
+        
 
         // GET: Concursoes
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int id)
         {
-            string nome = User.Identity.Name;
-
-            var user = await _context.ApplicationUser
-                .SingleOrDefaultAsync(m => m.UserName.Equals(nome));
-            if (user == null)
+            if (id==0)
             {
-                ViewBag.Tipo = 1;
+                id = 1;
             }
-            else
-            {
-                ViewBag.Tipo = user.TipoDeUserId;
-              
-            }
-                
-
-            //If null mostra tudo
-
-            
-            var candidaturas = _context.Candidatura.Where(c => c.ApplicationUserId.Equals(user.Id));
-            ViewBag.candidaturas = candidaturas;
-            var applicationDbContext = _context.Concurso.Include(c => c.Escola).Include(c => c.Regulamento);
-
-
-
-
-            var concursosShow = (from res in _context.Escola
-                                 join c in _context.Concurso
-                                 on res.EscolaId equals c.EscolaID
-                                 join v in _context.TipoDeUser
-                                 on c.TipoDeUtilizadorId equals v.TipoDeUserId
-                                  select new Concurso_Escola_Tipo { escola = res, concurso = c, TipoDeUser=v });
-
-
-
-
-
-
-
-            return View(concursosShow);
-        }
-
-        // GET: Concursoes/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
+           var concursoAMostrar = (from res in _context.Escola
+                                join c in _context.Concurso
+                                on res.EscolaId equals c.EscolaID
+                                join tp in _context.TipoConcurso
+                                on c.TipoConcursoId equals tp.TipoConcursoId
+                                join v in _context.TipoDeUser
+                                on c.TipoDeUtilizadorId equals v.TipoDeUserId                                
+                                select new Concurso_Escola_Tipo { escola = res, concurso = c, TipoDeUser = v, TipoConcurso = tp }).Where(c => c.TipoDeUser.TipoDeUserId.Equals(id));
+            ViewBag.Tipo = id;
+            if (concursoAMostrar == null)
             {
                 return NotFound();
             }
+            return View(concursoAMostrar);
+        }
 
+        public async Task<IActionResult> PorPais(int id)
+        {
+            var concursoAMostrar = (from res in _context.Escola
+                                    join c in _context.Concurso
+                                    on res.EscolaId equals c.EscolaID
+                                    join tp in _context.TipoConcurso
+                                    on c.TipoConcursoId equals tp.TipoConcursoId
+                                    join v in _context.TipoDeUser
+                                    on c.TipoDeUtilizadorId equals v.TipoDeUserId
+                                    select new Concurso_Escola_Tipo { escola = res, concurso = c, TipoDeUser = v, TipoConcurso = tp }).Where(c => c.TipoDeUser.TipoDeUserId.Equals(id));
+            ViewBag.Tipo = id;
+            return View(concursoAMostrar);
+        }
+
+        public async Task<IActionResult> PorParceria(int id)
+        {
+            var concursoAMostrar = (from res in _context.Escola
+                                    join c in _context.Concurso
+                                    on res.EscolaId equals c.EscolaID
+                                    join tp in _context.TipoConcurso
+                                    on c.TipoConcursoId equals tp.TipoConcursoId
+                                    join v in _context.TipoDeUser
+                                    on c.TipoDeUtilizadorId equals v.TipoDeUserId
+                                    select new Concurso_Escola_Tipo { escola = res, concurso = c, TipoDeUser = v, TipoConcurso = tp }).Where(c => c.TipoDeUser.TipoDeUserId.Equals(id));
+            ViewBag.Tipo = id;
+            return View(concursoAMostrar);
+        }
+
+        public async Task<IActionResult> PorTipo(int id)
+        {
+            var concursoAMostrar = (from res in _context.Escola
+                                    join c in _context.Concurso
+                                    on res.EscolaId equals c.EscolaID
+                                    join tp in _context.TipoConcurso
+                                    on c.TipoConcursoId equals tp.TipoConcursoId
+                                    join v in _context.TipoDeUser
+                                    on c.TipoDeUtilizadorId equals v.TipoDeUserId
+                                    select new Concurso_Escola_Tipo { escola = res, concurso = c, TipoDeUser = v, TipoConcurso = tp }).Where(c => c.TipoDeUser.TipoDeUserId.Equals(id));
+            ViewBag.Tipo = id;
+            return View(concursoAMostrar);
+        }
+
+        public async Task<IActionResult> consultarDetalhe(int id)
+        {
+           
             var concurso = await _context.Concurso
-                .Include(c => c.Escola)
-                .Include(c => c.Regulamento)
                 .SingleOrDefaultAsync(m => m.ConcursoId == id);
             if (concurso == null)
             {
                 return NotFound();
             }
 
-            return View(concurso);
+            return View(concurso);            
         }
 
-        public async Task<IActionResult> MostrarConcursos()
-        {
-            return View(await _context.Concurso.ToListAsync());
-        }
-
-        // GET: Concursoes/Create
-        public IActionResult Create()
-        {
-            ViewData["EscolaID"] = new SelectList(_context.Escola, "EscolaId", "EscolaId");
-            ViewData["RegulamentoId"] = new SelectList(_context.Regulamento, "RegulamentoId", "RegulamentoId");
-            return View();
-        }
-
-        // POST: Concursoes/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ConcursoId,EscolaID,PaisId,RegulamentoId,Descricao,TipoDeUtilizadorId")] Concurso concurso)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(concurso);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["EscolaID"] = new SelectList(_context.Escola, "EscolaId", "EscolaId", concurso.EscolaID);
-            ViewData["RegulamentoId"] = new SelectList(_context.Regulamento, "RegulamentoId", "RegulamentoId", concurso.RegulamentoId);
-            return View(concurso);
-        }
-
-        // GET: Concursoes/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var concurso = await _context.Concurso.SingleOrDefaultAsync(m => m.ConcursoId == id);
-            if (concurso == null)
-            {
-                return NotFound();
-            }
-            ViewData["EscolaID"] = new SelectList(_context.Escola, "EscolaId", "EscolaId", concurso.EscolaID);
-            ViewData["RegulamentoId"] = new SelectList(_context.Regulamento, "RegulamentoId", "RegulamentoId", concurso.RegulamentoId);
-            return View(concurso);
-        }
-
-        // POST: Concursoes/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ConcursoId,EscolaID,PaisId,RegulamentoId,Descricao,TipoDeUtilizadorId")] Concurso concurso)
-        {
-            if (id != concurso.ConcursoId)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(concurso);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!ConcursoExists(concurso.ConcursoId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["EscolaID"] = new SelectList(_context.Escola, "EscolaId", "EscolaId", concurso.EscolaID);
-            ViewData["RegulamentoId"] = new SelectList(_context.Regulamento, "RegulamentoId", "RegulamentoId", concurso.RegulamentoId);
-            return View(concurso);
-        }
-
-        // GET: Concursoes/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var concurso = await _context.Concurso
-                .Include(c => c.Escola)
-                .Include(c => c.Regulamento)
-                .SingleOrDefaultAsync(m => m.ConcursoId == id);
-            if (concurso == null)
-            {
-                return NotFound();
-            }
-
-            return View(concurso);
-        }
-
-        // POST: Concursoes/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var concurso = await _context.Concurso.SingleOrDefaultAsync(m => m.ConcursoId == id);
-            _context.Concurso.Remove(concurso);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool ConcursoExists(int id)
-        {
-            return _context.Concurso.Any(e => e.ConcursoId == id);
-        }
     }
 }

@@ -10,6 +10,6 @@ namespace Cimob.Models.Candidatura
     {
         [Key]
         public int RegulamentoId { get; set; }
-        public string Descricao { get; set; }
+        public String Caminho { get; set; }
     }
 }

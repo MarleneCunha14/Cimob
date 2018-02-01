@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Cimob.Models.AccountViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Cimob.Models.Utilizadores;
 
 namespace Cimob.Models.AccountViewModels
 {

@@ -14,11 +14,23 @@
 
   <ItemGroup>
     <Compile Remove="Controllers\AjudaAutenticacaoController.cs" />
+    <Compile Remove="Views\Shared\_Bottom.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Contactos\Delete.cshtml" />
+    <Content Remove="Views\Contactos\Details.cshtml" />
+    <Content Remove="Views\Contactos\Edit.cshtml" />
+    <Content Remove="Views\Home\About - Cópia.cshtml" />
+    <Content Remove="Views\Shared\_LoginHome.cshtml" />
+    <Content Remove="Views\Shared\_LoginPartial - Cópia.cshtml" />
     <Content Remove="wwwroot\css\login.css" />
     <Content Remove="wwwroot\images\erasmus.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Properties\PublishProfiles\Cimob20171218040443 - Web Deploy.pubxml" />
+    <None Remove="Properties\PublishProfiles\Cimob20171219030917 - Web Deploy.pubxml" />
   </ItemGroup>
 
 

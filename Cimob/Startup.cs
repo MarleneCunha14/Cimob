@@ -12,6 +12,7 @@ using Cimob.Data;
 using Cimob.Models;
 using Cimob.Services;
 using TopCar.Data;
+using Cimob.Models.Utilizadores;
 
 namespace Cimob
 {
@@ -68,7 +69,7 @@ namespace Cimob
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-            //DbInitializer.Initialize(context);
+            DbInitializer.Initialize(context);
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Cimob.Models.Candidatura;
+using Cimob.Models.Utilizadores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -8,7 +10,7 @@ namespace Cimob.Models.ManageViewModels
 {
     public class AlterarDadosModel
     {
-        public string Username { get; set; }
+        public string Nome { get; set; }
 
         public bool IsEmailConfirmed { get; set; }
 
@@ -21,5 +23,10 @@ namespace Cimob.Models.ManageViewModels
         public string PhoneNumber { get; set; }
 
         public string StatusMessage { get; set; }
+
+        public int TipoDeUserId { get; set; }
+        public int EscolaId { get; set; }
+        public int PaisId { get; set; }
+
     }
 }
