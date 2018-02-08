@@ -44,7 +44,7 @@ namespace TopCar.Data
                 context.Concurso.Add(new Concurso
                 {
                     EscolaID = 1,
-                    Descricao = "<p>O programa Vasco da Gama é um programa de mobilidade de estudantes entre escolas do< br >ensino politécnico.< br >O intercâmbio de estudantes ao abrigo do programa implica um acordo prévio entre a instituição<br>de origem e a instituição de acolhimento, assinado pelos respectivos responsáveis.< br >A mobilidade de estudantes abrange também os estágios, trabalhos de fim de curso ou projectos<br>finais, desde que as referidas actividades integrem o plano curricular do curso na escola de<br>origem.</ p >< table ><tbody><tr><td  > &nbsp;</td></tr></tbody></table><p><b>Período de candidatura:</b></p><p>Até 30 de abril para o 1º semestre</p><p>Até 30de novembro para o 2º semestre</p><table ><tbody><tr><td  > &nbsp;</td><td > &nbsp;</td></tr> </tbody></table>",
+                    Descricao = "O programa Vasco da Gama é um programa de mobilidade de estudantes entre escolas do ensino politécnico.O intercâmbio de estudantes ao abrigo do programa implica um acordo prévio entre a instituição<br>de origem e a instituição de acolhimento, assinado pelos respectivos responsáveis.A mobilidade de estudantes abrange também os estágios, trabalhos de fim de curso ou projectos<br>finais, desde que as referidas actividades integrem o plano curricular do curso na escola de<br>origem.",
                     Nome = "Vasco da Gama em Évora",
                     Prazo = DateTime.Today,
                     TipoDeUtilizadorId = 2,

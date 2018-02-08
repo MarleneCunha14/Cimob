@@ -13,6 +13,8 @@ namespace Cimob.Controllers
     public class CandidaturasController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private Candidatura candidatura;
+
 
         public CandidaturasController(ApplicationDbContext context)
         {
@@ -59,34 +61,17 @@ namespace Cimob.Controllers
         // GET: Candidaturas/Create
         public async Task<IActionResult> Create(int id)
         {
-            Candidatura candidatura = new Candidatura();
+            candidatura = new Candidatura();
             candidatura.ConcursoId=id;
-
+            
             string nome = User.Identity.Name;           
 
             var user = await _context.ApplicationUser
                 .SingleOrDefaultAsync(m => m.UserName.Equals(nome));
 
-            var candidaturas =  _context.Candidatura.Where(c => c.ApplicationUserId.Equals(user.Id));
-            foreach (var item in candidaturas)
-            {
-                if (item.ConcursoId==id)
-                {
-                    return RedirectToAction(nameof(already));
-                }
+            candidatura.ApplicationUserId = user.Id;
 
-            }
-            if  (candidaturas.Count() > 3)
-            {
-                return RedirectToAction(nameof(MaximumExceeded));
-            }
-            else
-            {
-                var concurso = await _context.Concurso
-              .SingleOrDefaultAsync(m => m.ConcursoId == id);
-
-                ViewBag.Descricao = concurso.Descricao;
-                return View(candidatura);
+            return View(candidatura);
             }
         }
 

@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Cimob.Data;
 using Cimob.Models.Candidatura;
+using System.IO;
+using Microsoft.AspNetCore.Http;
 
 namespace Cimob.Controllers
 {
@@ -95,9 +97,20 @@ namespace Cimob.Controllers
             {
                 return NotFound();
             }
-
+            var tipoConcurso = await _context.TipoConcurso
+               .SingleOrDefaultAsync(m => m.TipoConcursoId == concurso.TipoConcursoId);
+            if (tipoConcurso == null)
+            {
+                ViewBag.Imagem = "(Sem Imagem)";
+            }
+            else
+            {
+                ViewBag.Imagem = tipoConcurso.Imagem;
+            }
+            
+            ViewBag.Data = concurso.Prazo.ToString("dd")+ " de "+ concurso.Prazo.ToString("MMMM") + " de " + concurso.Prazo.ToString("yyyy");
             return View(concurso);            
         }
-
+       
     }
 }

@@ -15,7 +15,6 @@ namespace Cimob.Models.Candidatura
         public int UserId { get; set; }
         public DateTime DataCandidatura { get; set; }
         public int EstadoCandidaturaId { get; set; }
-        public String Comentarios { get; set; }
         public int ConcursoId { get; set; }
         public string ApplicationUserId { get; set; }
 

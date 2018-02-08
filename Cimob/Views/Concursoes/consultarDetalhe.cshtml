@@ -1,12 +1,38 @@
 ﻿@model Cimob.Models.Candidatura.Concurso
-    
-<div>
-    <h4>Html.DisplayNameFor(model => model.Nome)</h4>
-    <hr />
-    <div>
-        <a href=@Url.Content("~/pdf/F616366566/20170905_R_473_ActividadesAcademicas.pdf")>Link to guide if it does not show</a>
-   </div>
-</div>
-<div>   
-    <a asp-action="Index">Voltar à Lista</a>
-</div>
+
+<div class="DefaultPresentation">
+    <div class="vertical-menu">
+        <a href="#" class="active">Concurso</a>
+        <a class="SubMenuSelected" asp-area="" asp-controller="Home" asp-action="About">Detalhe Concurso</a>
+        <a class="SubMenu" asp-area="" asp-controller="Home" asp-action="Team">Documentação</a>
+        <a class="SubMenu" asp-area="" asp-controller="Home" asp-action="Team">Bolsas</a>
+        <a class="SubMenu" asp-area="" asp-controller="Candidaturas" asp-action="Create">Candidatar</a>
+        <a class="SubMenu" asp-area="" asp-controller="Home" asp-action="Team">Ajuda</a>
+    </div>
+
+    <div class="descriptionText">
+        <div style="width:88.5%;margin-left: 1%;">
+            <div style="margin-left: 10%;">
+                <div style="background-color: white;">
+                    <img style="width:200px;margin-left: 36%;" src="@Url.Content(ViewBag.Imagem)" alt="Visual Studio">
+                </div>
+            </div>
+            <div style="margin-left: 10%; display:table">
+                <div class="descriptionTextBoxOut">
+                    <div style="margin-left: -67%;margin-top: -7%;font-size: 19px;">@Html.DisplayFor(model => model.Nome)</div>
+                    <div class="descriptionTextBoxIn" style="height: 210px;margin-top: 44px;">
+                        <div>
+                            <label style="text-align: justify;"> @Html.DisplayFor(model => model.Descricao)</label>
+
+                            <label style="float:left"> Prazo para candidaturas:</label><br />
+                            <label style="float:left"> @ViewBag.Data</label>
+                        </div>
+                        <div style="margin-top: 6%;margin-left: 80%;">
+                            <a asp-action="Index">Voltar à Lista</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
