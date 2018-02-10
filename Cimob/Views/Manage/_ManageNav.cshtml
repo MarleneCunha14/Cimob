@@ -1,5 +1,5 @@
 ﻿@using Cimob.Views.Manage
-@inject SignInManager<ApplicationUser> SignInManager
+@inject SignInManager<Cimob.Models.Utilizadores.ApplicationUser> SignInManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
 }
