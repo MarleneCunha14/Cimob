@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Cimob.Models.Candidatura;
 using Microsoft.AspNetCore.Identity;
 
 namespace Cimob.Models
@@ -9,6 +10,6 @@ namespace Cimob.Models
     // Add profile data for application users by adding properties to the ApplicationUser class
     public class ApplicationUser : IdentityUser
     {
-
+        public virtual ICollection<Concurso> Concurso { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
+<head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Cimob</title>
@@ -8,44 +8,70 @@
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/custom.css" />
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/custom.css" asp-append-version="true" />
     </environment>
+
+   
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Cimob</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">Candidaturas</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contacto</a></li>
-                </ul>
-                @await Html.PartialAsync("_LoginPartial")
-            </div>
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <div>
+        <input type="Image" style="height: 75px;margin-left: 5%;margin-top: -22px;" onclick="location.href ='@Url.Action("Index", "Home")'; return false;" src="~/images/simboloIPS.png" />
+        <div id="navContainer">
+            <nav class="navbar" role="navigation" style="max-height: 50px;">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNav">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNav">
+                        <ul class="nav navbar-nav">
+                            <li><a asp-area="" style="font-size: 16px;" asp-controller="Home" asp-action="About">Sobre Nós</a></li>
+                            <li>
+                                <div class="dropdown">
+                                    <button class="dropbtn" style="height: 50px;">Consultar Concursos</button>
+                                    <div class="dropdown-content">
+                                        <a asp-area="" asp-controller="Concursoes" asp-action="Index" asp-route-id="1">Para Estudantes</a>
+                                        <a asp-area="" asp-controller="Concursoes" asp-action="Index" asp-route-id="2">Para Docentes</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a style="font-size: 16px;" asp-area="" asp-controller="Contactos" asp-action="Create">Contacto</a></li>
+                        </ul>
+                        @await Html.PartialAsync("_LoginPartial")
+                    </div>
+                </div>
+            </nav>
         </div>
-    </nav>
-    <div class="container body-content">
+    </div>
+    <div class=" body-content" style="margin-top: 30px; height: 70%;margin-left: 5%;">
         @RenderBody()
+    </div>
+    <div class="container" style="margin-top: 30px;">
         <hr />
-        <footer>
-            <p>&copy; 2017 - Projeto</p>
+        <footer style="color:grey">
+            <p>&copy;@DateTime.Now.Year CIMOB</p>
         </footer>
     </div>
-
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
@@ -66,8 +92,7 @@
         </script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
-
     @RenderSection("Scripts", required: false)
 </body>
-</html>
+        </html>
 

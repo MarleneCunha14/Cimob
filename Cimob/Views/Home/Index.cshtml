@@ -1,29 +1,32 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<div style="display:table">
+    <div id="HomeDivTitle" style="display:table-cell">
+        <h1 id="HomeTitleh1">Bem-Vindo ao</h1>
+        <h1 id="HomeTitleh1">CIMOB</h1>
+        <h4 id="HomeTitleh4">Aventura-te connosco.</h4>
+    </div>
+    <div style="width:61%; display:table-cell" >
+        <img src="~/images/mobilidade.png" alt="Visual Studio">
+    </div>
+</div>
 
-<environment include="Development">
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="~/css/estilo.css" />
-</environment>
-
-
-<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <img src="~/images/ips.jpg" alt="ASP.NET" class="img-responsive" />
-        </div>
-        <div class="item">
-            <img src="~/images/ips.jpg" alt="Visual Studio" class="img-responsive" />
-        </div>
-        <div class="item">
-            <img src="~/images/ips.jpg" alt="Microsoft Azure" class="img-responsive" />
-
-        </div>
+<div class="HomeImageDiv">
+    <div class="ImageHomeDiv">
+        <input type="Image" class="ImageHome" onclick="location.href ='@Url.Action("Index", "Concursoes")'; return false;" src="~/images/ips.jpg" />
+        <label >Consulta os Concursos</label>
+    </div>
+    <div class="ImageHomeDiv">
+        <input type="Image" class="ImageHome" onclick="location.href ='@Url.Action("SearchEscolas", "Escolas")'; return false;" src="~/images/escolas.png" />
+        <label>Consulta as Escolas Disponíveis</label>
+    </div>
+    <div class="ImageHomeDiv">
+        <input type="Image" class="ImageHome" onclick="location.href ='@Url.Action("SearchPais", "Pais")'; return false;" src="~/images/mundo.png" />
+        <label>Consulta os Países Disponíveis</label>
+    </div>
+    <div class="ImageHomeDiv">
+        <input type="Image" class="ImageHome" onclick="location.href ='@Url.Action("About", "Home")'; return false;" src="~/images/conhecenos.png" />      
+        <label>Sabe mais sobre nós</label>
     </div>
 </div>

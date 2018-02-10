@@ -20,6 +20,16 @@ namespace Cimob.Migrations
                 .HasAnnotation("ProductVersion", "2.0.1-rtm-125")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Cimob.Models.AjudaAutenticacao", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AjudaAutenticacao");
+                });
+
             modelBuilder.Entity("Cimob.Models.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")

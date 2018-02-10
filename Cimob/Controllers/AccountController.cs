@@ -13,6 +13,9 @@ using Microsoft.Extensions.Options;
 using Cimob.Models;
 using Cimob.Models.AccountViewModels;
 using Cimob.Services;
+using Cimob.Data;
+using Cimob.Models.Candidatura;
+using Cimob.Models.Utilizadores;
 
 namespace Cimob.Controllers
 {
@@ -24,17 +27,19 @@ namespace Cimob.Controllers
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IEmailSender _emailSender;
         private readonly ILogger _logger;
-
+        private readonly ApplicationDbContext _context;
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender,
-            ILogger<AccountController> logger)
+            ILogger<AccountController> logger,
+            ApplicationDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
             _logger = logger;
+            _context = context;
         }
 
         [TempData]
@@ -209,7 +214,25 @@ namespace Cimob.Controllers
         public IActionResult Register(string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
+            ViewData["EscolaId"] = new SelectList(_context.Escola, "EscolaId", "Nome");
+            ViewData["TipoId"] = new SelectList(_context.TipoDeUser, "TipoDeUserId", "nomeTipo");
+            ViewData["PaisId"] = new SelectList(_context.Pais, "PaisId", "NomePais" );
             return View();
+        }
+        [HttpPost]
+        public ActionResult ValidateDateEqualOrGreater(DateTime Date)
+        {        
+            DateTime dtMin = DateTime.UtcNow;
+            dtMin = dtMin.AddYears(-17);
+            if (Date >= dtMin)
+            {
+                return Json(true);
+            }
+
+            return Json(false);
+
+            
+           
         }
 
         //
@@ -222,7 +245,20 @@ namespace Cimob.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                /*   var user = new ApplicationUser { UserName = model.Email, Email = model.Email, PaisId = model.PaisId,
+                       Nome = model.Name, TipoDeUserId = model.TipoId, EscolaId = model.EscolaId,
+                       DataNascimento = model.DataNascimento };*/
+
+                var user = new ApplicationUser
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    PaisId = model.PaisId,
+                    Nome = model.Name,
+                    TipoDeUserId = model.TipoId,
+                    EscolaId = model.EscolaId,
+                    isAdministrador = false
+                };
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -234,14 +270,25 @@ namespace Cimob.Controllers
 
                     //await _signInManager.SignInAsync(user, isPersistent: false);
                     _logger.LogInformation("User created a new account with password.");
-                    return RedirectToLocal(returnUrl);
+                    return RedirectToAction(nameof(RegisterConfirmation));
                 }
                 AddErrors(result);
             }
-
+            ViewData["ReturnUrl"] = returnUrl;
+            ViewData["EscolaId"] = new SelectList(_context.Escola, "EscolaId", "NomeEscola");
+            ViewData["TipoId"] = new SelectList(_context.TipoDeUser, "TipoDeUserId", "nomeTipo");
+            ViewData["PaisId"] = new SelectList(_context.Pais, "PaisId", "NomePais");
             // If we got this far, something failed, redisplay form
             return View(model);
         }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult RegisterConfirmation()
+        {
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
@@ -381,12 +428,15 @@ namespace Cimob.Controllers
             return View(model);
         }
 
+        
+
         [HttpGet]
         [AllowAnonymous]
         public IActionResult ForgotPasswordConfirmation()
         {
             return View();
         }
+
 
         [HttpGet]
         [AllowAnonymous]

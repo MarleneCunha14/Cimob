@@ -14,19 +14,35 @@
 
   <ItemGroup>
     <Compile Remove="Controllers\AjudaAutenticacaoController.cs" />
+    <Compile Remove="Views\Shared\_Bottom.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Contactos\Delete.cshtml" />
+    <Content Remove="Views\Contactos\Details.cshtml" />
+    <Content Remove="Views\Contactos\Edit.cshtml" />
+    <Content Remove="Views\Home\About - Cópia.cshtml" />
+    <Content Remove="Views\Shared\_LoginHome.cshtml" />
+    <Content Remove="Views\Shared\_LoginPartial - Cópia.cshtml" />
     <Content Remove="wwwroot\css\login.css" />
     <Content Remove="wwwroot\images\erasmus.jpg" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Properties\PublishProfiles\Cimob20171218040443 - Web Deploy.pubxml" />
+    <None Remove="Properties\PublishProfiles\Cimob20171219030917 - Web Deploy.pubxml" />
+  </ItemGroup>
+
 
   <ItemGroup>
+    <PackageReference Include="jQuery.UI.Combined" Version="1.12.1" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.1" PrivateAssets="All" />
+    <PackageReference Include="Moq" Version="4.8.1" />
+    <PackageReference Include="NUnit" Version="3.9.0" />
     <PackageReference Include="SendGrid" Version="9.9.0" />
+    <PackageReference Include="xunit" Version="2.3.1" />
   </ItemGroup>
 
   <ItemGroup>

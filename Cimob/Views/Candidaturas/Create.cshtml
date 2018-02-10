@@ -1,0 +1,58 @@
+﻿@model Cimob.Models.Candidatura.Candidatura
+
+
+
+<h2 style="margin-left: 16%;">Candidatar</h2>
+<hr />
+
+<div class="DefaultPresentation" style="width: 50%;">
+    <div class="vertical-menu">
+        <a href="#" class="active">Candidatura</a>
+        <a class="SubMenuSelected" asp-area="" asp-controller="Home" asp-action="Team">Candidatura</a>
+        <a class="SubMenu" asp-area="" asp-controller="Home" asp-action="Team">Ajuda</a>
+    </div>
+
+    <div class="row" style="margin-left: 32%;margin-top: 0%;width: 84%;">
+        
+        
+        <div>
+            <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
+                <hr />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+
+                    <input asp-for="Curso" class="form-control" placeholder="Curso" />
+                    <span asp-validation-for="Curso" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input asp-for="Genero" class="form-control" placeholder="Genero" />
+                    <span asp-validation-for="Genero" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input asp-for="Localidade" class="form-control" placeholder="Localidade" />
+                    <span asp-validation-for="Localidade" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input asp-for="Telemovel" class="form-control" placeholder="Telemovel" />
+                    <span asp-validation-for="Telemovel" class="text-danger"></span>
+                </div>
+                <div hidden class="form-group">
+                    <label asp-for="ConcursoId" class="control-label"></label>
+                    <input asp-for="ConcursoId" value="@Model.ConcursoId" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-default">Candidatar</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+

@@ -1,5 +1,5 @@
 @using Microsoft.AspNetCore.Identity
-@using Cimob.Models
+@using Cimob.Models.Utilizadores
 
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
@@ -9,10 +9,10 @@
     <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
         <ul class="nav navbar-nav navbar-right">
             <li>
-                <a asp-area="" asp-controller="Manage" asp-action="AlterarDados" title="Manage"> @UserManager.GetUserName(User)!</a>
+                <a asp-area="" asp-controller="Manage" asp-action="ConsultarDados" title="Manage"> @UserManager.GetUserName(User)!</a>
             </li>
             <li>
-                <button type="submit" class="btn btn-link navbar-btn navbar-link">Log out</button>
+                <button type="submit" class="dropbtn">Log out</button>
             </li>
         </ul>
     </form>
@@ -22,6 +22,5 @@ else
     <ul class="nav navbar-nav navbar-right">
 
         <li><a asp-area="" asp-controller="Account" asp-action="Login">Login</a></li>
-        <li><a asp-area="" asp-controller="AjudaAutenticacaos" asp-action="Index">Ajuda</a></li>
 </ul>
 }

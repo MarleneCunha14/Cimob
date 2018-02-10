@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta lang="pt-pt">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/pesquisa.css" />
+
+
+</head>
+<body>
+    @model IEnumerable<Cimob.Models.Candidatura.Pais>
+
+    @{
+        ViewData["Title"] = "SearchPais";
+    }
+
+    <h2>País</h2>
+
+    <form asp-controller="Pais" asp-action="SearchPais">
+        <p>
+            <input type="text" name="id" style="height:40px; width:400px" />
+
+            &nbsp; &nbsp;<input type="submit" onclick="table" value="Pesquisar" style="height:40px; width:200px; color:black; background-color:lightgrey; border-color:lightgrey; font-family:ff-clan-web-pro-wide" />
+
+        </p>
+    </form>
+    <br/>
+   
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                   Nome Pais
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @{if (Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NomePais)
+                    </td>
+
+                </tr>
+            }
+      }
+      else
+           {
+        <text>"Resultado não encontrado"</text>
+           }
+
+          }
+        </tbody>
+    </table>
+
+    <div class="help-block">
+        <a asp-area="" asp-controller="HelpCompanhia" asp-action="Create" style="margin-left:1000px; color:white">HELP</a>
+    </div>
+
+</body>
+</html>

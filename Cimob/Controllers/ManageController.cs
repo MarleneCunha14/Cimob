@@ -13,6 +13,11 @@ using Microsoft.Extensions.Options;
 using Cimob.Models;
 using Cimob.Models.ManageViewModels;
 using Cimob.Services;
+using Cimob.Data;
+using Microsoft.EntityFrameworkCore;
+using Cimob.Models.Candidatura;
+using Cimob.Models.Utilizadores;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Cimob.Controllers
 {
@@ -25,7 +30,7 @@ namespace Cimob.Controllers
         private readonly IEmailSender _emailSender;
         private readonly ILogger _logger;
         private readonly UrlEncoder _urlEncoder;
-
+        private readonly ApplicationDbContext _context;
         private const string AuthenicatorUriFormat = "otpauth://totp/{0}:{1}?secret={2}&issuer={0}&digits=6";
 
         public ManageController(
@@ -33,13 +38,15 @@ namespace Cimob.Controllers
           SignInManager<ApplicationUser> signInManager,
           IEmailSender emailSender,
           ILogger<ManageController> logger,
-          UrlEncoder urlEncoder)
+          UrlEncoder urlEncoder,
+          ApplicationDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
             _logger = logger;
             _urlEncoder = urlEncoder;
+            _context = context;
         }
 
         [TempData]
@@ -56,12 +63,16 @@ namespace Cimob.Controllers
 
             var model = new AlterarDadosModel
             {
-                Username = user.UserName,
+                Nome = user.Nome,
                 Email = user.Email,
-                PhoneNumber = user.PhoneNumber,
-                IsEmailConfirmed = user.EmailConfirmed,
-                StatusMessage = StatusMessage
+                TipoDeUserId=user.TipoDeUserId,
+                EscolaId=user.EscolaId,
+                PaisId=user.PaisId
             };
+            ViewBag.EscolaId = new SelectList(_context.Escola, "EscolaId", "NomeEscola");
+            ViewData["TipoId"] = new SelectList(_context.TipoDeUser, "TipoDeUserId", "nomeTipo");
+            ViewData["PaisId"] = new SelectList(_context.Pais, "PaisId", "NomePais");
+
 
             return View(model);
         }
@@ -76,31 +87,11 @@ namespace Cimob.Controllers
             }
 
             var user = await _userManager.GetUserAsync(User);
-            if (user == null)
-            {
-                throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
-            }
 
-            var email = user.Email;
-            if (model.Email != email)
-            {
-                var setEmailResult = await _userManager.SetEmailAsync(user, model.Email);
-                if (!setEmailResult.Succeeded)
-                {
-                    throw new ApplicationException($"Unexpected error occurred setting email for user with ID '{user.Id}'.");
-                }
-            }
-
-            var phoneNumber = user.PhoneNumber;
-            if (model.PhoneNumber != phoneNumber)
-            {
-                var setPhoneResult = await _userManager.SetPhoneNumberAsync(user, model.PhoneNumber);
-                if (!setPhoneResult.Succeeded)
-                {
-                    throw new ApplicationException($"Unexpected error occurred setting phone number for user with ID '{user.Id}'.");
-                }
-            }
-
+            user.Nome = model.Nome;
+            user.EscolaId = model.EscolaId;
+            user.TipoDeUserId = model.TipoDeUserId;
+            await _userManager.UpdateAsync(user);
             StatusMessage = "Your profile has been updated";
             return RedirectToAction(nameof(AlterarDados));
         }
@@ -148,7 +139,9 @@ namespace Cimob.Controllers
             return View(model);
         }
 
-        [HttpPost]
+       
+
+    [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ChangePassword(ChangePasswordModel model)
         {
@@ -425,6 +418,28 @@ namespace Cimob.Controllers
             return View(nameof(ResetAuthenticator));
         }
 
+        
+        public async Task<IActionResult> ConsultarDados()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+            }
+
+            var escola = await _context.Escola.SingleOrDefaultAsync(m => m.EscolaId.Equals(user.EscolaId));
+            ViewBag.NomeEscola = escola.Nome;
+
+            var pais = await _context.Pais.SingleOrDefaultAsync(m => m.PaisId.Equals(user.PaisId));
+            ViewBag.NomePais = pais.NomePais;
+
+            var tipoDeuser = await _context.TipoDeUser.SingleOrDefaultAsync(m => m.TipoDeUserId.Equals(user.TipoDeUserId));
+            ViewBag.NomeTipo = tipoDeuser.nomeTipo;
+
+            return View(user);
+        }
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ResetAuthenticator()
@@ -499,7 +514,63 @@ namespace Cimob.Controllers
                 _urlEncoder.Encode(email),
                 unformattedKey);
         }
+        // GET: Candidaturas
+        public async Task<IActionResult> VerCandidaturasPendentes()
+        {
+            string id = User.Identity.Name;
+            if (string.Equals(id, "", StringComparison.OrdinalIgnoreCase))
+            {
+                return NotFound();
+            }
 
+            var user = await _context.ApplicationUser
+                .SingleOrDefaultAsync(m => m.UserName.Equals(id));
+            if (user == null)
+            {
+                return NotFound();
+            }
+            var applicationDbContext = _context.Candidatura.Where(c => c.ApplicationUserId.Equals(user.Id));
+
+            var candidatura = await applicationDbContext.ToListAsync();
+
+
+            var candidaturasPendentes = (from res in _context.Escola
+                                  join c in _context.Concurso
+                                  on res.EscolaId equals c.EscolaID
+                                  join v in _context.Candidatura
+                                  on c.ConcursoId equals v.ConcursoId
+                                  join e in _context.EstadoCandidatura
+                                  on v.EstadoCandidaturaId equals e.EstadoCandidaturaId
+                                  select new ProcessoCandidatura { escola = res, candidatura = v, concurso = c, estadoCandidatura = e});
+
+
+
+
+            return View(candidaturasPendentes);
+        }
+        // GET: Utilizadores/Delete/5
+        public async Task<IActionResult> Delete(int id)
+        {
+            var candidatura = await _context.Candidatura
+                .SingleOrDefaultAsync(m => m.CandidaturaId == id);
+            var concurso = await _context.Concurso
+                .SingleOrDefaultAsync(m => m.ConcursoId == candidatura.ConcursoId);
+            ViewBag.Descricao = concurso.Descricao;
+            
+            return View(candidatura);
+        }
+
+        // POST: Utilizadores/Delete/5
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var candidatura = await _context.Candidatura
+                .SingleOrDefaultAsync(m => m.CandidaturaId == id);
+            _context.Candidatura.Remove(candidatura);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(VerCandidaturasPendentes));
+        }
         #endregion
     }
+
+
 }
