@@ -25,9 +25,7 @@
                                         <th>
                                             Estado Candidatura
                                         </th>
-                                        <th>
-                                            Comentário
-                                        </th>
+                                        
 
                                         <th>
                                             Acções
@@ -45,9 +43,7 @@
                                         <td>
                                             @Html.DisplayFor(modelItem => item.estadoCandidatura.NomeEstado)
                                         </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.candidatura.Comentarios)
-                                        </td>
+                                       
 
                                         <td>
                                             <a asp-action="Delete" asp-route-id="@item.candidatura.CandidaturaId">Cancelar Candidatura</a>

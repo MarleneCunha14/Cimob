@@ -72,7 +72,7 @@ namespace Cimob.Controllers
             candidatura.ApplicationUserId = user.Id;
 
             return View(candidatura);
-            }
+            
         }
 
         // POST: Candidaturas/Create
@@ -80,7 +80,7 @@ namespace Cimob.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Comentarios, ConcursoId")] Candidatura candidatura)
+        public async Task<IActionResult> Create([Bind("Curso,Genero,Localidade,Telemovel, ConcursoId")] Candidatura candidatura)
         {
             candidatura.DataCandidatura = new DateTime();
             candidatura.EstadoCandidaturaId= 1;

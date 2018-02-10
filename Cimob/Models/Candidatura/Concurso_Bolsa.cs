@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Cimob.Models.Candidatura
 {
-    public class Concurso_Regulamento
+    public class Concurso_Bolsa
     {
         [Key]
-        public int Concurso_RegulamentoId { get; set; }
+        public int Concurso_BolsaId { get; set; }
         public int DocumentacaoId { get; set; }
         public int ConcursoId { get; set; }
         public virtual Documentacao Documentacao { get; set; }

@@ -17,6 +17,11 @@ namespace Cimob.Models.Candidatura
         public int EstadoCandidaturaId { get; set; }
         public int ConcursoId { get; set; }
         public string ApplicationUserId { get; set; }
+        public string Genero { get; set; }
+        public string Curso { get; set; }
+        public string Morada { get; set; }
+        public string Localidade { get; set; }
+        public string Telemovel { get; set; }
 
         public virtual Concurso Concurso { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
