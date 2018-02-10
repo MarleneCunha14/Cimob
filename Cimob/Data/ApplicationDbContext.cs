@@ -27,9 +27,6 @@ namespace Cimob.Data
         public DbSet<TipoDeUser> TipoDeUser { get; set; }
         public DbSet<Candidatura> Candidatura { get; set; }
         public DbSet<Concurso> Concurso { get; set; }
-        public DbSet<Documentacao> Documentacao { get; set; }
-        public DbSet<Concurso_Bolsa> Concurso_Bolsa { get; set; }
-        public DbSet<Concurso_Regulamento> Concurso_Regulamento { get; set; }
         public DbSet<EstadoCandidatura> EstadoCandidatura { get; set; }
         public DbSet<Escola> Escola { get; set; }
         public DbSet<Pais> Pais { get; set; }
