@@ -12,6 +12,9 @@ using Microsoft.AspNetCore.Http;
 
 namespace Cimob.Controllers
 {
+    /// <summary>
+    /// Controlador que gere a tabela CandidaturAS
+    /// </summary>
     public class ConcursoesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -45,7 +48,9 @@ namespace Cimob.Controllers
             }
             return View(concursoAMostrar);
         }
-
+        /// <summary>
+        /// Get concursos por Pais
+        /// </summary>
         public async Task<IActionResult> PorPais(int id)
         {
             var concursoAMostrar = (from res in _context.Escola
@@ -59,7 +64,9 @@ namespace Cimob.Controllers
             ViewBag.Tipo = id;
             return View(concursoAMostrar);
         }
-
+        /// <summary>
+        /// Get concursos por Parceria
+        /// </summary>
         public async Task<IActionResult> PorParceria(int id)
         {
             var concursoAMostrar = (from res in _context.Escola
@@ -73,7 +80,9 @@ namespace Cimob.Controllers
             ViewBag.Tipo = id;
             return View(concursoAMostrar);
         }
-
+        /// <summary>
+        /// Get concursos por Tipo
+        /// </summary>
         public async Task<IActionResult> PorTipo(int id)
         {
             var concursoAMostrar = (from res in _context.Escola
@@ -87,7 +96,9 @@ namespace Cimob.Controllers
             ViewBag.Tipo = id;
             return View(concursoAMostrar);
         }
-
+        /// <summary>
+        /// Get concursos por consultarDetalhe
+        /// </summary>
         public async Task<IActionResult> consultarDetalhe(int id)
         {
            

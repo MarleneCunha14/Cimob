@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Cimob.Models.Candidatura
 {
+    /// <summary>
+    /// Classe que relaciona o ApplicationUser entre a tabela candidatura, escola, concurso e estadoCandidatura 
+    /// </summary>
     public class ProcessoCandidatura
     {
         public ApplicationUser ApplicationUser { get; set; }

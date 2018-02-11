@@ -29,13 +29,13 @@ namespace TopCar.Data
             }
             if (!context.TipoConcurso.Any())
             {
-                context.TipoConcurso.Add(new TipoConcurso { Nome = "Vasco Da Gama", Descricao= "O programa Vasco da Gama é um programa de mobilidade de estudantes entre escolas do< br >ensino politécnico.< br >O intercâmbio de estudantes ao abrigo do programa implica um acordo prévio entre a instituição de origem e a instituição de acolhimento, assinado pelos respectivos responsáveis.< br >A mobilidade de estudantes abrange também os estágios, trabalhos de fim de curso ou projectos finais, desde que as referidas actividades integrem o plano curricular do curso na escola de origem.</ p > ", Imagem= "~/images/vascoGama.png" });        
+                context.TipoConcurso.Add(new TipoConcurso { Nome = "Vasco Da Gama",  Imagem= "~/images/vascoGama.png" });        
                 context.SaveChanges();
             }
             if (!context.Escola.Any())
             {
-                context.Escola.Add(new Escola { Nome = "EST" , Url= "http://www.estsetubal.ips.pt/" , Descricao="é em setúbal", Imagem = "~/images/simboloIPS.png" , Pais="Portugal"});
-                context.Escola.Add(new Escola { Nome = "Universidade de Évora", Url = "http://www.uevora.pt/", Descricao = "é em Évora", Imagem = "~/images/simboloIPS.png", Pais = "Portugal" });
+                context.Escola.Add(new Escola { Nome = "EST" , Url= "http://www.estsetubal.ips.pt/" });
+                context.Escola.Add(new Escola { Nome = "Universidade de Évora", Url = "http://www.uevora.pt/" });
                 context.SaveChanges();
             }
             if (!context.Concurso.Any())
@@ -76,7 +76,11 @@ namespace TopCar.Data
 
                 context.SaveChanges();
             }
-
+            if (!context.AjudaAutenticacao.Any())
+            {
+                context.AjudaAutenticacao.Add(new AjudaAutenticacao { Id = "Concursos", Descricao="Na presente página é possivel consultar todos os tipos de concursos. Estes podem ser apresentados por padrão, por tipo de concurso, por País ou por parcerias. Além disso, estes dividem-se em dois grupos, os concursos para docentes e concursos para Estudantes. Um estudante não se pode candidatar a um concurso para docente e vice-versa. Além disso, não é possível candidatar-se ao mesmo concurso duas vezes.", Controlador="Concursoes", Metodo="Index" });
+                              context.SaveChanges();
+            }
         }
     }
 }

@@ -32,7 +32,7 @@ namespace Cimob.Controllers
 
             return View(entrevistasPendentes);
         }
-
+        // GET: Entrevistas
         public async Task<IActionResult> IndexUser()
         {
             string nome = User.Identity.Name;

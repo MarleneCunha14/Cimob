@@ -16,8 +16,7 @@
     {
         <label> Está prestes a aceitar a candidatura. Deseja Continuar?</label>
         <div style="margin-left: 10%;display:table">
-            <a asp-action="Detalhe"  class="btn btn-default" style="display:table-cell" asp-route-id="@Model.CandidaturaId">Não</a>
-            <form asp-route-returnUrl=null style="display:table-cell" method="post">
+              <form asp-route-returnUrl=null style="display:table-cell" method="post">
                 <hr />
                 <div asp-validation-summary="All" class="text-danger"></div>
                 <div class="form-group" hidden>
@@ -26,7 +25,7 @@
                 <div class="form-group" hidden>
                     <input asp-for="CandidaturaId" class="form-control" value=@ViewBag.CandidaturaId />
                 </div>
-                <button type="submit" class="btn btn-default">Sim</button>
+                <button type="submit" class="btn btn-default">Alterar o Estado</button>
             </form>
 
 
@@ -37,8 +36,7 @@
     {
         <label> Está prestes a rejeitar a candidatura. Deseja Continuar?</label>
         <div style="margin-left: 10%;display:table">
-            <button asp-action="Detalhe" class="btn btn-default" style="display:table-cell" asp-route-id="@Model.CandidaturaId">Não</button>
-
+            
             <form asp-route-returnUrl=null style="display:table-cell" method="post">
                 <hr />
                 <div asp-validation-summary="All" class="text-danger"></div>
@@ -49,7 +47,7 @@
                     <input asp-for="CandidaturaId" class="form-control" value=@ViewBag.CandidaturaId />
                 </div>
 
-                <button type="submit" class="btn btn-default">Sim</button>
+                <button type="submit" class="btn btn-default">Alterar o Estado</button>
             </form>
 
 
@@ -58,5 +56,7 @@
 
 }
     </div>
-  
+    <div style="margin-left: 10%;">
+        <a asp-action="Detalhe" asp-route-id="@ViewBag.CandidaturaId">Voltar ao Detalhe</a>
+    </div>
 </div>

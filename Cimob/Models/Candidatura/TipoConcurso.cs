@@ -6,13 +6,24 @@ using System.Threading.Tasks;
 
 namespace Cimob.Models.Candidatura
 {
+    /// <summary>
+    /// Classe relativa à Tabela Pais
+    /// </summary>
     public class TipoConcurso
     {
  
     [Key]
-    public int TipoConcursoId { get; set; }
-    public String Nome { get; set; }
-    public String Descricao { get; set; }
-    public String Imagem { get; set; }
+        /// <summary>
+        /// Chave Primário do Tipo de Concurso
+        /// </summary>
+        public int TipoConcursoId { get; set; }
+        /// <summary>
+        /// Atributo nome do Tipo de COncurso
+        /// </summary>
+        public String Nome { get; set; }
+        /// <summary>
+        /// Atributo imagem do Tipo de COncurso
+        /// </summary>
+        public String Imagem { get; set; }
     }
 }

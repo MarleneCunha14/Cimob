@@ -11,6 +11,9 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Cimob.Controllers
 {
+    /// <summary>
+    /// Controlador que gere a tabela CandidaturAS
+    /// </summary>
     public class CandidaturasController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -66,7 +69,10 @@ namespace Cimob.Controllers
 
             return View(candidatura);
         }
-        
+        /// <summary>
+        /// Metodo que devolve candidatura pendente para o utilizador
+        /// </summary>
+
         public async Task<IActionResult> VerCandidaturasPendentes()
         {
             string id = User.Identity.Name;
@@ -120,8 +126,10 @@ namespace Cimob.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(VerCandidaturasPendentes));
         }
-    
-    public async Task<IActionResult> IndexAdministrador()
+        /// <summary>
+        /// Metodo que devolve todas as candidaturas para o Administrador
+        /// </summary>
+        public async Task<IActionResult> IndexAdministrador()
     {
             var candidaturasPendentes = (from res in _context.Escola
                                          join c in _context.Concurso
@@ -133,7 +141,9 @@ namespace Cimob.Controllers
                                          select new ProcessoCandidatura { escola = res, candidatura = v, concurso = c, estadoCandidatura = e });
             return View(candidaturasPendentes);
         }
-
+        /// <summary>
+        /// Metodo que devolve detalhe da Candidatura
+        /// </summary>
         public async Task<IActionResult> Detalhe(int id)
         {
             var candidaturasPendentes = (from res in _context.Escola
@@ -162,7 +172,9 @@ namespace Cimob.Controllers
             ViewBag.NomeEscola = Escola.Nome;
             return View(candidaturasPendentes.FirstOrDefault());
         }
-
+        /// <summary>
+        /// Metodo quealtera o estado da candidatura
+        /// </summary>
         public async Task<IActionResult> AlterarEstado(int id)
         {
             ViewBag.CandidaturaId = id;
@@ -183,7 +195,9 @@ namespace Cimob.Controllers
 
             return RedirectToAction(nameof(CandidaturasController.AlterarEstadoConfirm), "Candidaturas", model);
          }
-
+        /// <summary>
+        /// Metodo quealtera o estado da candidatura
+        /// </summary>
         public IActionResult AlterarEstadoConfirm(Candidatura_Estado model)
         {
             ViewBag.CandidaturaId = model.CandidaturaId;
@@ -199,7 +213,9 @@ namespace Cimob.Controllers
 
             return View(model);
         }
-
+        /// <summary>
+        /// Metodo quealtera o estado da candidatura
+        /// </summary>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AlterarEstadoConfirm([Bind("CandidaturaId,EstadoCandidaturaId")] Candidatura_Estado Candidatura_Estado, String returnUrl = null)

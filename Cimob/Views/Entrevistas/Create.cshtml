@@ -1,13 +1,9 @@
 ﻿@model Cimob.Models.Candidatura.Entrevista
 
-
-@Model.CandidaturaId
-@Model.EstadoId
-<h4>Entrevista</h4>
+<h4>Criar Entrevista</h4>
 <hr />
 
 
-</script>
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
@@ -27,7 +23,7 @@
                 <label asp-for="Hora" class="control-label"></label>
                 <input asp-for="Hora" type="time" class="form-control" value="" />
                 <span asp-validation-for="Hora" class="text-danger"></span>
-            </div>           
+            </div>
             <div class="form-group">
                 <input type="submit" value="Criar Entrevista" class="btn btn-default" />
             </div>
@@ -35,8 +31,8 @@
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Voltar a alterar estado</a>
+<div style="margin-left: 10%;">
+    <a asp-area="" asp-controller="Candidaturas" asp-action="Detalhe" asp-route-id="@Model.CandidaturaId">Voltar ao Detalhe</a>
 </div>
 
 

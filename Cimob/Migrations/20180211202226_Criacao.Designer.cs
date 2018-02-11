@@ -11,7 +11,7 @@ using System;
 namespace Cimob.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180211175011_Criacao")]
+    [Migration("20180211202226_Criacao")]
     partial class Criacao
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,8 +23,14 @@ namespace Cimob.Migrations
 
             modelBuilder.Entity("Cimob.Models.AjudaAutenticacao", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Controlador");
+
+                    b.Property<string>("Descricao");
+
+                    b.Property<string>("Metodo");
 
                     b.HasKey("Id");
 

@@ -35,6 +35,9 @@
 
 
   <ItemGroup>
+    <PackageReference Include="docfx" Version="2.31.0" />
+    <PackageReference Include="docfx.console" Version="2.31.0" />
+    <PackageReference Include="jQuery-vsdoc" Version="2.1.0" />
     <PackageReference Include="jQuery.UI.Combined" Version="1.12.1" />
     <PackageReference Include="Microsoft.AspNet.Identity.EntityFramework" Version="2.2.1" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />

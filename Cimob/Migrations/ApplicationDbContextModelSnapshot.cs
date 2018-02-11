@@ -22,8 +22,14 @@ namespace Cimob.Migrations
 
             modelBuilder.Entity("Cimob.Models.AjudaAutenticacao", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Controlador");
+
+                    b.Property<string>("Descricao");
+
+                    b.Property<string>("Metodo");
 
                     b.HasKey("Id");
 

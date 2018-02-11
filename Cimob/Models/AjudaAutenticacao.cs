@@ -6,9 +6,26 @@ using System.Threading.Tasks;
 namespace Cimob.Models
 
 {
-    //Classe Ajuda
+    /// <summary>
+    /// Classe relativa à Tabela AjudaAutenticacao
+    /// </summary>
     public class AjudaAutenticacao
     {
-        public int Id { get; set; }
+        /// <summary>
+        /// Id da ajuda
+        /// </summary>
+        public string Id { get; set; }
+        /// <summary>
+        /// Atributo Descricao da Ajuda
+        /// </summary>
+        public string Descricao { get; set; }
+        /// <summary>
+        /// Atributo Controlador da Ajuda
+        /// </summary>
+        public string Controlador { get; set; }
+        /// <summary>
+        /// Atributo Metodo da Ajuda
+        /// </summary>
+        public string Metodo { get; set; }
     }
 }

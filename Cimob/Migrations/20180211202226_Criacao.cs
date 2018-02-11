@@ -14,8 +14,10 @@ namespace Cimob.Migrations
                 name: "AjudaAutenticacao",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn)
+                    Id = table.Column<string>(nullable: false),
+                    Controlador = table.Column<string>(nullable: true),
+                    Descricao = table.Column<string>(nullable: true),
+                    Metodo = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
