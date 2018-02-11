@@ -7,57 +7,57 @@
     <div class="vertical-menu">
         <a href="#" class="active">Informação Sobre Concursos</a>
         @if (ViewBag.Tipo == 1)
-    {
-        <a class="SubMenuSelected" asp-area="" asp-controller="Concursoes" asp-action="Index" asp-route-id="1">Para Alunos</a>
-        <a class="SubSubMenu" asp-area="" asp-controller="Concursoes" asp-action="Index" asp-route-id="1">Abertos</a>
-        <a class="SubSubMenu" asp-area="" asp-controller="Concursoes" asp-action="PorTipo" asp-route-id="1">Por Tipos de Concurso</a>
-        <a class="SubSubMenu" asp-area="" asp-controller="Concursoes" asp-action="PorParceria" asp-route-id="1">Por Parcerias</a>
-        <a class="SubSubMenuSelected" asp-area="" asp-controller="Concursoes" asp-action="PorPais" asp-route-id="1">Por Pais</a>
-        <a class="SubMenu" asp-area="" asp-controller="Concursoes" asp-action="Index" asp-route-id="2">Para Docentes</a>
-}
-else
-{
-    <a class="SubMenu" asp-area="" asp-controller="Concursoes" asp-action="Index" asp-route-id="1">Para Alunos</a>
-    <a class="SubMenuSelected" asp-area="" asp-controller="Concursoes" asp-action="Index" asp-route-id="2">Para Docentes</a>
-    <a class="SubSubMenu" asp-area="" asp-controller="Concursoes" asp-action="Index" asp-route-id="2">Abertos</a>
-    <a class="SubSubMenu" asp-area="" asp-controller="Concursoes" asp-action="PorTipo" asp-route-id="2">Por Tipos de Concurso</a>
-    <a class="SubSubMenu" asp-area="" asp-controller="Concursoes" asp-action="PorParceria" asp-route-id="2">Por Parcerias</a>
-    <a class="SubSubMenuSelected" asp-area="" asp-controller="Concursoes" asp-action="PorPais" asp-route-id="2">Por Pais</a>
+        {
+            <a class="SubMenuSelected" asp-area="" asp-controller="Concursoes" asp-action="Index" asp-route-id="1">Para Alunos</a>
+            <a class="SubSubMenu" asp-area="" asp-controller="Concursoes" asp-action="Index" asp-route-id="1">Abertos</a>
+            <a class="SubSubMenu" asp-area="" asp-controller="Concursoes" asp-action="PorTipo" asp-route-id="1">Por Tipos de Concurso</a>
+            <a class="SubSubMenu" asp-area="" asp-controller="Concursoes" asp-action="PorParceria" asp-route-id="1">Por Parcerias</a>
+            <a class="SubSubMenuSelected" asp-area="" asp-controller="Concursoes" asp-action="PorPais" asp-route-id="1">Por Pais</a>
+            <a class="SubMenu" asp-area="" asp-controller="Concursoes" asp-action="Index" asp-route-id="2">Para Docentes</a>
+        }
+        else
+        {
+            <a class="SubMenu" asp-area="" asp-controller="Concursoes" asp-action="Index" asp-route-id="1">Para Alunos</a>
+            <a class="SubMenuSelected" asp-area="" asp-controller="Concursoes" asp-action="Index" asp-route-id="2">Para Docentes</a>
+            <a class="SubSubMenu" asp-area="" asp-controller="Concursoes" asp-action="Index" asp-route-id="2">Abertos</a>
+            <a class="SubSubMenu" asp-area="" asp-controller="Concursoes" asp-action="PorTipo" asp-route-id="2">Por Tipos de Concurso</a>
+            <a class="SubSubMenu" asp-area="" asp-controller="Concursoes" asp-action="PorParceria" asp-route-id="2">Por Parcerias</a>
+            <a class="SubSubMenuSelected" asp-area="" asp-controller="Concursoes" asp-action="PorPais" asp-route-id="2">Por Pais</a>
 
-}
+        }
     </div>
 
 
-    <div style="margin-left: 10%;">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>
-                        Pais
-                    </th>
-                    <th>
-                        Escola
-                    </th>
-                    <th>
-                        Tipo de Concurso
-                    </th>
-                    <th>
-                        Nome
-                    </th>
-                    <th>
-                        Tipo de Utilizador
-                    </th>
-                    <th>
-                        Prazo
-                    </th>
-                    <th>
 
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
+    <table class="table" style="margin-left:5%">
+        <thead>
+            <tr>
+                <th>
+                    Pais
+                </th>
+                <th>
+                    Escola
+                </th>
+                <th>
+                    Tipo de Concurso
+                </th>
+                <th>
+                    Nome
+                </th>
+                <th>
+                    Tipo de Utilizador
+                </th>
+                <th>
+                    Prazo
+                </th>
+                <th>
+
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
                 <tr>
                     <td>
                         @Html.DisplayFor(modelItem => item.escola.Pais)
@@ -81,8 +81,7 @@ else
                         <a asp-area="" asp-route-id="@item.concurso.ConcursoId" asp-controller="Concursoes" asp-action="consultarDetalhe">Consultar</a>
                     </td>
                 </tr>
-                }
-            </tbody>
-        </table>
-    </div>
+            }
+        </tbody>
+    </table>
 </div>

@@ -13,7 +13,10 @@ namespace Cimob.Models.Candidatura
         public int EntrevistaId { get; set; }        
         public string ApplicationUserId { get; set; }
         public int CandidaturaId { get; set; }
-        public DateTime HoraDia { get; set; }
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        public DateTime Data { get; set; }
+        [DisplayFormat(DataFormatString = "{0:HH:mm}")]
+        public DateTime Hora { get; set; }
         public bool jaFoiFeita { get; set; }
         public int EstadoId { get; set; }
 

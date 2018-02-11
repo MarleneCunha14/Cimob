@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cimob.Models.Candidatura
 {
-    public class ProcessoCandidaturaUser
+    public class ProcessoCandidatura
     {
         public ApplicationUser ApplicationUser { get; set; }
         public Candidatura candidatura { get; set; }

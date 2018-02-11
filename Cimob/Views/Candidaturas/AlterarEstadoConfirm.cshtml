@@ -17,7 +17,7 @@
         <label> Está prestes a aceitar a candidatura. Deseja Continuar?</label>
         <div style="margin-left: 10%;">
             <a asp-action="Detalhe" asp-route-id="@Model.CandidaturaId">Não</a>|
-            
+
             <form asp-route-returnUrl=null method="post">
                 <hr />
                 <div asp-validation-summary="All" class="text-danger"></div>
@@ -30,16 +30,32 @@
 
                 <button type="submit" class="btn btn-default">Sim</button>
             </form>
-            
-            
-           
+
+
+
         </div>
 
 } @if (@ViewBag.Estado == "Rejeitado")
     {
         <label> Está prestes a rejeitar a candidatura. Deseja Continuar?</label>
         <div style="margin-left: 10%;">
-            <a asp-action="Detalhe" asp-route-id="@Model.CandidaturaId">Não</a>|<a asp-action="Rejeitar" asp-route="@Model">Sim</a>
+            <a asp-action="Detalhe" asp-route-id="@Model.CandidaturaId">Não</a>|
+
+            <form asp-route-returnUrl=null method="post">
+                <hr />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <input asp-for="EstadoCandidaturaId" class="form-control" value=@ViewBag.EstadoCandidaturaId />
+                </div>
+                <div class="form-group" hidden>
+                    <input asp-for="CandidaturaId" class="form-control" value=@ViewBag.CandidaturaId />
+                </div>
+
+                <button type="submit" class="btn btn-default">Sim</button>
+            </form>
+
+
+
         </div>
 
 }

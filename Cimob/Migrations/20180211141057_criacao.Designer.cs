@@ -11,8 +11,8 @@ using System;
 namespace Cimob.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180211113941_Criacao")]
-    partial class Criacao
+    [Migration("20180211141057_criacao")]
+    partial class criacao
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -108,9 +108,11 @@ namespace Cimob.Migrations
 
                     b.Property<int>("CandidaturaId");
 
+                    b.Property<DateTime>("Data");
+
                     b.Property<int>("EstadoId");
 
-                    b.Property<DateTime>("HoraDia");
+                    b.Property<DateTime>("Hora");
 
                     b.Property<bool>("jaFoiFeita");
 

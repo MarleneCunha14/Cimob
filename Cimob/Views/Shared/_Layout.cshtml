@@ -6,9 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Cimob</title>
-    <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
-    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
-    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
@@ -64,7 +62,7 @@
                                     <button class="dropbtn" style="height: 50px;">Administação</button>
                                     <div class="dropdown-content">
                                         <a asp-area="" asp-controller="Candidaturas" asp-action="IndexAdministrador" >Candidaturas</a>
-                                        <a asp-area="" asp-controller="Concursoes" asp-action="Index" asp-route-id="2">Entrevistas</a>
+                                        <a asp-area="" asp-controller="Entrevistas" asp-action="Index">Entrevistas</a>
                                     </div>
                                 </div>
                             </li>

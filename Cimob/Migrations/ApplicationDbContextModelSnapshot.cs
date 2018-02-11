@@ -107,9 +107,11 @@ namespace Cimob.Migrations
 
                     b.Property<int>("CandidaturaId");
 
+                    b.Property<DateTime>("Data");
+
                     b.Property<int>("EstadoId");
 
-                    b.Property<DateTime>("HoraDia");
+                    b.Property<DateTime>("Hora");
 
                     b.Property<bool>("jaFoiFeita");
 

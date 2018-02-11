@@ -15,8 +15,6 @@ namespace Cimob.Controllers
     {
         private readonly ApplicationDbContext _context;
         private Candidatura candidatura;
-        private int candidaturaId;
-        private int estadoId;
         public CandidaturasController(ApplicationDbContext context)
         {
             _context = context;
@@ -44,7 +42,7 @@ namespace Cimob.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Curso,Genero,Localidade,Telemovel, ConcursoId")] Candidatura candidatura)
+        public async Task<IActionResult> Create([Bind("Curso,Genero,Localidade,Morada,Telemovel, ConcursoId")] Candidatura candidatura)
         {
             candidatura.DataCandidatura = new DateTime();
             candidatura.EstadoCandidaturaId= 1;
@@ -96,9 +94,7 @@ namespace Cimob.Controllers
                                          join e in _context.EstadoCandidatura
                                          on v.EstadoCandidaturaId equals e.EstadoCandidaturaId
                                          select new ProcessoCandidatura { escola = res, candidatura = v, concurso = c, estadoCandidatura = e });
-
-
-
+            
 
             return View(candidaturasPendentes);
         }
@@ -208,14 +204,19 @@ namespace Cimob.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AlterarEstadoConfirm([Bind("CandidaturaId,EstadoCandidaturaId")] Candidatura_Estado Candidatura_Estado, String returnUrl = null)
         {
-            return RedirectToAction(nameof(EntrevistasController.Create), "Entrevistas", Candidatura_Estado);
-        }
-
-
-        public async Task<IActionResult> Rejeitar(Candidatura_Estado model)
-        {
-           
-            return View();
+            if (Candidatura_Estado.EstadoCandidaturaId==2)
+            {
+                return RedirectToAction(nameof(EntrevistasController.Create), "Entrevistas", Candidatura_Estado);
+            }
+            else
+            {
+                var candidatura = _context.Candidatura.SingleOrDefaultAsync(m => m.CandidaturaId == Candidatura_Estado.CandidaturaId);
+                candidatura.Result.EstadoCandidaturaId = Candidatura_Estado.EstadoCandidaturaId;
+                _context.Update(candidatura.Result);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(CandidaturasController.IndexAdministrador), "Candidaturas");
+            }
+            
         }
     }
 

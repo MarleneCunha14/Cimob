@@ -1,8 +1,4 @@
-﻿@model IEnumerable<Cimob.Models.Candidatura.Entrevista>
-
-@{
-    Layout = null;
-}
+﻿@model IEnumerable<Cimob.Models.Candidatura.Utilizador_Entrevista>
 
 <!DOCTYPE html>
 
@@ -18,41 +14,29 @@
 <table class="table">
     <thead>
         <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.ApplicationUserId)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.HoraDia)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.jaFoiFeita)
-                </th>
             <th>
-                @Html.DisplayNameFor(model => model.Candidatura)
+               Nome Utilizador
             </th>
-            <th></th>
+            <th>
+               Data Entrevista
+            </th>
+            <th>
+               Hora Entrevista
+            </th>            
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.ApplicationUserId)
+                @Html.DisplayFor(modelItem => item.applicationUser.Nome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.HoraDia)
+                @Html.DisplayFor(modelItem => item.entrevista.Data)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.jaFoiFeita)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Candidatura.CandidaturaId)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.EntrevistaId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.EntrevistaId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.EntrevistaId">Delete</a>
-            </td>
+                @Html.DisplayFor(modelItem => item.entrevista.Hora)
+            </td>            
         </tr>
 }
     </tbody>
