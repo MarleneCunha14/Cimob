@@ -98,22 +98,28 @@ namespace Cimob.Migrations
                     b.ToTable("Concurso");
                 });
 
-            modelBuilder.Entity("Cimob.Models.Candidatura.Concurso_Regulamento", b =>
+            modelBuilder.Entity("Cimob.Models.Candidatura.Entrevista", b =>
                 {
-                    b.Property<int>("Concurso_RegulamentoId")
+                    b.Property<int>("EntrevistaId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("ConcursoId");
+                    b.Property<string>("ApplicationUserId");
 
-                    b.Property<int>("RegulamentoId");
+                    b.Property<int>("CandidaturaId");
 
-                    b.HasKey("Concurso_RegulamentoId");
+                    b.Property<int>("EstadoId");
 
-                    b.HasIndex("ConcursoId");
+                    b.Property<DateTime>("HoraDia");
 
-                    b.HasIndex("RegulamentoId");
+                    b.Property<bool>("jaFoiFeita");
 
-                    b.ToTable("Concurso_Regulamento");
+                    b.HasKey("EntrevistaId");
+
+                    b.HasIndex("ApplicationUserId");
+
+                    b.HasIndex("CandidaturaId");
+
+                    b.ToTable("Entrevista");
                 });
 
             modelBuilder.Entity("Cimob.Models.Candidatura.Escola", b =>
@@ -158,18 +164,6 @@ namespace Cimob.Migrations
                     b.HasKey("PaisId");
 
                     b.ToTable("Pais");
-                });
-
-            modelBuilder.Entity("Cimob.Models.Candidatura.Regulamento", b =>
-                {
-                    b.Property<int>("RegulamentoId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Caminho");
-
-                    b.HasKey("RegulamentoId");
-
-                    b.ToTable("Regulamento");
                 });
 
             modelBuilder.Entity("Cimob.Models.Candidatura.TipoConcurso", b =>
@@ -250,6 +244,8 @@ namespace Cimob.Migrations
 
                     b.Property<string>("Nome");
 
+                    b.Property<string>("NomeSkype");
+
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256);
 
@@ -272,8 +268,6 @@ namespace Cimob.Migrations
 
                     b.Property<string>("UserName")
                         .HasMaxLength(256);
-
-                    b.Property<bool>("isAdministrador");
 
                     b.HasKey("Id");
 
@@ -448,16 +442,15 @@ namespace Cimob.Migrations
                         .HasForeignKey("TipoDeUserId");
                 });
 
-            modelBuilder.Entity("Cimob.Models.Candidatura.Concurso_Regulamento", b =>
+            modelBuilder.Entity("Cimob.Models.Candidatura.Entrevista", b =>
                 {
-                    b.HasOne("Cimob.Models.Candidatura.Concurso", "concurso")
+                    b.HasOne("Cimob.Models.Utilizadores.ApplicationUser", "ApplicationUser")
                         .WithMany()
-                        .HasForeignKey("ConcursoId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ApplicationUserId");
 
-                    b.HasOne("Cimob.Models.Candidatura.Regulamento", "Regulamento")
+                    b.HasOne("Cimob.Models.Candidatura.Candidatura", "Candidatura")
                         .WithMany()
-                        .HasForeignKey("RegulamentoId")
+                        .HasForeignKey("CandidaturaId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

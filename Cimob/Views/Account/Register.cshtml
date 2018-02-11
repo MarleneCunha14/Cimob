@@ -31,49 +31,43 @@
     <div class="row">
         <div class="col-md-4">
             <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
-
                 <hr />
                 <div asp-validation-summary="All" class="text-danger"></div>
-
                 <div class="form-group">
-                   
+
                     <input asp-for="Name" class="form-control" placeholder="Nome" />
                     <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
-            <!--X    <div class="form-group">   var user = new ApplicationUser { UserName = model.Email, Email = model.Email, PaisId = model.PaisId,
-                    Nome = model.Name, TipoDeUserId = model.TipoId, EscolaId = model.EscolaId,
-                    DataNascimento = model.DataNascimento };
-                    <input asp-for="DataNascimento" type="date" class="form-control" placeholder="Data de nascimento" />
-                </div>-->
-
+                <!--X    <div class="form-group">   var user = new ApplicationUser { UserName = model.Email, Email = model.Email, PaisId = model.PaisId,
+        Nome = model.Name, TipoDeUserId = model.TipoId, EscolaId = model.EscolaId,
+        DataNascimento = model.DataNascimento };
+        <input asp-for="DataNascimento" type="date" class="form-control" placeholder="Data de nascimento" />
+    </div>-->
                 <div class="form-group">
                     <select asp-for="EscolaId" class="form-control" asp-items="ViewBag.EscolaId"></select>
                     <span asp-validation-for="EscolaId" class="text-danger"></span>
                 </div>
-
                 <div class="form-group">
-
                     <select asp-for="TipoId" class="form-control" asp-items="ViewBag.TipoId"></select>
                     <span asp-validation-for="TipoId" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-
                     <select asp-for="PaisId" class="form-control" asp-items="ViewBag.PaisId"></select>
                     <span asp-validation-for="PaisId" class="text-danger"></span>
                 </div>
-
                 <div class="form-group">
-
+                    <input asp-for="NomeSkype" class="form-control" placeholder="Nome Skype" />
+                    <span asp-validation-for="NomeSkype" class="text-danger"></span>
+                </div>
+                <div class="form-group">
                     <input asp-for="Email" class="form-control" placeholder="Email" />
                     <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-
                     <input asp-for="Password" class="form-control" placeholder="Palavra-passe" />
                     <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-
                     <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirmar palavra-passe" />
                     <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                 </div>

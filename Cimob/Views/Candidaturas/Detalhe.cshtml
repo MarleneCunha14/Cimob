@@ -1,0 +1,99 @@
+﻿@model Cimob.Models.Candidatura.ProcessoCandidatura
+<h2>Detalhe da Candidatura para o concurso @Html.DisplayFor(model => model.concurso.Nome)</h2>
+    <div class="DefaultPresentation">
+        <div class="vertical-menu">
+            <a href="#" class="active">Candidatura</a>
+            <a class="SubMenuSelected" asp-area="" asp-controller="Candidaturas" asp-action="Detalhe">Detalhe</a>
+            <a class="SubMenu" asp-area="" asp-controller="Candidaturas" asp-action="AlterarEstado" asp-route-id="@ViewBag.CandidaturaId">Alterar Estado</a>
+            <a class="SubMenu" asp-area="" asp-controller="Home" asp-action="Team">Ajuda</a>
+        </div>
+
+
+        <div class="row" style="margin-left: 10%;">
+            
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    Nome Aluno:
+                </dt>
+                <dd>
+                    @ViewBag.NomeAluno
+                </dd>
+                <dt>
+                    Nome Escola Origem:
+                </dt>
+                <dd>
+                    @ViewBag.NomeEscola
+                </dd>
+                <dt>
+                    Nacionalidade:
+                </dt>
+                <dd>
+                    @ViewBag.Nacionalidade
+                </dd>
+                <dt>
+                    Nome Concurso:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.concurso.Nome)
+                </dd>
+                <dt>
+                    Escola Concurso:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.escola.Nome)
+                </dd>
+                <dt>
+                    País Destino:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.escola.Pais)
+                </dd>
+                <dt>
+                    Morada:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.candidatura.Morada)
+                </dd>
+                <dt>
+                    Genero:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.candidatura.Genero)
+                </dd>
+                <dt>
+                    Curso:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.candidatura.Curso)
+                </dd>
+                <dt>
+                    Localidade:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.candidatura.Localidade)
+                </dd>
+                <dt>
+                    Telemovel:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.candidatura.Telemovel)
+                </dd>
+                <dt>
+                    Email:
+                </dt>
+                <dd>
+                    @ViewBag.Email
+                </dd>
+                <dt>
+                    Estado Candidatura:
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.estadoCandidatura.NomeEstado)
+                </dd>
+            </dl>
+        </div>
+        <div style="margin-left: 10%;">
+            <a asp-action="IndexAdministrador">Voltar à lista</a>
+        </div>
+    </div>

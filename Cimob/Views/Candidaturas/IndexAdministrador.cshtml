@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Cimob.Models.Candidatura.ProcessoCandidatura>
+<h2>Lista de Candidaturas</h2>
+<div class="DefaultPresentation">
+    <div class="vertical-menu">
+        <a href="#" class="active">Candidaturas</a>
+        <a class="SubMenuSelected" asp-area="" asp-controller="Candidaturas" asp-action="IndexAdministrador">Lista Candidaturas</a>
+        <a class="SubMenu" asp-area="" asp-controller="Home" asp-action="Team">Ajuda</a>
+    </div>
+
+    <div class="row">
+
+        <div style="margin: auto; width: auto;">
+
+            <div class="container" style="width: 800px; min-height: 400px; float: left;">
+                <div id="areaDeCaixaReserva">
+                    <div id="caixaLarga" style="width: 800px">
+                        @{ if (Model.Any())
+                            {
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                Concurso
+                                            </th>
+                                            <th>
+                                                Escola
+                                            </th>
+                                            <th>
+                                                Estado Candidatura
+                                            </th>
+
+                                            <th>
+                                                Acções
+                                            </th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.concurso.Nome)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.escola.Nome)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.estadoCandidatura.NomeEstado)
+                                                </td>
+
+
+                                                <td>
+                                                    <a asp-action="Detalhe" asp-route-id="@item.candidatura.CandidaturaId">Consultar Candidatura</a>
+                                                </td>
+
+                                            </tr>
+
+                                        }
+
+                                    </tbody>
+                                </table>
+                            }
+
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

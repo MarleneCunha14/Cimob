@@ -23,15 +23,7 @@ namespace XUnitTestProject1
             _dbContext = new ApplicationDbContext(optionsBuilder.Options);
         }
 
-        [Fact]
-        public async System.Threading.Tasks.Task Test_MostrarConcurso()
-        {
-
-            ConcursoesController concurso = new ConcursoesController(_dbContext);
-
-            var result = await concurso.MostrarConcursos();
-            Assert.IsType<ViewResult>(result);
-        }
+        
 
     }
 }

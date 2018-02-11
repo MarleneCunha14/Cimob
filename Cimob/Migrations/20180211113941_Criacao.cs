@@ -5,11 +5,11 @@ using System.Collections.Generic;
 
 namespace Cimob.Migrations
 {
-    public partial class Cricacao : Migration
+    public partial class Criacao : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            //Down(migrationBuilder);
+            Down(migrationBuilder);
             migrationBuilder.CreateTable(
                 name: "AjudaAutenticacao",
                 columns: table => new
@@ -37,13 +37,31 @@ namespace Cimob.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Contacto",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Assunto = table.Column<string>(nullable: false),
+                    Descriçao = table.Column<string>(nullable: false),
+                    Email = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Contacto", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Escola",
                 columns: table => new
                 {
                     EscolaId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Descricao = table.Column<string>(nullable: true),
+                    Imagem = table.Column<string>(nullable: true),
                     Nome = table.Column<string>(nullable: true),
-                    url = table.Column<string>(nullable: true)
+                    Pais = table.Column<string>(nullable: true),
+                    Url = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -64,21 +82,6 @@ namespace Cimob.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "InformacaoCandidatura",
-                columns: table => new
-                {
-                    InformacaoCandidaturaId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    CandidaturaId = table.Column<int>(nullable: false),
-                    Descricao = table.Column<string>(nullable: true),
-                    Nome = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_InformacaoCandidatura", x => x.InformacaoCandidaturaId);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Pais",
                 columns: table => new
                 {
@@ -92,16 +95,18 @@ namespace Cimob.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Regulamento",
+                name: "TipoConcurso",
                 columns: table => new
                 {
-                    RegulamentoId = table.Column<int>(nullable: false)
+                    TipoConcursoId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Descricao = table.Column<string>(nullable: true)
+                    Descricao = table.Column<string>(nullable: true),
+                    Imagem = table.Column<string>(nullable: true),
+                    Nome = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Regulamento", x => x.RegulamentoId);
+                    table.PrimaryKey("PK_TipoConcurso", x => x.TipoConcursoId);
                 });
 
             migrationBuilder.CreateTable(
@@ -145,12 +150,14 @@ namespace Cimob.Migrations
                     Id = table.Column<string>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
                     ConcurrencyStamp = table.Column<string>(nullable: true),
+                    DataNascimento = table.Column<DateTime>(nullable: false),
                     Email = table.Column<string>(maxLength: 256, nullable: true),
                     EmailConfirmed = table.Column<bool>(nullable: false),
                     EscolaId = table.Column<int>(nullable: false),
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     Nome = table.Column<string>(nullable: true),
+                    NomeSkype = table.Column<string>(nullable: true),
                     NormalizedEmail = table.Column<string>(maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(maxLength: 256, nullable: true),
                     PaisId = table.Column<int>(nullable: false),
@@ -195,7 +202,8 @@ namespace Cimob.Migrations
                     EscolaID = table.Column<int>(nullable: false),
                     Nome = table.Column<string>(nullable: true),
                     PaisId = table.Column<int>(nullable: false),
-                    RegulamentoId = table.Column<int>(nullable: false),
+                    Prazo = table.Column<DateTime>(nullable: false),
+                    TipoConcursoId = table.Column<int>(nullable: false),
                     TipoDeUserId = table.Column<int>(nullable: true),
                     TipoDeUtilizadorId = table.Column<int>(nullable: false)
                 },
@@ -209,49 +217,13 @@ namespace Cimob.Migrations
                         principalColumn: "EscolaId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Concurso_Regulamento_RegulamentoId",
-                        column: x => x.RegulamentoId,
-                        principalTable: "Regulamento",
-                        principalColumn: "RegulamentoId",
+                        name: "FK_Concurso_TipoConcurso_TipoConcursoId",
+                        column: x => x.TipoConcursoId,
+                        principalTable: "TipoConcurso",
+                        principalColumn: "TipoConcursoId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Concurso_TipoDeUser_TipoDeUserId",
-                        column: x => x.TipoDeUserId,
-                        principalTable: "TipoDeUser",
-                        principalColumn: "TipoDeUserId",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "RegisterModel",
-                columns: table => new
-                {
-                    Email = table.Column<string>(nullable: false),
-                    ConfirmPassword = table.Column<string>(nullable: true),
-                    EscolaId = table.Column<int>(nullable: false),
-                    Name = table.Column<string>(nullable: false),
-                    PaisId = table.Column<int>(nullable: false),
-                    Password = table.Column<string>(maxLength: 100, nullable: false),
-                    TipoDeUserId = table.Column<int>(nullable: true),
-                    TipoId = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_RegisterModel", x => x.Email);
-                    table.ForeignKey(
-                        name: "FK_RegisterModel_Escola_EscolaId",
-                        column: x => x.EscolaId,
-                        principalTable: "Escola",
-                        principalColumn: "EscolaId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_RegisterModel_Pais_PaisId",
-                        column: x => x.PaisId,
-                        principalTable: "Pais",
-                        principalColumn: "PaisId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_RegisterModel_TipoDeUser_TipoDeUserId",
                         column: x => x.TipoDeUserId,
                         principalTable: "TipoDeUser",
                         principalColumn: "TipoDeUserId",
@@ -350,10 +322,14 @@ namespace Cimob.Migrations
                     CandidaturaId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     ApplicationUserId = table.Column<string>(nullable: true),
-                    Comentarios = table.Column<string>(nullable: true),
                     ConcursoId = table.Column<int>(nullable: false),
+                    Curso = table.Column<string>(nullable: true),
                     DataCandidatura = table.Column<DateTime>(nullable: false),
                     EstadoCandidaturaId = table.Column<int>(nullable: false),
+                    Genero = table.Column<string>(nullable: true),
+                    Localidade = table.Column<string>(nullable: true),
+                    Morada = table.Column<string>(nullable: true),
+                    Telemovel = table.Column<string>(nullable: true),
                     UserId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -376,6 +352,56 @@ namespace Cimob.Migrations
                         column: x => x.EstadoCandidaturaId,
                         principalTable: "EstadoCandidatura",
                         principalColumn: "EstadoCandidaturaId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "PontoInteresse",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ConcursoId = table.Column<int>(nullable: false),
+                    Nome = table.Column<string>(nullable: true),
+                    Url = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PontoInteresse", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_PontoInteresse_Concurso_ConcursoId",
+                        column: x => x.ConcursoId,
+                        principalTable: "Concurso",
+                        principalColumn: "ConcursoId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Entrevista",
+                columns: table => new
+                {
+                    EntrevistaId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ApplicationUserId = table.Column<string>(nullable: true),
+                    CandidaturaId = table.Column<int>(nullable: false),
+                    EstadoId = table.Column<int>(nullable: false),
+                    HoraDia = table.Column<DateTime>(nullable: false),
+                    jaFoiFeita = table.Column<bool>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Entrevista", x => x.EntrevistaId);
+                    table.ForeignKey(
+                        name: "FK_Entrevista_AspNetUsers_ApplicationUserId",
+                        column: x => x.ApplicationUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Entrevista_Candidatura_CandidaturaId",
+                        column: x => x.CandidaturaId,
+                        principalTable: "Candidatura",
+                        principalColumn: "CandidaturaId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -454,9 +480,9 @@ namespace Cimob.Migrations
                 column: "EscolaID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Concurso_RegulamentoId",
+                name: "IX_Concurso_TipoConcursoId",
                 table: "Concurso",
-                column: "RegulamentoId");
+                column: "TipoConcursoId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Concurso_TipoDeUserId",
@@ -464,19 +490,19 @@ namespace Cimob.Migrations
                 column: "TipoDeUserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RegisterModel_EscolaId",
-                table: "RegisterModel",
-                column: "EscolaId");
+                name: "IX_Entrevista_ApplicationUserId",
+                table: "Entrevista",
+                column: "ApplicationUserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RegisterModel_PaisId",
-                table: "RegisterModel",
-                column: "PaisId");
+                name: "IX_Entrevista_CandidaturaId",
+                table: "Entrevista",
+                column: "CandidaturaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RegisterModel_TipoDeUserId",
-                table: "RegisterModel",
-                column: "TipoDeUserId");
+                name: "IX_PontoInteresse_ConcursoId",
+                table: "PontoInteresse",
+                column: "ConcursoId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -500,16 +526,19 @@ namespace Cimob.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Candidatura");
+                name: "Contacto");
 
             migrationBuilder.DropTable(
-                name: "InformacaoCandidatura");
+                name: "Entrevista");
 
             migrationBuilder.DropTable(
-                name: "RegisterModel");
+                name: "PontoInteresse");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
+
+            migrationBuilder.DropTable(
+                name: "Candidatura");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
@@ -527,7 +556,7 @@ namespace Cimob.Migrations
                 name: "Escola");
 
             migrationBuilder.DropTable(
-                name: "Regulamento");
+                name: "TipoConcurso");
 
             migrationBuilder.DropTable(
                 name: "TipoDeUser");

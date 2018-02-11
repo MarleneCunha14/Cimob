@@ -23,15 +23,7 @@ namespace XUnitTestProject1
             _dbContext = new ApplicationDbContext(optionsBuilder.Options);
         }
 
-        [Fact]
-        public async System.Threading.Tasks.Task Test_MostrarRegulamento()
-        {
-           
-            RegulamentoesController manage = new RegulamentoesController(_dbContext);
-
-            var result = await manage.Index();
-            Assert.IsType<ViewResult>(result);
-        }
+        
        
     }
 }

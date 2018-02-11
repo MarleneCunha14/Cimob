@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Cimob.Data;
 using Cimob.Models.Candidatura;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Cimob.Controllers
 {
@@ -14,50 +15,13 @@ namespace Cimob.Controllers
     {
         private readonly ApplicationDbContext _context;
         private Candidatura candidatura;
-
-
+        private int candidaturaId;
+        private int estadoId;
         public CandidaturasController(ApplicationDbContext context)
         {
             _context = context;
         }
-
-        // GET: Candidaturas
-        public async Task<IActionResult> Index()
-        {
-            var applicationDbContext = _context.Candidatura.Include(c => c.ApplicationUser).Include(c => c.Concurso).Include(c => c.EstadoCandidatura);
-            return View(await applicationDbContext.ToListAsync());
-        }
-
-        public IActionResult MaximumExceeded()
-        {
-            return View();
-        }
-
-        public IActionResult already()
-        {
-            return View();
-        }
-        // GET: Candidaturas/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var candidatura = await _context.Candidatura
-                .Include(c => c.ApplicationUser)
-                .Include(c => c.Concurso)
-                .Include(c => c.EstadoCandidatura)
-                .SingleOrDefaultAsync(m => m.CandidaturaId == id);
-            if (candidatura == null)
-            {
-                return NotFound();
-            }
-
-            return View(candidatura);
-        }
-
+      
         // GET: Candidaturas/Create
         public async Task<IActionResult> Create(int id)
         {
@@ -104,26 +68,7 @@ namespace Cimob.Controllers
 
             return View(candidatura);
         }
-
-        // GET: Candidaturas/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var candidatura = await _context.Candidatura.SingleOrDefaultAsync(m => m.CandidaturaId == id);
-            if (candidatura == null)
-            {
-                return NotFound();
-            }
-            ViewData["ApplicationUserId"] = new SelectList(_context.ApplicationUser, "Id", "Id", candidatura.ApplicationUserId);
-            ViewData["ConcursoId"] = new SelectList(_context.Concurso, "ConcursoId", "ConcursoId", candidatura.ConcursoId);
-            ViewData["EstadoCandidaturaId"] = new SelectList(_context.EstadoCandidatura, "EstadoCandidaturaId", "EstadoCandidaturaId", candidatura.EstadoCandidaturaId);
-            return View(candidatura);
-        }
-
+        
         public async Task<IActionResult> VerCandidaturasPendentes()
         {
             string id = User.Identity.Name;
@@ -179,5 +124,99 @@ namespace Cimob.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(VerCandidaturasPendentes));
         }
+    
+    public async Task<IActionResult> IndexAdministrador()
+    {
+            var candidaturasPendentes = (from res in _context.Escola
+                                         join c in _context.Concurso
+                                         on res.EscolaId equals c.EscolaID
+                                         join v in _context.Candidatura
+                                         on c.ConcursoId equals v.ConcursoId
+                                         join e in _context.EstadoCandidatura
+                                         on v.EstadoCandidaturaId equals e.EstadoCandidaturaId
+                                         select new ProcessoCandidatura { escola = res, candidatura = v, concurso = c, estadoCandidatura = e });
+            return View(candidaturasPendentes);
+        }
+
+        public async Task<IActionResult> Detalhe(int id)
+        {
+            var candidaturasPendentes = (from res in _context.Escola
+                                         join c in _context.Concurso
+                                         on res.EscolaId equals c.EscolaID
+                                         join v in _context.Candidatura
+                                         on c.ConcursoId equals v.ConcursoId
+                                         join e in _context.EstadoCandidatura
+                                         on v.EstadoCandidaturaId equals e.EstadoCandidaturaId
+                                         select new ProcessoCandidatura { escola = res, candidatura = v, concurso = c, estadoCandidatura = e }).Where(m=> m.candidatura.CandidaturaId.Equals(id));
+            var candidatura = await _context.Candidatura
+               .SingleOrDefaultAsync(m => m.CandidaturaId == id);
+
+            var user = await _context.ApplicationUser
+              .SingleOrDefaultAsync(m => m.Id== candidatura.ApplicationUserId);
+
+            var pais = await _context.Pais
+              .SingleOrDefaultAsync(m => m.PaisId == user.PaisId);
+
+            var Escola = await _context.Escola
+             .SingleOrDefaultAsync(m => m.EscolaId == user.EscolaId);
+            ViewBag.CandidaturaId = candidatura.CandidaturaId;
+            ViewBag.NomeAluno = user.Nome;
+            ViewBag.Email = user.Email;
+            ViewBag.Nacionalidade = pais.NomePais;
+            ViewBag.NomeEscola = Escola.Nome;
+            return View(candidaturasPendentes.FirstOrDefault());
+        }
+
+        public async Task<IActionResult> AlterarEstado(int id)
+        {
+            ViewBag.CandidaturaId = id;
+            var candidatura = await _context.Candidatura
+               .SingleOrDefaultAsync(m => m.CandidaturaId == id);           
+            ViewData["EstadoCandidaturaId"] = new SelectList(_context.EstadoCandidatura, "EstadoCandidaturaId", "NomeEstado");
+            return View();
+        }
+
+        //
+        // POST: /Account/Register
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AlterarEstado(Candidatura_Estado model, String returnUrl =null )
+        {
+          
+
+            return RedirectToAction(nameof(CandidaturasController.AlterarEstadoConfirm), "Candidaturas", model);
+         }
+
+        public IActionResult AlterarEstadoConfirm(Candidatura_Estado model)
+        {
+            ViewBag.CandidaturaId = model.CandidaturaId;
+            ViewBag.EstadoCandidaturaId = model.EstadoCandidaturaId;
+            if (model.EstadoCandidaturaId == 2)
+            {
+                ViewBag.Estado = "Aceite";
+            }
+            if (model.EstadoCandidaturaId == 3)
+            {
+                ViewBag.Estado = "Rejeitado";
+            }
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AlterarEstadoConfirm([Bind("CandidaturaId,EstadoCandidaturaId")] Candidatura_Estado Candidatura_Estado, String returnUrl = null)
+        {
+            return RedirectToAction(nameof(EntrevistasController.Create), "Entrevistas", Candidatura_Estado);
+        }
+
+
+        public async Task<IActionResult> Rejeitar(Candidatura_Estado model)
+        {
+           
+            return View();
+        }
     }
+
 }

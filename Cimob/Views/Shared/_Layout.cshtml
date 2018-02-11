@@ -1,10 +1,14 @@
 ﻿<!DOCTYPE html>
+@inject SignInManager<Cimob.Models.Utilizadores.ApplicationUser> SignInManager
+@inject UserManager<Cimob.Models.Utilizadores.ApplicationUser> UserManager
 <html>
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Cimob</title>
-
+    <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
@@ -20,7 +24,7 @@
         <link rel="stylesheet" href="~/css/custom.css" asp-append-version="true" />
     </environment>
 
-   
+
 </head>
 <body>
     <div id="google_translate_element"></div>
@@ -55,6 +59,16 @@
                                     </div>
                                 </div>
                             </li>
+                            <li>
+                                <div class="dropdown">
+                                    <button class="dropbtn" style="height: 50px;">Administação</button>
+                                    <div class="dropdown-content">
+                                        <a asp-area="" asp-controller="Candidaturas" asp-action="IndexAdministrador" >Candidaturas</a>
+                                        <a asp-area="" asp-controller="Concursoes" asp-action="Index" asp-route-id="2">Entrevistas</a>
+                                    </div>
+                                </div>
+                            </li>
+
                             <li><a style="font-size: 16px;" asp-area="" asp-controller="Contactos" asp-action="Create">Contacto</a></li>
                         </ul>
                         @await Html.PartialAsync("_LoginPartial")
@@ -94,5 +108,5 @@
     </environment>
     @RenderSection("Scripts", required: false)
 </body>
-        </html>
+</html>
 

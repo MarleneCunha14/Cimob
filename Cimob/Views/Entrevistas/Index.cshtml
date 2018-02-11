@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Cimob.Models.Candidatura.Entrevista>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ApplicationUserId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HoraDia)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.jaFoiFeita)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Candidatura)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicationUserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoraDia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.jaFoiFeita)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Candidatura.CandidaturaId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.EntrevistaId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.EntrevistaId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.EntrevistaId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

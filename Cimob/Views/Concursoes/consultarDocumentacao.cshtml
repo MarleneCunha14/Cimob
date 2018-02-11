@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Cimob.Models.Candidatura.Concurso_Documentacao>
+
+<div class="DefaultPresentation">
+    <div class="vertical-menu">
+        <a href="#" class="active">Concurso</a>
+        <a class="SubMenu" asp-area="" asp-controller="Concursoes" asp-action="consultarDetalhe" >Detalhe Concurso</a>
+        <a class="SubMenu" asp-area="" asp-controller="Concursoes" asp-action="consultarBolsa">Bolsas</a>
+        <a class="SubMenuSelected" asp-area="" asp-controller="Concursoes" asp-action="consultarDocumentacao">Regulamentos</a>
+        <a class="SubMenu" asp-area="" asp-controller="Candidaturas" asp-action="Create" >Candidatar</a>
+        <a class="SubMenu" asp-area="" asp-controller="Home" asp-action="Team">Ajuda</a>
+    </div>
+
+    <div class="descriptionText">
+        <div style="width:88.5%;margin-left: 1%;">
+            <div style="margin-left: 10%;">
+                <div style="background-color: white;">
+                    <img style="width:200px;margin-left: 36%;" src="@Url.Content(ViewBag.Imagem)" alt="Visual Studio">
+                </div>
+            </div>
+            <div style="margin-left: 10%; display:table">
+                <div class="descriptionTextBoxOut">
+                    <div style="margin-left: -67%;margin-top: -7%;font-size: 19px;">@ViewBag.Nome</div>
+                    <div class="descriptionTextBoxIn" style="height: 210px;margin-top: 44px;">
+                        <div>
+                            <label style="text-align: justify;">Pode consultar em Baixo todas as informações sobre Bolsas para o presente concurso:</label>
+                            <ul>
+                                @foreach (var item in Model)
+    {
+                           
+                        
+                            <li>  <a href=@item.Documentacao.Caminho target="_blank">  @Html.DisplayFor(modelItem => item.Documentacao.Nome)</a> </li>
+}
+                            </ul>
+
+                            </div>
+                        <div style="margin-top: 6%;margin-left: 80%;">
+                            <a asp-action="Index">Voltar à Lista</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

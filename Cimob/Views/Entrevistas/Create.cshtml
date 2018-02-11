@@ -1,0 +1,38 @@
+﻿@model Cimob.Models.Candidatura.Entrevista
+
+
+@Model.CandidaturaId
+@Model.EstadoId
+<h4>Entrevista</h4>
+<hr />
+
+
+</script>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" hidden>
+                <input asp-for="EstadoId" class="form-control" value=@Model.EstadoId>
+            </div>
+            <div class="form-group" hidden>
+                <input asp-for="CandidaturaId" class="form-control" value=@Model.CandidaturaId>
+            </div>
+            <div class="form-group">
+                <label asp-for="HoraDia" class="control-label"></label>
+                <input asp-for="HoraDia" id="datetime" class="form-control" />
+                <span asp-validation-for="HoraDia" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Criar Entrevista" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar a alterar estado</a>
+</div>
+
+
