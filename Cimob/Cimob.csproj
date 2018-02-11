@@ -19,7 +19,6 @@
 
   <ItemGroup>
     <Content Remove="Views\Contactos\Delete.cshtml" />
-    <Content Remove="Views\Contactos\Details.cshtml" />
     <Content Remove="Views\Contactos\Edit.cshtml" />
     <Content Remove="Views\Home\About - Cópia.cshtml" />
     <Content Remove="Views\Shared\_LoginHome.cshtml" />
@@ -31,6 +30,7 @@
   <ItemGroup>
     <None Remove="Properties\PublishProfiles\Cimob20171218040443 - Web Deploy.pubxml" />
     <None Remove="Properties\PublishProfiles\Cimob20171219030917 - Web Deploy.pubxml" />
+    <None Remove="Properties\PublishProfiles\Cimob20180210074701 - Web Deploy.pubxml" />
   </ItemGroup>
 
 

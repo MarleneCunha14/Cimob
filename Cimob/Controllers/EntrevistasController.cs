@@ -32,7 +32,23 @@ namespace Cimob.Controllers
 
             return View(entrevistasPendentes);
         }
-       
+
+        public async Task<IActionResult> IndexUser()
+        {
+            string nome = User.Identity.Name;
+
+            var user = await _context.ApplicationUser
+                .SingleOrDefaultAsync(m => m.UserName.Equals(nome));
+
+            var entrevistasPendentes = (from e in _context.Entrevista
+                                        join a in _context.ApplicationUser
+                                        on e.ApplicationUserId equals a.Id
+                                        select new Utilizador_Entrevista { entrevista = e, applicationUser = a }).Where(m=>m.applicationUser.Id.Equals(user.Id));
+
+
+            return View(entrevistasPendentes);
+        }
+
         // GET: Entrevistas/Create
         public  IActionResult Create(Candidatura_Estado model)
         {

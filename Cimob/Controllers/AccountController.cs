@@ -256,8 +256,7 @@ namespace Cimob.Controllers
                     PaisId = model.PaisId,
                     Nome = model.Name,
                     TipoDeUserId = model.TipoId,
-                    EscolaId = model.EscolaId,
-                    NomeSkype = model.NomeSkype
+                    EscolaId = model.EscolaId
                 };
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)

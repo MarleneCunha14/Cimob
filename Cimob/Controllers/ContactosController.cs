@@ -26,7 +26,7 @@ namespace Cimob.Controllers
         // GET: Contactos
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Contacto.ToListAsync());
+            return View();
         }
 
         
@@ -40,7 +40,7 @@ namespace Cimob.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
+       
         public async Task<IActionResult> Create([Bind("Id,Assunto,Descriçao,Email")] Contacto contacto)
         {
             if (ModelState.IsValid)

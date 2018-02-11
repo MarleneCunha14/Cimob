@@ -11,8 +11,8 @@ using System;
 namespace Cimob.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180211141057_criacao")]
-    partial class criacao
+    [Migration("20180211175011_Criacao")]
+    partial class Criacao
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -209,15 +209,11 @@ namespace Cimob.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("ConcursoId");
-
                     b.Property<string>("Nome");
 
                     b.Property<string>("Url");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ConcursoId");
 
                     b.ToTable("PontoInteresse");
                 });
@@ -246,8 +242,6 @@ namespace Cimob.Migrations
                     b.Property<DateTimeOffset?>("LockoutEnd");
 
                     b.Property<string>("Nome");
-
-                    b.Property<string>("NomeSkype");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256);
@@ -454,14 +448,6 @@ namespace Cimob.Migrations
                     b.HasOne("Cimob.Models.Candidatura.Candidatura", "Candidatura")
                         .WithMany()
                         .HasForeignKey("CandidaturaId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("Cimob.Models.PontosInteresse.PontoInteresse", b =>
-                {
-                    b.HasOne("Cimob.Models.Candidatura.Concurso", "Concurso")
-                        .WithMany()
-                        .HasForeignKey("ConcursoId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

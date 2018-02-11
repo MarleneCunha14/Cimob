@@ -15,9 +15,5 @@ namespace Cimob.Models.PontosInteresse
         public String Nome { get; set; }
 
         public String Url { get; set; }
-
-        public int ConcursoId { get; set; }
-
-        public virtual Concurso Concurso { get; set; }
     }
 }

@@ -1,45 +1,42 @@
 ﻿@model IEnumerable<Cimob.Models.Candidatura.Utilizador_Entrevista>
+    <h2>Lista de Entrevistas</h2>
+    <div class="DefaultPresentation">
+        <div class="vertical-menu">
+            <a href="#" class="active">Entrevistas</a>
+            <a class="SubMenuSelected" asp-area="" asp-controller="Entrevistas" asp-action="Index">Consultar Entrevistas</a>
+            <a class="SubMenu" asp-area="" asp-controller="Home" asp-action="Team">Ajuda</a>
+        </div>
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-               Nome Utilizador
-            </th>
-            <th>
-               Data Entrevista
-            </th>
-            <th>
-               Hora Entrevista
-            </th>            
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.applicationUser.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.entrevista.Data)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.entrevista.Hora)
-            </td>            
-        </tr>
-}
-    </tbody>
-</table>
-</body>
-</html>
+        <table class="table" style="margin-left:5%">
+            <thead>
+                <tr>
+                    <th>
+                        Nome Utilizador
+                    </th>
+                    <th>
+                        Data Entrevista
+                    </th>
+                    <th>
+                        Hora Entrevista
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.applicationUser.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.entrevista.Data)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.entrevista.Hora)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+</div>

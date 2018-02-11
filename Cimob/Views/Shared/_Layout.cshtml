@@ -59,15 +59,16 @@
                             </li>
                             <li>
                                 <div class="dropdown">
-                                    <button class="dropbtn" style="height: 50px;">Administação</button>
+                                    <button class="dropbtn" style="height: 50px;">Administração</button>
                                     <div class="dropdown-content">
-                                        <a asp-area="" asp-controller="Candidaturas" asp-action="IndexAdministrador" >Candidaturas</a>
+                                        <a asp-area="" asp-controller="Candidaturas" asp-action="IndexAdministrador">Candidaturas</a>
                                         <a asp-area="" asp-controller="Entrevistas" asp-action="Index">Entrevistas</a>
                                     </div>
                                 </div>
                             </li>
 
-                            <li><a style="font-size: 16px;" asp-area="" asp-controller="Contactos" asp-action="Create">Contacto</a></li>
+                            <li><a style="font-size: 16px;" asp-area="" asp-controller="PontoInteresses" asp-action="Index">Pontos de Interesse</a></li>
+                            <!--   <li><a style="font-size: 16px;" asp-area="" asp-controller="Contactos" asp-action="Create">Contacto</a></li>-->
                         </ul>
                         @await Html.PartialAsync("_LoginPartial")
                     </div>
