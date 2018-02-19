@@ -64,16 +64,13 @@ namespace Cimob.Controllers
             var model = new AlterarDadosModel
             {
                 Nome = user.Nome,
-                Email = user.Email,
-                TipoDeUserId=user.TipoDeUserId,
                 EscolaId=user.EscolaId,
                 PaisId=user.PaisId
             };
-            ViewBag.EscolaId = new SelectList(_context.Escola, "EscolaId", "NomeEscola");
-            ViewData["TipoId"] = new SelectList(_context.TipoDeUser, "TipoDeUserId", "nomeTipo");
+            ViewData["EscolaId"] = new SelectList(_context.Escola, "EscolaId", "Nome");          
             ViewData["PaisId"] = new SelectList(_context.Pais, "PaisId", "NomePais");
 
-
+            ViewBag.aviso = "";
             return View(model);
         }
 
@@ -90,10 +87,9 @@ namespace Cimob.Controllers
 
             user.Nome = model.Nome;
             user.EscolaId = model.EscolaId;
-            user.TipoDeUserId = model.TipoDeUserId;
             await _userManager.UpdateAsync(user);
-            StatusMessage = "Your profile has been updated";
-            return RedirectToAction(nameof(AlterarDados));
+            ViewBag.aviso = "Os seus dados foram alterados";
+            return RedirectToAction(nameof(Confirmacao));
         }
 
         [HttpPost]
@@ -134,14 +130,21 @@ namespace Cimob.Controllers
             {
                 return RedirectToAction(nameof(SetPassword));
             }
-
+            ViewBag.aviso = "";
             var model = new ChangePasswordModel { StatusMessage = StatusMessage };
             return View(model);
         }
 
-       
+        [HttpGet]
+        public  IActionResult Confirmacao()
+        {
+           
+            return View();
+        }
 
-    [HttpPost]
+
+
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ChangePassword(ChangePasswordModel model)
         {
@@ -166,8 +169,8 @@ namespace Cimob.Controllers
             await _signInManager.SignInAsync(user, isPersistent: false);
             _logger.LogInformation("User changed their password successfully.");
             StatusMessage = "Your password has been changed.";
-
-            return RedirectToAction(nameof(ChangePassword));
+            ViewBag.aviso = "A sua Password foi mudada";
+            return RedirectToAction(nameof(Confirmacao));
         }
 
         [HttpGet]
@@ -565,9 +568,31 @@ namespace Cimob.Controllers
         {
             var candidatura = await _context.Candidatura
                 .SingleOrDefaultAsync(m => m.CandidaturaId == id);
+            var concurso = await _context.Concurso
+                .SingleOrDefaultAsync(m => m.ConcursoId == candidatura.ConcursoId);
+
+            var NomeConcurso = concurso.Nome;
+
+            var utilizador = await _context.ApplicationUser
+                .SingleOrDefaultAsync(m => m.Id == candidatura.ApplicationUserId);
+
+            var NomeAluno = utilizador.Nome;
+            var candidaturaId = candidatura.CandidaturaId;
             _context.Candidatura.Remove(candidatura);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(VerCandidaturasPendentes));
+            //Enviar Email
+            var entrevista= await _context.Entrevista
+                .SingleOrDefaultAsync(m => m.CandidaturaId == candidaturaId);
+            if (entrevista==null)                
+            {
+                await _emailSender.SendEmailAsync("Cimob_esw@outlook.pt", " CIMOB - desistência de candidatura", "A candidatura para o " + NomeConcurso + " do aluno " + NomeAluno + " foi cancelada pelo mesmo.");
+            }
+            else
+            {
+                await _emailSender.SendEmailAsync("Cimob_esw@outlook.pt", " CIMOB - desistência", "A candidatura para o " + NomeConcurso + " do aluno " + NomeAluno + " foi cancelada pelo mesmo. Como esta já tinha sido aceite, a entrevista marcada foi também cancelada.");
+            }
+
+            return View();
         }
         #endregion
     }

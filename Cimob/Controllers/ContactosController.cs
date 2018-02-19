@@ -26,10 +26,10 @@ namespace Cimob.Controllers
         // GET: Contactos
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Contacto.ToListAsync());
+            return View();
         }
 
-        
+
         // GET: Contactos/Create
         public IActionResult Create()
         {
@@ -40,20 +40,24 @@ namespace Cimob.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
+
         public async Task<IActionResult> Create([Bind("Id,Assunto,Descriçao,Email")] Contacto contacto)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(contacto);
-                await _emailSender.SendEmailAsync("marlenecunha14@hotmail.com"," CIMOB - Erasmus", "Um utilizador enviou a senguinte mensagem: " + contacto.Descriçao + " Email:" + contacto.Email);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                if (_emailSender != null)
+                {
+                    _context.Add(contacto);
+                    await _emailSender.SendEmailAsync("Cimob_esw@outlook.pt", " CIMOB - Erasmus", "Um utilizador enviou a senguinte mensagem: " + contacto.Descriçao + " Email:" + contacto.Email);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+               
             }
             return View(contacto);
         }
 
-       
+
 
     }
 }

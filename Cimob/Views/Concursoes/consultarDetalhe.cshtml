@@ -1,13 +1,23 @@
 ﻿@model Cimob.Models.Candidatura.Concurso
 
+@inject SignInManager<Cimob.Models.Utilizadores.ApplicationUser> SignInManager
+@inject UserManager<Cimob.Models.Utilizadores.ApplicationUser> UserManager
+
+
 <div class="DefaultPresentation">
     <div class="vertical-menu">
         <a href="#" class="active">Concurso</a>
-        <a class="SubMenuSelected" asp-area="" asp-controller="Home" asp-action="About">Detalhe Concurso</a>
-        <a class="SubMenu" asp-area="" asp-controller="Home" asp-action="Team">Documentação</a>
-        <a class="SubMenu" asp-area="" asp-controller="Home" asp-action="Team">Bolsas</a>
+        <a class="SubMenuSelected" asp-area="" asp-controller="Concursoes" asp-action="consultarDetalhe" asp-route-id=@ViewBag.ConcursoId>Detalhe Concurso</a>
+     
+        @if (SignInManager.IsSignedIn(User) && ViewBag.Valido && User.Identity.Name != "Cimob_esw@outlook.pt")
+    {
         <a class="SubMenu" asp-area="" asp-controller="Candidaturas" asp-action="Create" asp-route-id=@Model.ConcursoId>Candidatar</a>
-        <a class="SubMenu" asp-area="" asp-controller="Home" asp-action="Team">Ajuda</a>
+}
+else
+{
+    <a class="SubMenu" style="background-color: rgb(166, 166, 166);cursor: default;">Candidatar</a>
+}
+        <a class="SubMenu" asp-area="" asp-controller="AjudaAutenticacaos" asp-action="Index" asp-route-id="2">Ajuda</a>
     </div>
 
     <div class="descriptionText">
@@ -30,6 +40,10 @@
                         <div style="margin-top: 6%;margin-left: 80%;">
                             <a asp-action="Index">Voltar à Lista</a>
                         </div>
+                        <div style="margin-top: -2%;margin-left: -55%;color: red;">
+                            @ViewBag.Aviso
+                        </div>
+
                     </div>
                 </div>
             </div>

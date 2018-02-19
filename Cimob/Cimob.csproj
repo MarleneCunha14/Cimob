@@ -19,7 +19,6 @@
 
   <ItemGroup>
     <Content Remove="Views\Contactos\Delete.cshtml" />
-    <Content Remove="Views\Contactos\Details.cshtml" />
     <Content Remove="Views\Contactos\Edit.cshtml" />
     <Content Remove="Views\Home\About - Cópia.cshtml" />
     <Content Remove="Views\Shared\_LoginHome.cshtml" />
@@ -31,11 +30,16 @@
   <ItemGroup>
     <None Remove="Properties\PublishProfiles\Cimob20171218040443 - Web Deploy.pubxml" />
     <None Remove="Properties\PublishProfiles\Cimob20171219030917 - Web Deploy.pubxml" />
+    <None Remove="Properties\PublishProfiles\Cimob20180210074701 - Web Deploy.pubxml" />
   </ItemGroup>
 
 
   <ItemGroup>
+    <PackageReference Include="docfx" Version="2.31.0" />
+    <PackageReference Include="docfx.console" Version="2.31.0" />
+    <PackageReference Include="jQuery-vsdoc" Version="2.1.0" />
     <PackageReference Include="jQuery.UI.Combined" Version="1.12.1" />
+    <PackageReference Include="Microsoft.AspNet.Identity.EntityFramework" Version="2.2.1" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.1" PrivateAssets="All" />
@@ -50,6 +54,10 @@
     <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.1" />
     <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

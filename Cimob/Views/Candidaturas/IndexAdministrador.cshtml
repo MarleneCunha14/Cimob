@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Cimob.Models.Candidatura.ProcessoCandidatura>
+<div class="DefaultPresentation">
+    <div class="vertical-menu">
+        <a href="#" class="active">Candidaturas</a>
+        <a class="SubMenuSelected" asp-area="" asp-controller="Candidaturas" asp-action="IndexAdministrador">Lista Candidaturas</a>
+        <a class="SubMenu" asp-area="" asp-controller="AjudaAutenticacaos" asp-action="Index" asp-route-id="5">Ajuda</a>
+    </div>
+
+                             <table class="table" style="margin-left:5%">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                Concurso
+                                            </th>
+                                            <th>
+                                                Escola
+                                            </th>
+                                            <th>
+                                                Estado Candidatura
+                                            </th>
+
+                                            <th>
+                                                Acções
+                                            </th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.concurso.Nome)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.escola.Nome)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.estadoCandidatura.NomeEstado)
+                                                </td>
+
+
+                                                <td>
+                                                    <a asp-action="Detalhe" asp-route-id="@item.candidatura.CandidaturaId">Consultar Candidatura</a>
+                                                </td>
+
+                                            </tr>
+
+                                        }
+
+                                    </tbody>
+                                </table>
+                        
+
+                    </div>
+              

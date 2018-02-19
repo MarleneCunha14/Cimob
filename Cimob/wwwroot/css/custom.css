@@ -6,13 +6,14 @@
 }
 
 body {
-    background-color: #ebebe0  !important;
+    background-color: #ebebe0 !important;
 }
 
 th {
     background-color: #669999;
     border: 0.5px solid black;
 }
+
 thead,
 td,
 tr,
@@ -49,7 +50,7 @@ html {
         opacity: 0.5;
     }
 
- /*1.2.Google Widget  */
+/*1.2.Google Widget  */
 #google_translate_element {
     margin-top: 1%;
     margin-left: 76.5%;
@@ -101,15 +102,15 @@ html {
 }
 
     .dropdown-content a {
-        color: #262626 !important ;
+        color: #262626 !important;
         padding: 12px 16px;
         text-decoration: none;
         display: block;
     }
 
-    .dropdown-content a:hover {
-        background-color: #339966
-    }
+        .dropdown-content a:hover {
+            background-color: #339966
+        }
 
 .dropdown:hover .dropdown-content {
     display: block;
@@ -119,14 +120,14 @@ html {
     background-color: #339966;
 }
 
-.DefaultPresentation{
-    display:table;
+.DefaultPresentation {
+    display: table;
 }
 
 /*Menu Vertical CSS*/
 .vertical-menu {
     width: 135px;
-    display:table-cell
+    display: table-cell
 }
 
     .vertical-menu a {
@@ -144,7 +145,7 @@ html {
         .vertical-menu a.active {
             background-color: #4CAF50;
             color: white;
-            cursor:default;
+            cursor: default;
         }
 
 label {
@@ -181,7 +182,7 @@ label {
 .descriptionText {
     margin-left: 4%;
     margin-right: 13%;
-    width:84%;
+    width: 84%;
 }
 
 .descriptionTextBoxIn {
@@ -214,7 +215,7 @@ h6 {
 /*CSS MENU principal*/
 .container {
     width: 100% !important;
-    margin-right:25%
+    margin-right: 25%
 }
 
 #navContainer {

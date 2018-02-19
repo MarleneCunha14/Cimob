@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Cimob.Models.AccountViewModels;
 using Cimob.Models.Candidatura;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore; 
 
 namespace Cimob.Models.Utilizadores
 {
@@ -15,7 +16,6 @@ namespace Cimob.Models.Utilizadores
         public int PaisId { get; set; }
         public int EscolaId { get; set; }
         public string Nome { get; set; }
-        public bool isAdministrador { get; set; }
         public DateTime DataNascimento { get; set; }
         public virtual TipoDeUser TipoDeUser { get; set; }
         public virtual Pais Pais { get; set; }

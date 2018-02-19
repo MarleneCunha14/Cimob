@@ -3,13 +3,17 @@
     <div class="vertical-menu">
         <a href="#" class="active">Gestão de conta</a>
         <a class="SubMenuSelected" asp-area="" asp-controller="Manage" asp-action="ConsultarDados">Consultar Dados</a>
-        <a class="SubMenu" asp-area="" asp-controller="Manage" asp-action="AlterarDados">Alterar Dados</a>
         <a class="SubMenu" asp-area="" asp-controller="Manage" asp-action="ChangePassword">Alterar Password</a>
-        <a class="SubMenu" asp-area="" asp-controller="Manage" asp-action="VerCandidaturasPendentes">Ver Candidaturas Pendentes</a>
+
+        @if (User.Identity.Name != "Cimob_esw@outlook.pt")
+    {
+        <a class="SubMenu" asp-area="" asp-controller="Manage" asp-action="AlterarDados">Alterar Dados</a>
+        <a class="SubMenu" asp-area="" asp-controller="Manage" asp-action="VerCandidaturasPendentes">Estado Candidatura</a>
+        <a class="SubMenu" asp-area="" asp-controller="Entrevistas" asp-action="IndexUser">Entrevistas Pendentes</a>
+}
     </div>
-    <div class="descriptionText">
-        <h1>Gestão de Conta</h1>
-        <hr />
+    <div class="descriptionText">       
+        
         <dl class="dl-horizontal">
             <dt>
                 Nome
@@ -23,24 +27,31 @@
             <dd>
                 @Html.DisplayFor(model => model.Email)
             </dd>
-            <dt>
-                Escola
-            </dt>
-            <dd>
-                @ViewBag.NomeEscola
-            </dd>
-            <dt>
-                Pais
-            </dt>
-            <dd>
-                @ViewBag.NomePais
-            </dd>
-            <dt>
-                Tipo de Utilizador
-            </dt>
-            <dd>
-                @ViewBag.NomeTipo
-            </dd>
+            @if (User.Identity.Name != "Cimob_esw@outlook.pt")
+            {
+        <dt>
+            Escola
+        </dt>
+
+        <dd>
+            @ViewBag.NomeEscola
+        </dd>
+}
+        <dt>
+            Pais
+        </dt>
+        <dd>
+            @ViewBag.NomePais
+        </dd>
+        @if (User.Identity.Name != "Cimob_esw@outlook.pt")
+{
+        <dt>
+            Tipo de Utilizador
+        </dt>
+        <dd>
+            @ViewBag.NomeTipo
+        </dd>
+}
         </dl>
     </div>
 </div>

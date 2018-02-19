@@ -6,35 +6,30 @@
 @inject SignInManager<Cimob.Models.Utilizadores.ApplicationUser> SignInManager
 
 
-    <img src="~/images/imagem.jpg" class="img" />
-    <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
-        <hr />
-        <div asp-validation-summary="All" class="text-danger"></div>
-        <div class="col-md-4">
-            <input class="form-control" placeholder="Introduza o email" name="Email" type="text" size="10">
+<img src="~/images/imagem.jpg" style="margin-left: 15%;" class="img" />
+<form asp-route-returnurl="@ViewData["ReturnUrl"]" style="margin-left: 31%;" method="post">
+    <hr />
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="col-md-4">
+        <input class="form-control" placeholder="Introduza o email" name="Email" type="text" size="10">
 
 
-            <input class="form-control" placeholder="Password" name="Password" type="password" value="">
+        <input class="form-control" placeholder="Password" name="Password" type="password" value="">
 
-            <div class="checkbox">
-                <label><input asp-for="RememberMe" />Lembrar-me? </label>
-            </div>
-
-            <button type="submit" class="btn btn-default">Iniciar sessão</button>
+        <div class="checkbox">
+            <label><input asp-for="RememberMe" />Lembrar-me? </label>
         </div>
-        <p>
-            <a asp-action="ForgotPassword">Esqueceu a palavra-passe?</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div>
+            <a asp-action="ForgotPassword">Esqueceu a palavra-passe?</a>
             <a asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]">Criar conta</a>
+        </div>
+        <button type="submit" class="btn btn-default">Iniciar sessão</button>
+    </div>
+    <p>
 
 
 
-        </p>
 
-    </form>
+    </p>
 
-
-    @section Scripts {
-        @await Html.PartialAsync("_ValidationScriptsPartial")
-    }
->
+</form>

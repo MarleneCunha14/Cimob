@@ -5,18 +5,11 @@
         <a class="SubMenu" asp-area="" asp-controller="Manage" asp-action="ConsultarDados">Consultar Dados</a>
         <a class="SubMenu" asp-area="" asp-controller="Manage" asp-action="AlterarDados">Alterar Dados</a>
         <a class="SubMenu" asp-area="" asp-controller="Manage" asp-action="ChangePassword">Alterar Password</a>
-        <a class="SubMenuSelected" asp-area="" asp-controller="Manage" asp-action="VerCandidaturasPendentes">Ver Candidaturas Pendentes</a>
+        <a class="SubMenu" asp-area="" asp-controller="Manage" asp-action="VerCandidaturasPendentes">Estado Candidatura</a>
+        <a class="SubMenu" asp-area="" asp-controller="Entrevistas" asp-action="IndexUser">Entrevistas Pendentes</a>
     </div>
-    <div class="descriptionText">
-        <h1>Ver Candidaturas Pendentes</h1>
-        <div style="margin: auto; width: auto;">
 
-            <div class="container" style="width: 800px; min-height: 400px; float: left;">
-                <div id="areaDeCaixaReserva">
-                    <div id="caixaLarga" style="width: 800px">
-                        @{ if (Model.Any())
-                        {
-                            <table class="table">
+                            <table class="table" style="margin-left:5%">
                                 <thead>
                                     <tr>
                                         <th>
@@ -55,13 +48,6 @@
 
                                 </tbody>
                             </table>
-                    }
-
-                        }
-
+                   
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+             

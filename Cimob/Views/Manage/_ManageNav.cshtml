@@ -1,5 +1,5 @@
 ﻿@using Cimob.Views.Manage
-@inject SignInManager<ApplicationUser> SignInManager
+@inject SignInManager<Cimob.Models.Utilizadores.ApplicationUser> SignInManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
 }
@@ -28,10 +28,11 @@
 
         <li class="@ManageNavPages.AlterarDadosNavClass(ViewContext)"><a asp-action="AlterarDados">Consultar dados do perfil</a></li>
         <li class="@ManageNavPages.ChangePasswordNavClass(ViewContext)"><a asp-action="ChangePassword">Alterar Palavra-passe</a></li>
+        <li class="@ManageNavPages.CandidaturasPendentesNavClass(ViewContext)"><a asp-action="VerCandidaturasPendentes">Ver Estado da Candidatura</a></li>
         @if (hasExternalLogins)
-        {
-            <li class="@ManageNavPages.ExternalLoginsNavClass(ViewContext)"><a asp-action="ExternalLogins">External logins</a></li>
-        }
+    {
+        <li class="@ManageNavPages.ExternalLoginsNavClass(ViewContext)"><a asp-action="ExternalLogins">External logins</a></li>
+}
 
     </ul>
     </body>

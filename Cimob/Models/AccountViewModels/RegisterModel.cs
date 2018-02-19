@@ -28,7 +28,7 @@ namespace Cimob.Models.AccountViewModels
         [Required]
         [Display(Name = "Tipo")]
         public int TipoId { get; set; }
-
+        
         [Key]
         [Required]
         [EmailAddress]

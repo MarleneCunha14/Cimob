@@ -18,7 +18,7 @@ namespace Cimob.Controllers
         {
             _context = context;
         }
-
+        // GET: Entrevistas/Create
         public async Task<IActionResult> SearchPais(string id)
         {
             var pais = from m in _context.Pais

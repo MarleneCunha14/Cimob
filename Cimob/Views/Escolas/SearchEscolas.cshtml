@@ -1,75 +1,60 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta lang="pt-pt">
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+﻿
+@model IEnumerable<Cimob.Models.Candidatura.Escola>
+
+    <div class="DefaultPresentation">
+        <div class="vertical-menu">
+            <a href="#" class="active">Parcerias</a>
+            <a class="SubMenuSelected" asp-area="" asp-controller="Escolas" asp-action="searchEscolas">Consultar Parcerias</a>
+            <a class="SubMenu" asp-area="" asp-controller="AjudaAutenticacaos" asp-action="Index" asp-route-id="4">Ajuda</a>
+        </div>
 
 
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="~/css/pesquisa.css" />
+        <div style="margin-left: 5%;width: 131%;">
+            <form asp-controller="Escolas" asp-action="SearchEscolas">
+                <p>
+                    <input type="text" name="id" style="height:40px; width:400px" />
 
+                    <button type="submit" class="btn btn-default">Pesquisar </button>
 
-</head>
-<body>
-    @model IEnumerable<Cimob.Models.Candidatura.Escola>
+                </p>
+            </form>
 
-    @{
-        ViewData["Title"] = "SearchEscolas";
-    }
-
-    <h2>Escolas</h2>
-
-    <form asp-controller="Escolas" asp-action="SearchEscolas">
-        <p>
-            <input type="text" name="id" style="height:40px; width:400px" />
-
-            &nbsp; &nbsp;<input type="submit" onclick="table" value="Pesquisar" style="height:40px; width:200px; color:black; background-color:lightgrey; border-color:lightgrey; font-family:ff-clan-web-pro-wide" />
-
-        </p>
-    </form>
-    </br>
-    </br>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Nome)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Url)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @{if (Model.Any())
-                {
-                    foreach (var item in Model)
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Nome)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Url)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{if (Model.Any())
                     {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Nome)
-                            </td>
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Nome)
+                                </td>
 
-                            <td>
-                                <a href="@item.Url">Visitar</a>
-                            </td>
-                        </tr>
+                                <td>
+                                    <a href="@item.Url">Visitar</a>
+                                </td>
+                            </tr>
                     }
                 }
                 else
                 {
                     <text>"Resultado não encontrado"</text>
-                }
-
             }
-        </tbody>
-    </table>
 
-    <div class="help-block">
-        <a asp-area="" asp-controller="HelpCompanhia" asp-action="Create" style="margin-left:1000px; color:white">HELP</a>
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
 
-</body>
-</html>
+

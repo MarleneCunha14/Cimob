@@ -70,7 +70,8 @@ namespace Cimob.Controllers
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return RedirectToLocal(returnUrl);
+
+                    return RedirectToAction("ConsultarDados", "Manage", new { area = "" }); ;
                 }
                 if (result.RequiresTwoFactor)
                 {
@@ -256,8 +257,7 @@ namespace Cimob.Controllers
                     PaisId = model.PaisId,
                     Nome = model.Name,
                     TipoDeUserId = model.TipoId,
-                    EscolaId = model.EscolaId,
-                    isAdministrador = false
+                    EscolaId = model.EscolaId
                 };
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)

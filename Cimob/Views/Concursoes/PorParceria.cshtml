@@ -1,6 +1,5 @@
 ﻿@model IEnumerable<Cimob.Models.Candidatura.Concurso_Escola_Tipo>
 @inject SignInManager<Cimob.Models.Utilizadores.ApplicationUser> SignInManager
-<h2>Informação Concursos abertos</h2>
 
 
 <div class="DefaultPresentation">
@@ -25,39 +24,39 @@ else
     <a class="SubSubMenu" asp-area="" asp-controller="Concursoes" asp-action="PorPais" asp-route-id="2">Por Pais</a>
 
 }
+        <a class="SubMenu" asp-area="" asp-controller="AjudaAutenticacaos" asp-action="Index" asp-route-id="1">Ajuda</a>
     </div>
 
 
-    <div style="margin-left: 10%;">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>
-                        Escola
-                    </th>
-                    <th>
-                        Nome
-                    </th>
-                    <th>
-                        Pais
-                    </th>
-                    <th>
-                        Tipo de Concurso
-                    </th>
-                    <th>
-                        Tipo de Utilizador
-                    </th>
-                    <th>
-                        Prazo
-                    </th>
-                    <th>
+    <table class="table" style="margin-left:5%">
+        <thead>
+            <tr>
+                <th>
+                    Escola
+                </th>
+                <th>
+                    Nome
+                </th>
+                <th>
+                    Pais
+                </th>
+                <th>
+                    Tipo de Concurso
+                </th>
+                <th>
+                    Tipo de Utilizador
+                </th>
+                <th>
+                    Prazo
+                </th>
+                <th>
 
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
                 <tr>
                     <td>
                         @Html.DisplayFor(modelItem => item.escola.Nome)
@@ -81,8 +80,7 @@ else
                         <a asp-area="" asp-route-id="@item.concurso.ConcursoId" asp-controller="Concursoes" asp-action="consultarDetalhe">Consultar</a>
                     </td>
                 </tr>
-                }
-            </tbody>
-        </table>
-    </div>
+            }
+        </tbody>
+    </table>
 </div>

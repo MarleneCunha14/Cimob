@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Cimob.Models;
 using Cimob.Models.Candidatura;
 using Cimob.Models.Utilizadores;
+using Cimob.Models.Estatística;
 using Cimob.Models.Contactos;
 using Cimob.Models.PontosInteresse;
 
@@ -30,7 +31,9 @@ namespace Cimob.Data
         public DbSet<EstadoCandidatura> EstadoCandidatura { get; set; }
         public DbSet<Escola> Escola { get; set; }
         public DbSet<Pais> Pais { get; set; }
+        public DbSet<Entrevista> Entrevista { get; set; }
         public DbSet<Contacto> Contacto { get; set; }
+        public DbSet<Estatistica> Estatistica { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

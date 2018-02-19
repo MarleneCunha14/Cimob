@@ -1,0 +1,1250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebTest Name="WebTest1" Id="172bc1e0-321a-402d-8887-bfb58dbadff6" Owner="" Priority="2147483647" Enabled="True" CssProjectStructure="" CssIteration="" Timeout="0" WorkItemIds="" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" Description="" CredentialUserName="" CredentialPassword="" PreAuthenticate="True" Proxy="default" StopOnError="False" RecordedResultFile="WebTest1.783a6ff0-9bf4-42aa-9365-693d619d2b1c.rec.webtestresult" ResultsLocale="">
+  <Items>
+    <Request Method="GET" Guid="63080ae0-3dcd-4c8a-aaf3-ed3805f36e3a" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="3000" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="HomePage" IgnoreHttpStatusCode="False" />
+    <Request Method="GET" Guid="6433123b-940e-4e87-934e-70d2a08dd4f1" Version="1.1" Url="https://translate.googleapis.com/translate_a/l" ThinkTime="5" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="3000" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client" Value="te" RecordedValue="te" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alpha" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hl" Value="pt-PT" RecordedValue="pt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cb" Value="_callbacks____0jdszna38" RecordedValue="_callbacks____0jdszna38" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="09abd476-4c32-4746-aa41-0ff838284e8b" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/Escolas/SearchEscolas" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="3000" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/" />
+      </Headers>
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extrair campos ocultos" Description="Extrair todos os campos ocultos da resposta e colocá-los no contexto do teste.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+    </Request>
+    <Request Method="GET" Guid="668c9a0f-418b-469c-b025-6ea3246b68d5" Version="1.1" Url="https://translate.googleapis.com/translate_a/l" ThinkTime="2" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="3000" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Escolas/SearchEscolas" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client" Value="te" RecordedValue="te" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alpha" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hl" Value="pt-PT" RecordedValue="pt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cb" Value="_callbacks____0jdszneq3" RecordedValue="_callbacks____0jdszneq3" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="POST" Guid="9fcf0f9b-d365-436b-be8f-c2af9156b4e5" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/Escolas/SearchEscolas" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Escolas/SearchEscolas" />
+      </Headers>
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extrair campos ocultos" Description="Extrair todos os campos ocultos da resposta e colocá-los no contexto do teste.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <FormPostHttpBody>
+        <FormPostParameter Name="id" Value="E" RecordedValue="E" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="__RequestVerificationToken" Value="{{$HIDDEN1.__RequestVerificationToken}}" RecordedValue="CfDJ8GFPLfqH-qBLrvfY2AENhJrns9U-FQEaKx9sm9QzaJU8lPpEzTGaLmSf_QcvDnjVzgduPJcs2VT6pDlZi0IjR58Y12Bg8e5o7_6i2Y2v0KkDG_NEuXzXLaygq_llzNa-FY47hc3Jeh_vNLbBZKRQadI" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="14c78250-23f2-4d9d-90ad-ff58ffdd8498" Version="1.1" Url="https://translate.googleapis.com/translate_a/l" ThinkTime="2" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Escolas/SearchEscolas" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client" Value="te" RecordedValue="te" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alpha" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hl" Value="pt-PT" RecordedValue="pt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cb" Value="_callbacks____0jdsznhs2" RecordedValue="_callbacks____0jdsznhs2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="POST" Guid="c83af87c-edd2-4420-8ff5-94b8fc24937f" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/Escolas/SearchEscolas" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Escolas/SearchEscolas" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="id" Value="ES" RecordedValue="ES" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="__RequestVerificationToken" Value="{{$HIDDEN1.__RequestVerificationToken}}" RecordedValue="CfDJ8GFPLfqH-qBLrvfY2AENhJpcimrsPTJrT_OKh7y5gD5uhaSOWYsie7uNpJKblU_VRJa_s2y4KpItv-o_Fy90jdWedUVDupIjOf5PwFiFtLzAjpISQ6FgmnBa5g76IOyvMek7ksapwUjSrySOoqGJoyk" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="e9f14eb7-d3f1-4fec-8bfa-ec151d54c316" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Escolas/SearchEscolas" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="d1e4637d-4f84-4c5a-9d63-c3b55e8fa32f" Version="1.1" Url="https://translate.googleapis.com/translate_a/l" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client" Value="te" RecordedValue="te" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alpha" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hl" Value="pt-PT" RecordedValue="pt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cb" Value="_callbacks____0jdsznlmf" RecordedValue="_callbacks____0jdsznlmf" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="468f6a89-7fd6-4618-8b9a-6dc10a01099c" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/Pais/SearchPais" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/" />
+      </Headers>
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extrair campos ocultos" Description="Extrair todos os campos ocultos da resposta e colocá-los no contexto do teste.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+    </Request>
+    <Request Method="GET" Guid="05ea3b13-5bcf-4e82-9b72-861755189219" Version="1.1" Url="https://translate.googleapis.com/translate_a/l" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Pais/SearchPais" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client" Value="te" RecordedValue="te" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alpha" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hl" Value="pt-PT" RecordedValue="pt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cb" Value="_callbacks____0jdsznniy" RecordedValue="_callbacks____0jdsznniy" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="POST" Guid="378e50f8-3d18-4505-82a0-5da540ae13a1" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/Pais/SearchPais" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Pais/SearchPais" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="id" Value="BR" RecordedValue="BR" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="__RequestVerificationToken" Value="{{$HIDDEN1.__RequestVerificationToken}}" RecordedValue="CfDJ8GFPLfqH-qBLrvfY2AENhJoHCFPfrEOfHlZE_2qYdIIc-JXsObSTFg19BQUgapRd_UusJklcUmRM47UZnYXvpF_X_MMO1664aiHBkve87d4TvPtq2s17mjGPz-bfIc0PH9tluHrYwtA6_p0a2JMSIk0" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="a767da1f-91a0-4aaf-a358-f0c57bf86f42" Version="1.1" Url="https://translate.googleapis.com/translate_a/l" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Pais/SearchPais" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client" Value="te" RecordedValue="te" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alpha" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hl" Value="pt-PT" RecordedValue="pt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cb" Value="_callbacks____0jdsznqcu" RecordedValue="_callbacks____0jdsznqcu" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="d9668e59-1590-4d3b-bd9d-954e02064b9f" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Pais/SearchPais" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="54041802-f158-4621-8faf-333d74228c60" Version="1.1" Url="https://translate.googleapis.com/translate_a/l" ThinkTime="5" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client" Value="te" RecordedValue="te" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alpha" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hl" Value="pt-PT" RecordedValue="pt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cb" Value="_callbacks____0jdszns9h" RecordedValue="_callbacks____0jdszns9h" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="26b258bd-2879-41e8-abc2-7ab0c102ce52" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/PontoInteresses" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/" />
+      </Headers>
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extrair campos ocultos" Description="Extrair todos os campos ocultos da resposta e colocá-los no contexto do teste.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam6.Id" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;Ser" />
+            <RuleParameter Name="Index" Value="3" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+    </Request>
+    <Request Method="GET" Guid="ab4256f0-710c-4614-a4ae-d386100b708d" Version="1.1" Url="https://www.google.com/maps/embed" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/PontoInteresses" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="pb" Value="!1m14!1m8!1m3!1d12486.02758090049!2d-8.838784!3d38.522082!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa0df10aa0caa2efa!2sInstituto+Polit%C3%A9cnico+de+Set%C3%BAbal!5e0!3m2!1spt-PT!2sus!4v1518371014365" RecordedValue="!1m14!1m8!1m3!1d12486.02758090049!2d-8.838784!3d38.522082!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa0df10aa0caa2efa!2sInstituto+Polit%C3%A9cnico+de+Set%C3%BAbal!5e0!3m2!1spt-PT!2sus!4v1518371014365" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="4ca96433-621b-4ae8-9e2b-bfc91c6032af" Version="1.1" Url="https://csi.gstatic.com/csi" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12486.02758090049!2d-8.838784!3d38.522082!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa0df10aa0caa2efa!2sInstituto+Polit%C3%A9cnico+de+Set%C3%BAbal!5e0!3m2!1spt-PT!2sus!4v1518371014365" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="v" Value="2" RecordedValue="2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="s" Value="mapsapi3" RecordedValue="mapsapi3" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="v3v" Value="32.1a" RecordedValue="32.1a" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="action" Value="apiboot2" RecordedValue="apiboot2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="libraries" Value="geometry%2Csearch" RecordedValue="geometry%2Csearch" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="e" Value="google-maps-embed,10_1_0,10_2_0" RecordedValue="google-maps-embed,10_1_0,10_2_0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="rt" Value="main.5" RecordedValue="main.5" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="9edb5fee-56ed-4a57-b050-9fd55ae6eecd" Version="1.1" Url="https://csi.gstatic.com/csi" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12486.02758090049!2d-8.838784!3d38.522082!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa0df10aa0caa2efa!2sInstituto+Polit%C3%A9cnico+de+Set%C3%BAbal!5e0!3m2!1spt-PT!2sus!4v1518371014365" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="v" Value="2" RecordedValue="2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="s" Value="mapsapi3" RecordedValue="mapsapi3" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="v3v" Value="32.1a" RecordedValue="32.1a" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="action" Value="apiboot2" RecordedValue="apiboot2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="libraries" Value="geometry%2Csearch" RecordedValue="geometry%2Csearch" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="e" Value="google-maps-embed,10_1_0,10_2_0" RecordedValue="google-maps-embed,10_1_0,10_2_0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="rt" Value="firstmap.38" RecordedValue="firstmap.38" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="c4e10340-6d14-477b-9cce-41d48827c5dc" Version="1.1" Url="https://translate.googleapis.com/translate_a/l" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/PontoInteresses" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client" Value="te" RecordedValue="te" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alpha" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hl" Value="pt-PT" RecordedValue="pt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cb" Value="_callbacks____0jdsznx06" RecordedValue="_callbacks____0jdsznx06" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="ecf1c00d-af1d-4fe0-a585-cdc6400307f9" Version="1.1" Url="https://csi.gstatic.com/csi" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12486.02758090049!2d-8.838784!3d38.522082!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa0df10aa0caa2efa!2sInstituto+Polit%C3%A9cnico+de+Set%C3%BAbal!5e0!3m2!1spt-PT!2sus!4v1518371014365" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="v" Value="2" RecordedValue="2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="s" Value="mapsapi3" RecordedValue="mapsapi3" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="v3v" Value="32.1a" RecordedValue="32.1a" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="action" Value="map2" RecordedValue="map2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="firstmap" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hdpi" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="mob" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="staticmap" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="size" Value="38x38" RecordedValue="38x38" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hadviewport" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="libraries" Value="geometry%2Csearch" RecordedValue="geometry%2Csearch" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="e" Value="google-maps-embed,10_1_0,10_2_0" RecordedValue="google-maps-embed,10_1_0,10_2_0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="rt" Value="visreq.1" RecordedValue="visreq.1" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="e85cc970-7636-4579-823f-82e1488272f2" Version="1.1" Url="https://maps.googleapis.com/maps/api/js/ViewportInfoService.GetViewportInfo" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12486.02758090049!2d-8.838784!3d38.522082!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa0df10aa0caa2efa!2sInstituto+Polit%C3%A9cnico+de+Set%C3%BAbal!5e0!3m2!1spt-PT!2sus!4v1518371014365" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="" Value="1m6" RecordedValue="1m6" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="1m2" RecordedValue="1m2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="1d38.47662986831623" RecordedValue="1d38.47662986831623" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="2d-8.91734349653666" RecordedValue="2d-8.91734349653666" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="2m2" RecordedValue="2m2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="1d38.57030579118734" RecordedValue="1d38.57030579118734" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="2d-8.760209690430315" RecordedValue="2d-8.760209690430315" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="2u14" RecordedValue="2u14" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="4spt-PT" RecordedValue="4spt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="5e0" RecordedValue="5e0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="6sm%40411000000" RecordedValue="6sm%40411000000" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="7b0" RecordedValue="7b0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="8e0" RecordedValue="8e0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="11e289" RecordedValue="11e289" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="callback" Value="_xdc_._epuvr4" RecordedValue="_xdc_._epuvr4" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="token" Value="92989" RecordedValue="92989" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="f2712a43-ee25-42a6-bd5e-35c8750128db" Version="1.1" Url="https://csi.gstatic.com/csi" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12486.02758090049!2d-8.838784!3d38.522082!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa0df10aa0caa2efa!2sInstituto+Polit%C3%A9cnico+de+Set%C3%BAbal!5e0!3m2!1spt-PT!2sus!4v1518371014365" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="v" Value="2" RecordedValue="2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="s" Value="mapsapi3" RecordedValue="mapsapi3" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="v3v" Value="32.1a" RecordedValue="32.1a" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="action" Value="map2" RecordedValue="map2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="firstmap" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hdpi" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="mob" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="staticmap" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="size" Value="600x450" RecordedValue="600x450" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hadviewport" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="libraries" Value="geometry%2Csearch" RecordedValue="geometry%2Csearch" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="e" Value="google-maps-embed,10_1_0,10_2_0" RecordedValue="google-maps-embed,10_1_0,10_2_0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="rt" Value="staticmap.7,firstpixel.7,allpixels.7" RecordedValue="staticmap.7,firstpixel.7,allpixels.7" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="34628b36-edda-4cd3-bc7f-d3364301fe9c" Version="1.1" Url="https://maps.googleapis.com/maps/api/js/ViewportInfoService.GetViewportInfo" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12486.02758090049!2d-8.838784!3d38.522082!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa0df10aa0caa2efa!2sInstituto+Polit%C3%A9cnico+de+Set%C3%BAbal!5e0!3m2!1spt-PT!2sus!4v1518371014365" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="" Value="1m6" RecordedValue="1m6" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="1m2" RecordedValue="1m2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="1d38.45990908493063" RecordedValue="1d38.45990908493063" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="2d-8.920902478829475" RecordedValue="2d-8.920902478829475" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="2m2" RecordedValue="2m2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="1d38.5864756647218" RecordedValue="1d38.5864756647218" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="2d-8.757590762969812" RecordedValue="2d-8.757590762969812" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="2u10" RecordedValue="2u10" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="4spt-PT" RecordedValue="4spt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="5e2" RecordedValue="5e2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="7b0" RecordedValue="7b0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="8e0" RecordedValue="8e0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="11e289" RecordedValue="11e289" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="callback" Value="_xdc_._546xlu" RecordedValue="_xdc_._546xlu" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="token" Value="62565" RecordedValue="62565" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="ffc8c24f-2672-4d97-ad0a-f8786b220ae8" Version="1.1" Url="https://csi.gstatic.com/csi" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12486.02758090049!2d-8.838784!3d38.522082!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa0df10aa0caa2efa!2sInstituto+Polit%C3%A9cnico+de+Set%C3%BAbal!5e0!3m2!1spt-PT!2sus!4v1518371014365" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="v" Value="2" RecordedValue="2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="s" Value="mapsapi3" RecordedValue="mapsapi3" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="v3v" Value="32.1a" RecordedValue="32.1a" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="action" Value="map2" RecordedValue="map2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="firstmap" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hdpi" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="mob" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="staticmap" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="size" Value="38x38" RecordedValue="38x38" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hadviewport" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="libraries" Value="geometry%2Csearch" RecordedValue="geometry%2Csearch" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="e" Value="google-maps-embed,10_1_0,10_2_0" RecordedValue="google-maps-embed,10_1_0,10_2_0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="rt" Value="tilesloaded.331,allpixels.331" RecordedValue="tilesloaded.331,allpixels.331" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="436292c6-f305-499f-b314-2f41e8356bb8" Version="1.1" Url="https://maps.googleapis.com/maps/api/js/AuthenticationService.Authenticate" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12486.02758090049!2d-8.838784!3d38.522082!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa0df10aa0caa2efa!2sInstituto+Polit%C3%A9cnico+de+Set%C3%BAbal!5e0!3m2!1spt-PT!2sus!4v1518371014365" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="" Value="1shttps%3A%2F%2Fwww.google.com%2Fmaps%2Fembed%3Fpb%3D!1m14!1m8!1m3!1d12486.02758090049!2d-8.838784!3d38.522082!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%253A0xa0df10aa0caa2efa!2sInstituto%2BPolit%25C3%25A9cnico%2Bde%2BSet%25C3%25BAbal!5e0!3m2!1spt-PT!2sus!4v1518371014365" RecordedValue="1shttps%3A%2F%2Fwww.google.com%2Fmaps%2Fembed%3Fpb%3D!1m14!1m8!1m3!1d12486.02758090049!2d-8.838784!3d38.522082!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%253A0xa0df10aa0caa2efa!2sInstituto%2BPolit%25C3%25A9cnico%2Bde%2BSet%25C3%25BAbal!5e0!3m2!1spt-PT!2sus!4v1518371014365" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="2sgoogle-maps-embed" RecordedValue="2sgoogle-maps-embed" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="callback" Value="_xdc_._ofh38z" RecordedValue="_xdc_._ofh38z" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="token" Value="57163" RecordedValue="57163" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="9c637936-a4cf-4175-911e-3aea4b29c217" Version="1.1" Url="https://csi.gstatic.com/csi" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12486.02758090049!2d-8.838784!3d38.522082!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa0df10aa0caa2efa!2sInstituto+Polit%C3%A9cnico+de+Set%C3%BAbal!5e0!3m2!1spt-PT!2sus!4v1518371014365" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="v" Value="2" RecordedValue="2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="s" Value="mapsapi3" RecordedValue="mapsapi3" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="v3v" Value="32.1a" RecordedValue="32.1a" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="action" Value="map2" RecordedValue="map2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="firstmap" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hdpi" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="mob" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="staticmap" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="size" Value="38x38" RecordedValue="38x38" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hadviewport" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="libraries" Value="geometry%2Csearch" RecordedValue="geometry%2Csearch" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="e" Value="google-maps-embed,10_1_0,10_2_0" RecordedValue="google-maps-embed,10_1_0,10_2_0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="rt" Value="visres.373" RecordedValue="visres.373" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="aa3433fd-a12f-4e2a-8497-4ac0a5986e95" Version="1.1" Url="https://csi.gstatic.com/csi" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12486.02758090049!2d-8.838784!3d38.522082!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa0df10aa0caa2efa!2sInstituto+Polit%C3%A9cnico+de+Set%C3%BAbal!5e0!3m2!1spt-PT!2sus!4v1518371014365" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="v" Value="2" RecordedValue="2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="s" Value="mapsapi3" RecordedValue="mapsapi3" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="v3v" Value="32.1a" RecordedValue="32.1a" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="action" Value="map2" RecordedValue="map2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="firstmap" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hdpi" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="mob" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="staticmap" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="size" Value="600x450" RecordedValue="600x450" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hadviewport" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="libraries" Value="geometry%2Csearch" RecordedValue="geometry%2Csearch" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="e" Value="google-maps-embed,10_1_0,10_2_0" RecordedValue="google-maps-embed,10_1_0,10_2_0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="rt" Value="visres.503" RecordedValue="visres.503" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="176c74a7-d02d-4a70-b89e-4a0b7e7b4006" Version="1.1" Url="https://www.google.com/maps/vt" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12486.02758090049!2d-8.838784!3d38.522082!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa0df10aa0caa2efa!2sInstituto+Polit%C3%A9cnico+de+Set%C3%BAbal!5e0!3m2!1spt-PT!2sus!4v1518371014365" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="pb" Value="!1m4!1m3!1i14!2i7788!3i6288!1m4!1m3!1i14!2i7788!3i6289!1m4!1m3!1i14!2i7789!3i6288!1m4!1m3!1i14!2i7789!3i6289!1m4!1m3!1i14!2i7788!3i6290!1m4!1m3!1i14!2i7789!3i6290!1m4!1m3!1i14!2i7790!3i6288!1m4!1m3!1i14!2i7790!3i6289!1m4!1m3!1i14!2i7790!3i6290!2m3!1e0!2sm!3i411110210!2m36!1e2!2sspotlight!5i1!8m32!1m8!12m7!10b0!12splaceholder!19m3!1b0!2zNSw2LDI0LDQ1LDc1LDkz!3s0x0%3A0xa0df10aa0caa2efa!20e1!2m6!1s0x0%3A0xa0df10aa0caa2efa!2sInstituto+Polit%C3%A9cnico+de+Set%C3%BAbal!4m2!3d38.522082!4d-8.838784!5e0!11e11!13m11!2sa!14b1!18m4!5b0!6b0!8b0!9b1!22m3!6e2!7e3!8e2!19u14!19u20!19u29!3m14!2spt-PT!3sUS!5e289!12m4!1e52!2m2!1sentity_class!2s0!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e3!12m1!5b1!23i4111425" RecordedValue="!1m4!1m3!1i14!2i7788!3i6288!1m4!1m3!1i14!2i7788!3i6289!1m4!1m3!1i14!2i7789!3i6288!1m4!1m3!1i14!2i7789!3i6289!1m4!1m3!1i14!2i7788!3i6290!1m4!1m3!1i14!2i7789!3i6290!1m4!1m3!1i14!2i7790!3i6288!1m4!1m3!1i14!2i7790!3i6289!1m4!1m3!1i14!2i7790!3i6290!2m3!1e0!2sm!3i411110210!2m36!1e2!2sspotlight!5i1!8m32!1m8!12m7!10b0!12splaceholder!19m3!1b0!2zNSw2LDI0LDQ1LDc1LDkz!3s0x0%3A0xa0df10aa0caa2efa!20e1!2m6!1s0x0%3A0xa0df10aa0caa2efa!2sInstituto+Polit%C3%A9cnico+de+Set%C3%BAbal!4m2!3d38.522082!4d-8.838784!5e0!11e11!13m11!2sa!14b1!18m4!5b0!6b0!8b0!9b1!22m3!6e2!7e3!8e2!19u14!19u20!19u29!3m14!2spt-PT!3sUS!5e289!12m4!1e52!2m2!1sentity_class!2s0!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e3!12m1!5b1!23i4111425" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="token" Value="129857" RecordedValue="129857" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="f5c148e2-11ee-4f91-ba81-05f43ab6660d" Version="1.1" Url="https://csi.gstatic.com/csi" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12486.02758090049!2d-8.838784!3d38.522082!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa0df10aa0caa2efa!2sInstituto+Polit%C3%A9cnico+de+Set%C3%BAbal!5e0!3m2!1spt-PT!2sus!4v1518371014365" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="v" Value="2" RecordedValue="2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="s" Value="mapsapi3" RecordedValue="mapsapi3" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="v3v" Value="32.1a" RecordedValue="32.1a" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="action" Value="map2" RecordedValue="map2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="firstmap" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hdpi" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="mob" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="staticmap" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="size" Value="600x450" RecordedValue="600x450" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hadviewport" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="libraries" Value="geometry%2Csearch" RecordedValue="geometry%2Csearch" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="e" Value="google-maps-embed,10_1_0,10_2_0" RecordedValue="google-maps-embed,10_1_0,10_2_0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="rt" Value="tilesloaded.1104" RecordedValue="tilesloaded.1104" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="d5d47ebd-e494-42ea-a8ee-de4f7a5f772d" Version="1.1" Url="https://fonts.googleapis.com/css" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12486.02758090049!2d-8.838784!3d38.522082!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa0df10aa0caa2efa!2sInstituto+Polit%C3%A9cnico+de+Set%C3%BAbal!5e0!3m2!1spt-PT!2sus!4v1518371014365" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="family" Value="Roboto:300,400,500,700" RecordedValue="Roboto:300,400,500,700" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="10894137-67f7-488f-8735-0b5eecf913c5" Version="1.1" Url="https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmSU5fBBc-.woff" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12486.02758090049!2d-8.838784!3d38.522082!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa0df10aa0caa2efa!2sInstituto+Polit%C3%A9cnico+de+Set%C3%BAbal!5e0!3m2!1spt-PT!2sus!4v1518371014365" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="ae8462a9-ba5d-448d-8f62-9d835eef7bf9" Version="1.1" Url="https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxM.woff" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12486.02758090049!2d-8.838784!3d38.522082!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa0df10aa0caa2efa!2sInstituto+Polit%C3%A9cnico+de+Set%C3%BAbal!5e0!3m2!1spt-PT!2sus!4v1518371014365" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="e377d8ea-7897-47e1-8846-f0dc90b2ddf0" Version="1.1" Url="https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBBc-.woff" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12486.02758090049!2d-8.838784!3d38.522082!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa0df10aa0caa2efa!2sInstituto+Polit%C3%A9cnico+de+Set%C3%BAbal!5e0!3m2!1spt-PT!2sus!4v1518371014365" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="25dc36a0-08f6-4034-90b7-5b4831cef57d" Version="1.1" Url="https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfBBc-.woff" ThinkTime="2" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12486.02758090049!2d-8.838784!3d38.522082!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa0df10aa0caa2efa!2sInstituto+Polit%C3%A9cnico+de+Set%C3%BAbal!5e0!3m2!1spt-PT!2sus!4v1518371014365" />
+      </Headers>
+    </Request>
+    <Request Method="POST" Guid="09afef7c-e035-47b5-9f3a-5bcbe296cdbe" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/PontoInteresses" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/PontoInteresses" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="Id" Value="4" RecordedValue="4" CorrelationBinding="{{FormPostParam6.Id}}" UrlEncode="True" />
+        <FormPostParameter Name="__RequestVerificationToken" Value="{{$HIDDEN1.__RequestVerificationToken}}" RecordedValue="CfDJ8GFPLfqH-qBLrvfY2AENhJq-AH9LX314PazwwZxnqaQI7-8dnw-B-4J55N5lF50u4u2aELnpFUPmhVmnkVD2D1ErnJZl-EccpozseAHAOfTcscJxUE0TfwqJW3CFMth-skP0c_HgET3uHtoRb5CtwoQ" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="dbc2ab7d-57f7-4588-ac8c-f2793ac5adf0" Version="1.1" Url="https://www.google.com/maps/embed" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/PontoInteresses" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="pb" Value="!1m18!1m12!1m3!1d12489.854687458905!2d-9.00875477375297!3d38.500015917168916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd194568ceecf761%3A0x6c3af723efb0427e!2sSerra+da+Arr%C3%A1bida!5e0!3m2!1spt-PT!2sus!4v1518371241544" RecordedValue="!1m18!1m12!1m3!1d12489.854687458905!2d-9.00875477375297!3d38.500015917168916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd194568ceecf761%3A0x6c3af723efb0427e!2sSerra+da+Arr%C3%A1bida!5e0!3m2!1spt-PT!2sus!4v1518371241544" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="e52adb35-0659-4cf1-b67a-a750a17413c2" Version="1.1" Url="https://csi.gstatic.com/csi" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12489.854687458905!2d-9.00875477375297!3d38.500015917168916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd194568ceecf761%3A0x6c3af723efb0427e!2sSerra+da+Arr%C3%A1bida!5e0!3m2!1spt-PT!2sus!4v1518371241544" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="v" Value="2" RecordedValue="2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="s" Value="mapsapi3" RecordedValue="mapsapi3" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="v3v" Value="32.1a" RecordedValue="32.1a" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="action" Value="apiboot2" RecordedValue="apiboot2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="libraries" Value="geometry%2Csearch" RecordedValue="geometry%2Csearch" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="e" Value="google-maps-embed,10_1_0,10_2_0" RecordedValue="google-maps-embed,10_1_0,10_2_0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="rt" Value="main.3" RecordedValue="main.3" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="55b8267f-b404-4a0c-8be8-65ee8c6a8b3b" Version="1.1" Url="https://csi.gstatic.com/csi" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12489.854687458905!2d-9.00875477375297!3d38.500015917168916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd194568ceecf761%3A0x6c3af723efb0427e!2sSerra+da+Arr%C3%A1bida!5e0!3m2!1spt-PT!2sus!4v1518371241544" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="v" Value="2" RecordedValue="2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="s" Value="mapsapi3" RecordedValue="mapsapi3" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="v3v" Value="32.1a" RecordedValue="32.1a" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="action" Value="apiboot2" RecordedValue="apiboot2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="libraries" Value="geometry%2Csearch" RecordedValue="geometry%2Csearch" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="e" Value="google-maps-embed,10_1_0,10_2_0" RecordedValue="google-maps-embed,10_1_0,10_2_0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="rt" Value="firstmap.32" RecordedValue="firstmap.32" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="d858b7f6-e7ec-4f92-9d53-99e5e446b400" Version="1.1" Url="https://translate.googleapis.com/translate_a/l" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/PontoInteresses" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client" Value="te" RecordedValue="te" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alpha" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hl" Value="pt-PT" RecordedValue="pt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cb" Value="_callbacks____0jdszo0p5" RecordedValue="_callbacks____0jdszo0p5" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="6797d7d5-ea31-4d81-ac0f-b172c53e7067" Version="1.1" Url="https://csi.gstatic.com/csi" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12489.854687458905!2d-9.00875477375297!3d38.500015917168916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd194568ceecf761%3A0x6c3af723efb0427e!2sSerra+da+Arr%C3%A1bida!5e0!3m2!1spt-PT!2sus!4v1518371241544" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="v" Value="2" RecordedValue="2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="s" Value="mapsapi3" RecordedValue="mapsapi3" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="v3v" Value="32.1a" RecordedValue="32.1a" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="action" Value="map2" RecordedValue="map2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="firstmap" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hdpi" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="mob" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="staticmap" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="size" Value="38x38" RecordedValue="38x38" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hadviewport" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="libraries" Value="geometry%2Csearch" RecordedValue="geometry%2Csearch" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="e" Value="google-maps-embed,10_1_0,10_2_0" RecordedValue="google-maps-embed,10_1_0,10_2_0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="rt" Value="visreq.2" RecordedValue="visreq.2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="c2ad91f5-9b71-424c-ae48-9f06298012bc" Version="1.1" Url="https://maps.googleapis.com/maps/api/js/ViewportInfoService.GetViewportInfo" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12489.854687458905!2d-9.00875477375297!3d38.500015917168916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd194568ceecf761%3A0x6c3af723efb0427e!2sSerra+da+Arr%C3%A1bida!5e0!3m2!1spt-PT!2sus!4v1518371241544" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="" Value="1m6" RecordedValue="1m6" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="1m2" RecordedValue="1m2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="1d38.45215941198379" RecordedValue="1d38.45215941198379" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="2d-9.077260806083472" RecordedValue="2d-9.077260806083472" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="2m2" RecordedValue="2m2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="1d38.54586406898965" RecordedValue="1d38.54586406898965" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="2d-8.920078800783244" RecordedValue="2d-8.920078800783244" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="2u14" RecordedValue="2u14" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="4spt-PT" RecordedValue="4spt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="5e0" RecordedValue="5e0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="6sm%40411000000" RecordedValue="6sm%40411000000" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="7b0" RecordedValue="7b0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="8e0" RecordedValue="8e0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="11e289" RecordedValue="11e289" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="callback" Value="_xdc_._hawe1d" RecordedValue="_xdc_._hawe1d" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="token" Value="114227" RecordedValue="114227" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="205e32aa-9b23-43a3-8a88-a6fc11e406f8" Version="1.1" Url="https://csi.gstatic.com/csi" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12489.854687458905!2d-9.00875477375297!3d38.500015917168916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd194568ceecf761%3A0x6c3af723efb0427e!2sSerra+da+Arr%C3%A1bida!5e0!3m2!1spt-PT!2sus!4v1518371241544" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="v" Value="2" RecordedValue="2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="s" Value="mapsapi3" RecordedValue="mapsapi3" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="v3v" Value="32.1a" RecordedValue="32.1a" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="action" Value="map2" RecordedValue="map2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="firstmap" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hdpi" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="mob" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="staticmap" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="size" Value="600x450" RecordedValue="600x450" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hadviewport" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="libraries" Value="geometry%2Csearch" RecordedValue="geometry%2Csearch" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="e" Value="google-maps-embed,10_1_0,10_2_0" RecordedValue="google-maps-embed,10_1_0,10_2_0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="rt" Value="staticmap.7,firstpixel.7,allpixels.7" RecordedValue="staticmap.7,firstpixel.7,allpixels.7" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="77f0be9c-650c-4f99-9e42-19bce5216e4a" Version="1.1" Url="https://maps.googleapis.com/maps/api/js/ViewportInfoService.GetViewportInfo" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12489.854687458905!2d-9.00875477375297!3d38.500015917168916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd194568ceecf761%3A0x6c3af723efb0427e!2sSerra+da+Arr%C3%A1bida!5e0!3m2!1spt-PT!2sus!4v1518371241544" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="" Value="1m6" RecordedValue="1m6" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="1m2" RecordedValue="1m2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="1d38.434949862393836" RecordedValue="1d38.434949862393836" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="2d-9.078832594209075" RecordedValue="2d-9.078832594209075" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="2m2" RecordedValue="2m2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="1d38.56155526519208" RecordedValue="1d38.56155526519208" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="2d-8.919554829398407" RecordedValue="2d-8.919554829398407" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="2u10" RecordedValue="2u10" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="4spt-PT" RecordedValue="4spt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="5e2" RecordedValue="5e2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="7b0" RecordedValue="7b0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="8e0" RecordedValue="8e0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="11e289" RecordedValue="11e289" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="callback" Value="_xdc_._qw2cef" RecordedValue="_xdc_._qw2cef" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="token" Value="17234" RecordedValue="17234" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="2b519192-4e77-4010-a76c-b57e1a472001" Version="1.1" Url="https://csi.gstatic.com/csi" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12489.854687458905!2d-9.00875477375297!3d38.500015917168916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd194568ceecf761%3A0x6c3af723efb0427e!2sSerra+da+Arr%C3%A1bida!5e0!3m2!1spt-PT!2sus!4v1518371241544" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="v" Value="2" RecordedValue="2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="s" Value="mapsapi3" RecordedValue="mapsapi3" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="v3v" Value="32.1a" RecordedValue="32.1a" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="action" Value="map2" RecordedValue="map2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="firstmap" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hdpi" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="mob" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="staticmap" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="size" Value="38x38" RecordedValue="38x38" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hadviewport" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="libraries" Value="geometry%2Csearch" RecordedValue="geometry%2Csearch" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="e" Value="google-maps-embed,10_1_0,10_2_0" RecordedValue="google-maps-embed,10_1_0,10_2_0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="rt" Value="visres.317" RecordedValue="visres.317" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="cd1b7c89-1512-4339-8181-b4c407bb4e61" Version="1.1" Url="https://csi.gstatic.com/csi" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12489.854687458905!2d-9.00875477375297!3d38.500015917168916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd194568ceecf761%3A0x6c3af723efb0427e!2sSerra+da+Arr%C3%A1bida!5e0!3m2!1spt-PT!2sus!4v1518371241544" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="v" Value="2" RecordedValue="2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="s" Value="mapsapi3" RecordedValue="mapsapi3" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="v3v" Value="32.1a" RecordedValue="32.1a" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="action" Value="map2" RecordedValue="map2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="firstmap" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hdpi" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="mob" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="staticmap" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="size" Value="600x450" RecordedValue="600x450" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hadviewport" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="libraries" Value="geometry%2Csearch" RecordedValue="geometry%2Csearch" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="e" Value="google-maps-embed,10_1_0,10_2_0" RecordedValue="google-maps-embed,10_1_0,10_2_0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="rt" Value="visres.324" RecordedValue="visres.324" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="f866a8c6-3baa-46c9-a4a4-14b3d5332070" Version="1.1" Url="https://csi.gstatic.com/csi" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12489.854687458905!2d-9.00875477375297!3d38.500015917168916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd194568ceecf761%3A0x6c3af723efb0427e!2sSerra+da+Arr%C3%A1bida!5e0!3m2!1spt-PT!2sus!4v1518371241544" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="v" Value="2" RecordedValue="2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="s" Value="mapsapi3" RecordedValue="mapsapi3" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="v3v" Value="32.1a" RecordedValue="32.1a" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="action" Value="map2" RecordedValue="map2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="firstmap" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hdpi" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="mob" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="staticmap" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="size" Value="38x38" RecordedValue="38x38" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hadviewport" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="libraries" Value="geometry%2Csearch" RecordedValue="geometry%2Csearch" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="e" Value="google-maps-embed,10_1_0,10_2_0" RecordedValue="google-maps-embed,10_1_0,10_2_0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="rt" Value="tilesloaded.336,allpixels.336" RecordedValue="tilesloaded.336,allpixels.336" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="99cc40f8-c29f-4577-b9aa-c68417eff84b" Version="1.1" Url="https://maps.googleapis.com/maps/api/js/AuthenticationService.Authenticate" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12489.854687458905!2d-9.00875477375297!3d38.500015917168916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd194568ceecf761%3A0x6c3af723efb0427e!2sSerra+da+Arr%C3%A1bida!5e0!3m2!1spt-PT!2sus!4v1518371241544" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="" Value="1shttps%3A%2F%2Fwww.google.com%2Fmaps%2Fembed%3Fpb%3D!1m18!1m12!1m3!1d12489.854687458905!2d-9.00875477375297!3d38.500015917168916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd194568ceecf761%253A0x6c3af723efb0427e!2sSerra%2Bda%2BArr%25C3%25A1bida!5e0!3m2!1spt-PT!2sus!4v1518371241544" RecordedValue="1shttps%3A%2F%2Fwww.google.com%2Fmaps%2Fembed%3Fpb%3D!1m18!1m12!1m3!1d12489.854687458905!2d-9.00875477375297!3d38.500015917168916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd194568ceecf761%253A0x6c3af723efb0427e!2sSerra%2Bda%2BArr%25C3%25A1bida!5e0!3m2!1spt-PT!2sus!4v1518371241544" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="" Value="2sgoogle-maps-embed" RecordedValue="2sgoogle-maps-embed" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="callback" Value="_xdc_._5z6ay2" RecordedValue="_xdc_._5z6ay2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="token" Value="128956" RecordedValue="128956" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="3be8d9e7-8f83-41af-b2b1-13414ae868d8" Version="1.1" Url="https://www.google.com/maps/vt" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12489.854687458905!2d-9.00875477375297!3d38.500015917168916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd194568ceecf761%3A0x6c3af723efb0427e!2sSerra+da+Arr%C3%A1bida!5e0!3m2!1spt-PT!2sus!4v1518371241544" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="pb" Value="!1m4!1m3!1i14!2i7781!3i6289!1m4!1m3!1i14!2i7781!3i6290!1m4!1m3!1i14!2i7781!3i6291!1m4!1m3!1i14!2i7782!3i6289!1m4!1m3!1i14!2i7783!3i6289!1m4!1m3!1i14!2i7782!3i6290!1m4!1m3!1i14!2i7782!3i6291!1m4!1m3!1i14!2i7783!3i6290!1m4!1m3!1i14!2i7783!3i6291!2m3!1e0!2sm!3i411110246!2m37!1e2!2sspotlight!5i1!8m33!1m8!12m7!10b0!12splaceholder!19m3!1b0!2zNSw2LDI0LDQ1LDc1LDkz!3s0x0%3A0x6c3af723efb0427e!20e1!2m7!1s0xd194568ceecf761%3A0x6c3af723efb0427e!2sSerra+da+Arr%C3%A1bida!4m2!3d38.5!4d-9!5e2!6b1!11e11!13m11!2sa!14b1!18m4!5b0!6b0!8b0!9b1!22m3!6e2!7e3!8e2!19u14!19u20!19u29!3m14!2spt-PT!3sUS!5e289!12m4!1e52!2m2!1sentity_class!2s2!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e3!12m1!5b1!23i4111425" RecordedValue="!1m4!1m3!1i14!2i7781!3i6289!1m4!1m3!1i14!2i7781!3i6290!1m4!1m3!1i14!2i7781!3i6291!1m4!1m3!1i14!2i7782!3i6289!1m4!1m3!1i14!2i7783!3i6289!1m4!1m3!1i14!2i7782!3i6290!1m4!1m3!1i14!2i7782!3i6291!1m4!1m3!1i14!2i7783!3i6290!1m4!1m3!1i14!2i7783!3i6291!2m3!1e0!2sm!3i411110246!2m37!1e2!2sspotlight!5i1!8m33!1m8!12m7!10b0!12splaceholder!19m3!1b0!2zNSw2LDI0LDQ1LDc1LDkz!3s0x0%3A0x6c3af723efb0427e!20e1!2m7!1s0xd194568ceecf761%3A0x6c3af723efb0427e!2sSerra+da+Arr%C3%A1bida!4m2!3d38.5!4d-9!5e2!6b1!11e11!13m11!2sa!14b1!18m4!5b0!6b0!8b0!9b1!22m3!6e2!7e3!8e2!19u14!19u20!19u29!3m14!2spt-PT!3sUS!5e289!12m4!1e52!2m2!1sentity_class!2s2!12m1!1e68!12m3!1e37!2m1!1ssmartmaps!4e3!12m1!5b1!23i4111425" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="token" Value="28717" RecordedValue="28717" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="c1039a4d-d33b-4305-ae53-822ade3df243" Version="1.1" Url="https://csi.gstatic.com/csi" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12489.854687458905!2d-9.00875477375297!3d38.500015917168916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd194568ceecf761%3A0x6c3af723efb0427e!2sSerra+da+Arr%C3%A1bida!5e0!3m2!1spt-PT!2sus!4v1518371241544" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="v" Value="2" RecordedValue="2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="s" Value="mapsapi3" RecordedValue="mapsapi3" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="v3v" Value="32.1a" RecordedValue="32.1a" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="action" Value="map2" RecordedValue="map2" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="firstmap" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hdpi" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="mob" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="staticmap" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="size" Value="600x450" RecordedValue="600x450" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hadviewport" Value="false" RecordedValue="false" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="libraries" Value="geometry%2Csearch" RecordedValue="geometry%2Csearch" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="e" Value="google-maps-embed,10_1_0,10_2_0" RecordedValue="google-maps-embed,10_1_0,10_2_0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="rt" Value="tilesloaded.939" RecordedValue="tilesloaded.939" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="530cad9a-337a-4b52-a596-6f7f9bfd4c60" Version="1.1" Url="https://fonts.googleapis.com/css" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12489.854687458905!2d-9.00875477375297!3d38.500015917168916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd194568ceecf761%3A0x6c3af723efb0427e!2sSerra+da+Arr%C3%A1bida!5e0!3m2!1spt-PT!2sus!4v1518371241544" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="family" Value="Roboto:300,400,500,700" RecordedValue="Roboto:300,400,500,700" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="a12c9ff7-d04f-4e80-9b47-d75382fabc57" Version="1.1" Url="https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmSU5fBBc-.woff" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12489.854687458905!2d-9.00875477375297!3d38.500015917168916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd194568ceecf761%3A0x6c3af723efb0427e!2sSerra+da+Arr%C3%A1bida!5e0!3m2!1spt-PT!2sus!4v1518371241544" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="5f2b587f-d4f2-4a6c-a556-5247c6c946aa" Version="1.1" Url="https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxM.woff" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12489.854687458905!2d-9.00875477375297!3d38.500015917168916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd194568ceecf761%3A0x6c3af723efb0427e!2sSerra+da+Arr%C3%A1bida!5e0!3m2!1spt-PT!2sus!4v1518371241544" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="e06d1c5d-79f1-45b4-93ac-72a40b637499" Version="1.1" Url="https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBBc-.woff" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12489.854687458905!2d-9.00875477375297!3d38.500015917168916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd194568ceecf761%3A0x6c3af723efb0427e!2sSerra+da+Arr%C3%A1bida!5e0!3m2!1spt-PT!2sus!4v1518371241544" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="61c6e7b7-9ed4-45ba-9262-903da5257e81" Version="1.1" Url="https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfBBc-.woff" ThinkTime="4" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12489.854687458905!2d-9.00875477375297!3d38.500015917168916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd194568ceecf761%3A0x6c3af723efb0427e!2sSerra+da+Arr%C3%A1bida!5e0!3m2!1spt-PT!2sus!4v1518371241544" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="5459aceb-19a0-4906-815a-3cc05989ae4f" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/Estatistica" ThinkTime="5" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/PontoInteresses" />
+      </Headers>
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extrair campos ocultos" Description="Extrair todos os campos ocultos da resposta e colocá-los no contexto do teste.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam5.Id" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;Cur" />
+            <RuleParameter Name="Index" Value="3" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+    </Request>
+    <Request Method="GET" Guid="7e930cf2-f38b-4fef-a527-982aac429443" Version="1.1" Url="https://translate.googleapis.com/translate_a/l" ThinkTime="3" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Estatistica" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client" Value="te" RecordedValue="te" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alpha" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hl" Value="pt-PT" RecordedValue="pt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cb" Value="_callbacks____0jdszo8xx" RecordedValue="_callbacks____0jdszo8xx" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="POST" Guid="71027389-23fe-4573-b54c-1fe5bb7729aa" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/Estatistica" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Estatistica" />
+      </Headers>
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extrair campos ocultos" Description="Extrair todos os campos ocultos da resposta e colocá-los no contexto do teste.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam4.Id" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;Con" />
+            <RuleParameter Name="Index" Value="2" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+      <FormPostHttpBody>
+        <FormPostParameter Name="Id" Value="4" RecordedValue="4" CorrelationBinding="{{FormPostParam5.Id}}" UrlEncode="True" />
+        <FormPostParameter Name="__RequestVerificationToken" Value="{{$HIDDEN1.__RequestVerificationToken}}" RecordedValue="CfDJ8GFPLfqH-qBLrvfY2AENhJoCx7aGzPn7867m_03IVFitubvEzW9C32oqG4TjJPZaDrZFPC_2sGLabM5_7-r2e9MFa_AGC4yMEEPQk-ltmYiEoc0qjzVOMJdvmdKiogyJifVXmRGuThsgBDEanAvdNFQ" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="2088b74b-cbea-454f-8740-3bf7f2d5f7f9" Version="1.1" Url="https://translate.googleapis.com/translate_a/l" ThinkTime="2" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Estatistica" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client" Value="te" RecordedValue="te" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alpha" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hl" Value="pt-PT" RecordedValue="pt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cb" Value="_callbacks____0jdszocgp" RecordedValue="_callbacks____0jdszocgp" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="POST" Guid="e285911d-9e18-4f5a-927a-2e178887503b" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/Estatistica" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Estatistica" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="Id" Value="3" RecordedValue="3" CorrelationBinding="{{FormPostParam4.Id}}" UrlEncode="True" />
+        <FormPostParameter Name="__RequestVerificationToken" Value="{{$HIDDEN1.__RequestVerificationToken}}" RecordedValue="CfDJ8GFPLfqH-qBLrvfY2AENhJp3OTEXGyzftsTpy-un7T7RJza7To1AC7qlKtN3KrGkf2LDMWdPY6Itr_uAZGfBSDguhUHj13u7lBMqr8YzwZhDBrwF3L3W1Ay2zyLC7Ioy6_H_2DUowA-VNVMj_BQGVxg" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="5b68a49a-89ef-43b4-8572-5b8b32d83887" Version="1.1" Url="https://translate.googleapis.com/translate_a/l" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Estatistica" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client" Value="te" RecordedValue="te" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alpha" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hl" Value="pt-PT" RecordedValue="pt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cb" Value="_callbacks____0jdszofyl" RecordedValue="_callbacks____0jdszofyl" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="0ade1915-2115-463f-9f78-847c4e0f61e7" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/Contactos/Create" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Estatistica" />
+      </Headers>
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extrair campos ocultos" Description="Extrair todos os campos ocultos da resposta e colocá-los no contexto do teste.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+    </Request>
+    <Request Method="GET" Guid="bf558146-1290-49b4-9e85-68e95d013360" Version="1.1" Url="https://b.config.skype.com/config/v1/skype/1.00/lwc" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Contactos/Create" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="configOption" Value="prod" RecordedValue="prod" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="callback" Value="Skype.ECS.jsonpCallback" RecordedValue="Skype.ECS.jsonpCallback" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="POST" Guid="95403603-14ee-4580-ba0c-b5d398ef6bf5" Version="1.1" Url="https://browser.pipe.aria.microsoft.com/Collector/3.0/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Contactos/Create" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="qsp" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="content-type" Value="application%2Fbond-compact-binary" RecordedValue="application%2Fbond-compact-binary" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="client-id" Value="NO_AUTH" RecordedValue="NO_AUTH" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="sdk-version" Value="ACT-Web-JS-2.9.0" RecordedValue="ACT-Web-JS-2.9.0" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="x-apikey" Value="8025e5036b77483783612070662d3127-d2fcc34c-3b1d-4fdd-8759-7d2b573371c8-6859" RecordedValue="8025e5036b77483783612070662d3127-d2fcc34c-3b1d-4fdd-8759-7d2b573371c8-6859" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+      <StringHttpBody ContentType="" InsertByteOrderMark="False">KwAKAAEASQARAEoAUwBfAGQAZQBmAGEAdQBsAHQAXwBzAG8AdQByAGMAZQD9/yQAMwAzADQANwA5ADYAMgAwAC0AYgBiAGUAOAAtADMAMAAxADgALQAwAGQAYwAzAC0AMwA3AGIAOQBlADQANgA1ADQAMgA3ADkA/f8GAP3//f/9//3//f9YAP3/CAAKAAEAKQAkAGMAOQBkADQAYwBmADAANAAtADcAYwBkAGQALQA2AGIAOABiAC0AMwA2ADUAZAAtAGIAOAAzADUAMgAwADgAMAA0AGEAMAA4AHEA/f/9//3//f/9/1gA/f8HAGcAZQBuAGUAcgBhAGwA/f8GABEAawBwAGkAXwBiAHUAdAB0AG8AbgBfAHIAZQBuAGQAZQByAP3/DQAJAAkAFQAQAEUAdgBlAG4AdABJAG4AZgBvAC4AUwBvAHUAcgBjAGUAEQBKAFMAXwBkAGUAZgBhAHUAbAB0AF8AcwBvAHUAcgBjAGUAEABFAHYAZQBuAHQASQBuAGYAbwAuAEkAbgBpAHQASQBkACQAYQA3AGQAMQA2AGYANQA0AC0ANgBhADkAYwAtAGEANwA1AGMALQBmADcANQBhAC0ANgA5ADAAMwA0ADUAMQBhAGIAZQA1ADEAEgBFAHYAZQBuAHQASQBuAGYAbwAuAFMAZQBxAHUAZQBuAGMAZQABADEADgBFAHYAZQBuAHQASQBuAGYAbwAuAE4AYQBtAGUAEQBrAHAAaQBfAGIAdQB0AHQAbwBuAF8AcgBlAG4AZABlAHIADgBFAHYAZQBuAHQASQBuAGYAbwAuAFQAaQBtAGUAGAAyADAAMQA4AC0AMAAyAC0AMQA4AFQAMQA2ADoAMQAxADoAMQAwAC4ANwA5ADEAWgAUAEUAdgBlAG4AdABJAG4AZgBvAC4AUwBkAGsAVgBlAHIAcwBpAG8AbgAQAEEAQwBUAC0AVwBlAGIALQBKAFMALQAyAC4AOQAuADAAEQBVAHMAZQByAEkAbgBmAG8ALgBMAGEAbgBnAHUAYQBnAGUABQBwAHQALQBQAFQAEQBVAHMAZQByAEkAbgBmAG8ALgBUAGkAbQBlAFoAbwBuAGUABgArADAAMAA6ADAAMAAWAEQAZQB2AGkAYwBlAEkAbgBmAG8ALgBCAHIAbwB3AHMAZQByAE4AYQBtAGUABABNAFMASQBFABkARABlAHYAaQBjAGUASQBuAGYAbwAuAEIAcgBvAHcAcwBlAHIAVgBlAHIAcwBpAG8AbgAEADEAMQAuADAAEQBEAGUAdgBpAGMAZQBJAG4AZgBvAC4ATwBzAE4AYQBtAGUABwBXAGkAbgBkAG8AdwBzABQARABlAHYAaQBjAGUASQBuAGYAbwAuAE8AcwBWAGUAcgBzAGkAbwBuAAIAMQAwAA0AcABhAGcAZQBTAGUAcwBzAGkAbwBuAEkAZAAkADYAZgA2AGMAYwA3ADAANAAtAGYAYQBhADgALQBiAGQAOQBlAC0AZAAzADYAMwAtADUANwA1AGEAMABiAGUAYwA5ADQAMwA1AAYAYwBoAGEAdABJAGQABABuAHUAbABsAAcAdgBlAHIAcwBpAG8AbgAHADAALgA1ADIALgA0ADIADABpAGQAZQBuAHQAaQB0AHkAdAB5AHAAZQADAG4ALwBhAAQAaABvAHMAdAAdAGMAaQBtAG0AbwBiAGkAbwBwAHMAdwAuAGEAegB1AHIAZQB3AGUAYgBzAGkAdABlAHMALgBuAGUAdAAGAGwAbwBjAGEAbABlAAUAcAB0AC0AcAB0AAwAaQBzAEYAaQByAHMAdABQAGEAcgB0AHkABQBmAGEAbABzAGUADQBjAG8AcgByAGUAbABhAHQAaQBvAG4ASQBkAAMATgAvAEEACQBzAGUAcwBzAGkAbwBuAEkAZAAkADUAMgAwADkAYwBjAGQAYQAtAGYAMwBlADAALQBjAGIAYQBjAC0AYwAyAGEAMAAtADYANgA0AGYAMgA3AGEANgBmADUAMwA1AP3/HgAJAAoAAQAEAHUAcwBlAHIAMAACAFAAFABpAAMAbgAvAGEAAAAAAAAAAAA=</StringHttpBody>
+    </Request>
+    <Request Method="GET" Guid="e201f48c-fa3b-444c-a441-2f87cd8bc04c" Version="1.1" Url="https://translate.googleapis.com/translate_a/l" ThinkTime="20" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Contactos/Create" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client" Value="te" RecordedValue="te" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alpha" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hl" Value="pt-PT" RecordedValue="pt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cb" Value="_callbacks____0jdszoib9" RecordedValue="_callbacks____0jdszoib9" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="POST" Guid="20b07235-1df6-4f5e-b6f8-e9e24bb50004" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/Contactos/Create" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="http://cimmobiopsw.azurewebsites.net/Contactos" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Contactos/Create" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="Email" Value="joaosantox2@hotmail.com" RecordedValue="joaosantox2@hotmail.com" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Assunto" Value="Olá" RecordedValue="Olá" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Descriçao" Value="Quando abrem as candidaturas para o Isel?" RecordedValue="Quando abrem as candidaturas para o Isel?" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="__RequestVerificationToken" Value="{{$HIDDEN1.__RequestVerificationToken}}" RecordedValue="CfDJ8NauP8V6DqlNtySKG99FWyMZVD8YDWzaUhmt3zw_1IZlhVPCv-iOQ3DweJt4O51xXypIDuMU4arvVgVrb1TsSkA6FujmHFyt7Qb8wwHe04cqhH19rZIdYIryu_O2GQNzabkQ0CoioBXOawZEODQyLdI" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="6b411395-8771-4640-98fb-04f15462d530" Version="1.1" Url="https://translate.googleapis.com/translate_a/l" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Contactos" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client" Value="te" RecordedValue="te" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alpha" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hl" Value="pt-PT" RecordedValue="pt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cb" Value="_callbacks____0jdszoz55" RecordedValue="_callbacks____0jdszoz55" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="25c44979-38d1-4d4e-8fbd-cf8175d3362c" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/Account/Login" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Contactos" />
+      </Headers>
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extrair campos ocultos" Description="Extrair todos os campos ocultos da resposta e colocá-los no contexto do teste.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+    </Request>
+    <Request Method="GET" Guid="eeb35f9e-1d3b-4d1a-99fc-c14eb5756b6a" Version="1.1" Url="https://translate.googleapis.com/translate_a/l" ThinkTime="10" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Account/Login" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client" Value="te" RecordedValue="te" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alpha" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hl" Value="pt-PT" RecordedValue="pt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cb" Value="_callbacks____0jdszp124" RecordedValue="_callbacks____0jdszp124" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="POST" Guid="ff33e529-b3e3-432a-8d5f-f3cfe623f13c" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/Account/Login" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="http://cimmobiopsw.azurewebsites.net/Manage/ConsultarDados" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Account/Login" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="Email" Value="joaosantox2@hotmail.com" RecordedValue="joaosantox2@hotmail.com" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Password" Value="Santos.21" RecordedValue="Santos.21" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="__RequestVerificationToken" Value="{{$HIDDEN1.__RequestVerificationToken}}" RecordedValue="CfDJ8GFPLfqH-qBLrvfY2AENhJoKv842V8uVNEDXRZ5BgLEUf_RK5w2eMmB-zqiY-NWp2TVvtdniHLVet9x7WXHvANoqIzbdPOWR0gRZH7uNDZ2yCqLi-4LBB_UdURyTYxOtOpPVi-nAYTO0yl5RVh9XxVE" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="RememberMe" Value="{{$HIDDEN1.RememberMe}}" RecordedValue="false" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="032acabc-428a-40c7-870f-c4ee3f52c58f" Version="1.1" Url="https://translate.googleapis.com/translate_a/l" ThinkTime="3" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Manage/ConsultarDados" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client" Value="te" RecordedValue="te" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alpha" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hl" Value="pt-PT" RecordedValue="pt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cb" Value="_callbacks____0jdszp9v8" RecordedValue="_callbacks____0jdszp9v8" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="12a0bc8d-5445-490e-9c10-37e1e9a3a04b" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/Manage/AlterarDados" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Manage/ConsultarDados" />
+      </Headers>
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extrair campos ocultos" Description="Extrair todos os campos ocultos da resposta e colocá-los no contexto do teste.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam2.EscolaId" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;EST" />
+            <RuleParameter Name="Index" Value="2" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam3.PaisId" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="lue=&quot;" />
+            <RuleParameter Name="EndsWith" Value="&quot;&gt;EST" />
+            <RuleParameter Name="Index" Value="2" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+    </Request>
+    <Request Method="GET" Guid="dba52982-0796-4e4d-84ca-a6a93772244f" Version="1.1" Url="https://translate.googleapis.com/translate_a/l" ThinkTime="4" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Manage/AlterarDados" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client" Value="te" RecordedValue="te" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alpha" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hl" Value="pt-PT" RecordedValue="pt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cb" Value="_callbacks____0jdszpe16" RecordedValue="_callbacks____0jdszpe16" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="POST" Guid="0bb44a98-bc72-4151-826d-d69b0a2a8719" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/Manage/AlterarDados" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="http://cimmobiopsw.azurewebsites.net/Manage/Confirmacao" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Manage/AlterarDados" />
+      </Headers>
+      <FormPostHttpBody>
+        <FormPostParameter Name="Nome" Value="João Carlos" RecordedValue="João Carlos" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="EscolaId" Value="1" RecordedValue="1" CorrelationBinding="{{FormPostParam2.EscolaId}}" UrlEncode="True" />
+        <FormPostParameter Name="PaisId" Value="1" RecordedValue="1" CorrelationBinding="{{FormPostParam3.PaisId}}" UrlEncode="True" />
+        <FormPostParameter Name="__RequestVerificationToken" Value="{{$HIDDEN1.__RequestVerificationToken}}" RecordedValue="CfDJ8GFPLfqH-qBLrvfY2AENhJqs3oOgDbh-O2mhewzdAcCnsQtxLn32Qt1fu9dTz2tnJH2Q2E9NetC49WOV6EF_Wuxi_Yrlp4IrOjM0Yl_6a05rS-roGqLE3EpPd-p5FW7EBWR5sCQcS-hPB1yfCSmGniGMNgyE7Sg6GGFWyrglyiHu3bNfIh8_l0mpIaa-Sy79_A" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="f0112927-8055-4bb3-b1ca-97160a07d328" Version="1.1" Url="https://translate.googleapis.com/translate_a/l" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Manage/Confirmacao" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client" Value="te" RecordedValue="te" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alpha" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hl" Value="pt-PT" RecordedValue="pt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cb" Value="_callbacks____0jdszpi9a" RecordedValue="_callbacks____0jdszpi9a" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="765d5b5f-9a4e-44bf-9cc6-4757ea92f56c" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/Manage/ConsultarDados" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Manage/Confirmacao" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="90af6f6c-717f-4ef4-873f-7f86cd9bdafa" Version="1.1" Url="https://translate.googleapis.com/translate_a/l" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Manage/ConsultarDados" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client" Value="te" RecordedValue="te" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alpha" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hl" Value="pt-PT" RecordedValue="pt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cb" Value="_callbacks____0jdszpkif" RecordedValue="_callbacks____0jdszpkif" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="b082970f-7d56-4a4a-8109-05f3cd06f8e5" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/Manage/ChangePassword" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Manage/ConsultarDados" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="9dcf8186-e50b-487c-ace9-c475890b0fcb" Version="1.1" Url="https://translate.googleapis.com/translate_a/l" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Manage/ChangePassword" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client" Value="te" RecordedValue="te" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alpha" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hl" Value="pt-PT" RecordedValue="pt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cb" Value="_callbacks____0jdszpnbe" RecordedValue="_callbacks____0jdszpnbe" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="fa6a5144-fcb8-469d-834b-70100708bbf6" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/Manage/VerCandidaturasPendentes" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Manage/ChangePassword" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="c7f02e87-66b6-42a9-9e18-318f32c38bd6" Version="1.1" Url="https://translate.googleapis.com/translate_a/l" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Manage/VerCandidaturasPendentes" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client" Value="te" RecordedValue="te" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alpha" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hl" Value="pt-PT" RecordedValue="pt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cb" Value="_callbacks____0jdszpose" RecordedValue="_callbacks____0jdszpose" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="52d2497a-5992-4ac2-ba05-d5564d9cfa2b" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/Entrevistas/IndexUser" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Manage/VerCandidaturasPendentes" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="16276a47-78f5-43c6-a561-3f046e13f88a" Version="1.1" Url="https://translate.googleapis.com/translate_a/l" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Entrevistas/IndexUser" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client" Value="te" RecordedValue="te" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alpha" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hl" Value="pt-PT" RecordedValue="pt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cb" Value="_callbacks____0jdszpr8a" RecordedValue="_callbacks____0jdszpr8a" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="d617a976-0838-4d35-b30b-81ca298141c6" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/Concursoes/Index/1" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Entrevistas/IndexUser" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="49a93f07-c04b-4b69-aeb7-284abdd32e76" Version="1.1" Url="https://translate.googleapis.com/translate_a/l" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Concursoes/Index/1" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client" Value="te" RecordedValue="te" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alpha" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hl" Value="pt-PT" RecordedValue="pt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cb" Value="_callbacks____0jdszptum" RecordedValue="_callbacks____0jdszptum" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="5321b224-2b19-4969-b30a-a71a4b6a2be3" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/Concursoes/consultarDetalhe/2" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Concursoes/Index/1" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="d9854982-3962-4aed-b671-6d352e2f52d3" Version="1.1" Url="https://translate.googleapis.com/translate_a/l" ThinkTime="3" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Concursoes/consultarDetalhe/2" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client" Value="te" RecordedValue="te" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alpha" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hl" Value="pt-PT" RecordedValue="pt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cb" Value="_callbacks____0jdszpwaq" RecordedValue="_callbacks____0jdszpwaq" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="a4f29a85-b24e-43ba-b62a-8643d2faae21" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/Candidaturas/Create/2" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Concursoes/consultarDetalhe/2" />
+      </Headers>
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractHiddenFields, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="1" DisplayName="Extrair campos ocultos" Description="Extrair todos os campos ocultos da resposta e colocá-los no contexto do teste.">
+          <RuleParameters>
+            <RuleParameter Name="Required" Value="True" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <CorrelationExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractFormField, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="FormPostParam1.ConcursoId" DisplayName="" Description="">
+          <RuleParameters>
+            <RuleParameter Name="Name" Value="ConcursoId" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+            <RuleParameter Name="Index" Value="0" />
+          </RuleParameters>
+        </ExtractionRule>
+      </CorrelationExtractionRules>
+    </Request>
+    <Request Method="GET" Guid="181e9718-0cfc-4796-bf7f-bac29191616f" Version="1.1" Url="https://translate.googleapis.com/translate_a/l" ThinkTime="118" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Candidaturas/Create/2" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client" Value="te" RecordedValue="te" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alpha" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hl" Value="pt-PT" RecordedValue="pt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cb" Value="_callbacks____0jdszpzjp" RecordedValue="_callbacks____0jdszpzjp" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="POST" Guid="64e428e7-50a3-4fd7-86a2-27344841d39d" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/Candidaturas/Create/2" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="http://cimmobiopsw.azurewebsites.net/Manage/VerCandidaturasPendentes" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Candidaturas/Create/2" />
+      </Headers>
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam2.id" DisplayName="Extrair texto" Description="Extrair texto da resposta e o coloca no contexto do teste.">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?id=" />
+            <RuleParameter Name="EndsWith" Value="&quot;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <FormPostHttpBody>
+        <FormPostParameter Name="Curso" Value="Informática" RecordedValue="Informática" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Genero" Value="Masculino" RecordedValue="Masculino" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Localidade" Value="Lisboa" RecordedValue="Lisboa" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Morada" Value="Rua Casal da Barreira nº4" RecordedValue="Rua Casal da Barreira nº4" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="Telemovel" Value="912814511" RecordedValue="912814511" CorrelationBinding="" UrlEncode="True" />
+        <FormPostParameter Name="ConcursoId" Value="2" RecordedValue="2" CorrelationBinding="{{FormPostParam1.ConcursoId}}" UrlEncode="True" />
+        <FormPostParameter Name="__RequestVerificationToken" Value="{{$HIDDEN1.__RequestVerificationToken}}" RecordedValue="CfDJ8GFPLfqH-qBLrvfY2AENhJqhi4oV8GYDyrtTT6xiqU1KGFkmllY_yl2slEYLTk9N3z9CS0Z4S96ICRHBGkEYu0s7fQOku5-5cUAB6LwnVn7OtMqpUe-42DOzyDsuVIQEXVFRsMOKfDH4InuXhl79AxdgaLlv9_WXGNg6uoHwTwEv3OvCcQE3-2lxkQepN2emqQ" CorrelationBinding="" UrlEncode="True" />
+      </FormPostHttpBody>
+    </Request>
+    <Request Method="GET" Guid="f6480f18-6db8-470c-8013-410dcad4585c" Version="1.1" Url="https://translate.googleapis.com/translate_a/l" ThinkTime="2" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Manage/VerCandidaturasPendentes" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client" Value="te" RecordedValue="te" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alpha" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hl" Value="pt-PT" RecordedValue="pt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cb" Value="_callbacks____0jdszsknp" RecordedValue="_callbacks____0jdszsknp" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="ddeacfb2-671b-462f-badc-6389117db2a3" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/Manage/Delete" ThinkTime="2" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Manage/VerCandidaturasPendentes" />
+      </Headers>
+      <ExtractionRules>
+        <ExtractionRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ExtractText, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" VariableName="QueryStringParam1.id" DisplayName="Extrair texto" Description="Extrair texto da resposta e o coloca no contexto do teste.">
+          <RuleParameters>
+            <RuleParameter Name="StartsWith" Value="?id=" />
+            <RuleParameter Name="EndsWith" Value="&quot;" />
+            <RuleParameter Name="Index" Value="0" />
+            <RuleParameter Name="IgnoreCase" Value="False" />
+            <RuleParameter Name="UseRegularExpression" Value="False" />
+            <RuleParameter Name="HtmlDecode" Value="True" />
+            <RuleParameter Name="Required" Value="False" />
+          </RuleParameters>
+        </ExtractionRule>
+      </ExtractionRules>
+      <QueryStringParameters>
+        <QueryStringParameter Name="id" Value="{{QueryStringParam2.id}}" RecordedValue="5" CorrelationBinding="{{QueryStringParam2.id}}" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="1021c8e5-e2ff-4190-a1f4-7c9f4a9987b2" Version="1.1" Url="https://translate.googleapis.com/translate_a/l" ThinkTime="3" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Manage/Delete?id=5" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client" Value="te" RecordedValue="te" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alpha" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hl" Value="pt-PT" RecordedValue="pt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cb" Value="_callbacks____0jdszso4l" RecordedValue="_callbacks____0jdszso4l" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="c8a8a958-af9d-4546-b7fc-f15066090663" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/Manage/DeleteConfirmed" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Manage/Delete?id=5" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="id" Value="{{QueryStringParam1.id}}" RecordedValue="5" CorrelationBinding="{{QueryStringParam1.id}}" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="3c3343cc-9b71-4a44-8f7a-fca47375a87d" Version="1.1" Url="https://translate.googleapis.com/translate_a/l" ThinkTime="6" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Manage/DeleteConfirmed?id=5" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client" Value="te" RecordedValue="te" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alpha" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hl" Value="pt-PT" RecordedValue="pt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cb" Value="_callbacks____0jdszsrmw" RecordedValue="_callbacks____0jdszsrmw" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="9358283c-bf03-4b93-b0ca-9161c7e2b482" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/Concursoes/Index/1" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Manage/DeleteConfirmed?id=5" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="7dde2d63-db22-4406-982b-033e955d181a" Version="1.1" Url="https://translate.googleapis.com/translate_a/l" ThinkTime="3" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Concursoes/Index/1" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client" Value="te" RecordedValue="te" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alpha" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hl" Value="pt-PT" RecordedValue="pt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cb" Value="_callbacks____0jdszsxjl" RecordedValue="_callbacks____0jdszsxjl" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="5cfc7598-d917-450c-9223-91d6455fc367" Version="1.1" Url="http://cimmobiopsw.azurewebsites.net/Manage/ConsultarDados" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Concursoes/Index/1" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="c76b4c54-d794-426a-8333-1ba9d3b55547" Version="1.1" Url="https://translate.googleapis.com/translate_a/l" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="http://cimmobiopsw.azurewebsites.net/Manage/ConsultarDados" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client" Value="te" RecordedValue="te" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="alpha" Value="true" RecordedValue="true" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="hl" Value="pt-PT" RecordedValue="pt-PT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="cb" Value="_callbacks____0jdszt18t" RecordedValue="_callbacks____0jdszt18t" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+  </Items>
+  <ValidationRules>
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidateResponseUrl, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="URL de resposta" Description="Valida que a URL de resposta após redirecionamentos é a mesma que a URL de resposta após os parâmetros QueryString serem ignorados." Level="Low" ExectuionOrder="BeforeDependents" />
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleResponseTimeGoal, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Meta de tempo de resposta" Description="Valida que o tempo de resposta para a solicitação é menor que ou igual ao tempo de resposta especificado na solicitação. Metas de tempo de resposta nulas serão ignoradas." Level="Low" ExectuionOrder="AfterDependents">
+      <RuleParameters>
+        <RuleParameter Name="Tolerance" Value="0" />
+      </RuleParameters>
+    </ValidationRule>
+  </ValidationRules>
+</WebTest>

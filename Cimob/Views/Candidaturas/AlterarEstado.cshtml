@@ -1,0 +1,34 @@
+﻿@model Cimob.Models.Candidatura.Candidatura_Estado
+<div class="DefaultPresentation">
+    <div class="vertical-menu">
+        <a href="#" class="active">Candidatura</a>
+        <a class="SubMenu" asp-area="" asp-controller="Candidaturas" asp-action="Detalhe" asp-route-id="@ViewBag.CandidaturaId">Detalhe</a>
+        <a class="SubMenuSelected" asp-area="" asp-controller="Candidaturas" asp-action="AlterarEstado">Alterar Estado</a>
+        <a class="SubMenu" asp-area="" asp-controller="Home" asp-action="Team">Ajuda</a>
+    </div>
+
+
+    <div class="row" style="margin-left: 10%;">
+        @ViewBag.Estado
+        <hr />
+        <dl class="dl-horizontal">
+            <form asp-route-returnUrl=null method="post">
+                <hr />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <select asp-for="EstadoCandidaturaId" class="form-control" asp-items="ViewBag.EstadoCandidaturaId"></select>
+                    <span asp-validation-for="EstadoCandidaturaId" class="text-danger"></span>
+                </div>
+                <div class="form-group" hidden>
+                   
+                    <input asp-for="CandidaturaId" class="form-control" value=@ViewBag.CandidaturaId />
+                </div>
+
+                <button type="submit" class="btn btn-default">Alterar o Estado</button>
+            </form>
+        </dl>
+    </div>
+    <div style="margin-left: 10%;">
+        <a asp-action="Detalhe" asp-route-id="@ViewBag.CandidaturaId">Voltar ao Detalhe</a>
+    </div>
+</div>

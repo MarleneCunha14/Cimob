@@ -17,11 +17,15 @@ namespace Cimob.Views.Manage
 
         public static string ExternalLogins => "ExternalLogins";
 
+        public static string VerCandidaturasPendentes => "VerCandidaturasPendentes";
+
         public static string TwoFactorAuthentication => "TwoFactorAuthentication";
 
         public static string AlterarDadosNavClass(ViewContext viewContext) => PageNavClass(viewContext, AlterarDados);
 
         public static string ChangePasswordNavClass(ViewContext viewContext) => PageNavClass(viewContext, ChangePassword);
+
+        public static string CandidaturasPendentesNavClass(ViewContext viewContext) => PageNavClass(viewContext, VerCandidaturasPendentes);
 
         public static string ExternalLoginsNavClass(ViewContext viewContext) => PageNavClass(viewContext, ExternalLogins);
 

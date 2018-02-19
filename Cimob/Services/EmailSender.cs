@@ -27,7 +27,7 @@ namespace Cimob.Services
 
         public Task Execute(string apiKey, string subject, string message, string email)
         {
-            var client = new SendGridClient("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");
+            var client = new SendGridClient("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");
             var msg = new SendGridMessage()
             {
                 From = new EmailAddress("Cimob@ips.pt", "Cimob"),

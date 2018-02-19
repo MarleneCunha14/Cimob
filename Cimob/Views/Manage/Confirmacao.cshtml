@@ -1,0 +1,15 @@
+﻿@model AlterarDadosModel
+<div class="DefaultPresentation">
+    <div class="vertical-menu">
+        <a href="#" class="active">Gestão de conta</a>
+        <a class="SubMenu" asp-area="" asp-controller="Manage" asp-action="ConsultarDados">Consultar Dados</a>
+        <a class="SubMenu" asp-area="" asp-controller="Manage" asp-action="AlterarDados">Alterar Dados</a>
+        <a class="SubMenu" asp-area="" asp-controller="Manage" asp-action="ChangePassword">Alterar Password</a>
+        <a class="SubMenu" asp-area="" asp-controller="Manage" asp-action="VerCandidaturasPendentes">Ver Estado Candidatura</a>
+        <a class="SubMenu" asp-area="" asp-controller="Entrevistas" asp-action="IndexUser">Ver Entrevistas Pendentes</a>
+    </div>
+    <div class="descriptionText">
+
+       <label>A alteração foi efectuado com sucesso.</label>
+    </div>
+</div>
